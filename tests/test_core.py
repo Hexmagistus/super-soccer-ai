@@ -141,3 +141,16 @@ def test_new_league_fixtures_parse(tmp_path, monkeypatch):
     (tmp_path / "new_league_fixtures.csv").write_text("Country,League,Date,Time,Home,Away,AvgH,AvgD,AvgA\nBrazil,Serie A,10/10/2026,20:00,Flamengo RJ,Palmeiras,2.1,3.2,3.6\nNarnia,X,10/10/2026,20:00,A,B,2,3,4\n")
     monkeypatch.setattr(ing, "RAW", tmp_path); f = ing.load_fixtures()
     assert list(f.league) == ["BRA"] and f.kickoff_utc6.iloc[0] == "2026-10-10 13:00" and f.fixture_source.iloc[0].endswith("new_league_fixtures.csv")
+
+
+def test_fixtures_exclude_past_kickoffs(monkeypatch):
+    import datetime as dt, app
+    now = dt.datetime.now(dt.timezone.utc); f = lambda d: (now + d).astimezone(app.UTC6).strftime("%Y-%m-%d %H:%M")
+    base = {"league": "E0", "date": "2000-01-01", "home": "A", "away": "B", "value": None, "odds": None}
+    rows = [{**base, "match_id": "past", "kickoff_utc6": f(dt.timedelta(hours=-2))},
+            {**base, "match_id": "future", "kickoff_utc6": f(dt.timedelta(hours=2))},
+            {**base, "match_id": "old_dateonly", "kickoff_utc6": None}]
+    monkeypatch.setattr(app, "latest_preds", lambda: [dict(r) for r in rows])
+    assert [x["match_id"] for x in app.fixtures()] == ["future"]
+    assert [x["match_id"] for x in app.upcoming_preds()] == ["future"]
+    assert not app.is_upcoming(rows[0], now) and app.is_upcoming(rows[1], now)

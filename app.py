@@ -19,6 +19,26 @@ def latest_preds():
                 AND evaluated_at IS NULL ORDER BY match_date""")
     return [json.loads(r["payload"]) for r in rows]
 
+UTC6 = dt.timezone(dt.timedelta(hours=-6))
+
+def kickoff_dt(x):
+    """Kickoff as an aware datetime (stored kickoff_utc6 is 'YYYY-MM-DD HH:MM' in UTC-6). Date-only -> end of that day."""
+    k = x.get("kickoff_utc6")
+    try:
+        if k: return dt.datetime.strptime(k[:16], "%Y-%m-%d %H:%M").replace(tzinfo=UTC6)
+        return dt.datetime.strptime(x["date"][:10], "%Y-%m-%d").replace(hour=23, minute=59, tzinfo=UTC6)
+    except (KeyError, TypeError, ValueError): return None
+
+def is_upcoming(x, now=None):
+    k = kickoff_dt(x); now = now or dt.datetime.now(dt.timezone.utc)
+    return k is not None and k > now
+
+def upcoming_preds(now=None):
+    """Latest predictions whose kickoff is after `now`, evaluated at request time (Render serves a stale snapshot).
+    Past fixtures are filtered from views only; stored predictions are never deleted."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    return [x for x in latest_preds() if is_upcoming(x, now)]
+
 @app.get("/")
 def index(): return FileResponse(ROOT / "static" / "index.html")
 
@@ -39,7 +59,7 @@ def _refresh_info():
 def status():
     src = q("SELECT * FROM sources ORDER BY file")
     counts = q("SELECT league, season, COUNT(*) n, MIN(date) first, MAX(date) last FROM matches GROUP BY league, season ORDER BY league, season")
-    preds = latest_preds()
+    preds = upcoming_preds()
     return {"model_version": MODEL_VERSION, "sources": src, "counts": counts, "unavailable": UNAVAILABLE,
             "leagues": {**MAIN_LEAGUES, **EXTRA, **EXTRA_UNDATED, **FD_MORE, **EXTRA_MORE},
             "psl": _psl_status(), "optional_api_keys": adapters.status(),
@@ -60,7 +80,7 @@ def psl_info(): return _psl_status()
 
 @app.get("/api/fixtures")
 def fixtures(league: str = None, sort: str = "kickoff", desc: bool = False):
-    p = latest_preds()
+    p = upcoming_preds()
     if league: p = [x for x in p if x["league"] == league]
     key = {"kickoff": lambda x: x["kickoff_utc6"] or x["date"], "league": lambda x: (x["league"], x["kickoff_utc6"] or ""),
            "probability": lambda x: x.get("probability", -1), "ssi": lambda x: x.get("ssi", -1),
@@ -84,7 +104,7 @@ def performance():
 @app.get("/api/value")
 def value():
     s = get_settings(); out = []
-    for x in latest_preds():
+    for x in upcoming_preds():
         if x.get("value"): out.append({k: x[k] for k in ("match_id", "league", "kickoff_utc6", "home", "away", "value", "odds")})
     return {"betting_module_enabled": s["betting_module"], "rows": out if s["betting_module"] else [],
             "rule": {"min_edge": VALUE_MIN_EDGE, "min_ev": VALUE_MIN_EV, "max_odds": VALUE_MAX_ODDS},

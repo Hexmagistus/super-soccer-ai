@@ -15,7 +15,8 @@ const pct=x=>x==null?"unavailable":(100*x).toFixed(1)+"%", f2=x=>x==null?"unavai
 const api=p=>fetch(p).then(r=>r.json());
 function nav(){document.getElementById('nav').innerHTML=Object.entries(pages).map(([k,v])=>`<a href="#${k}" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 ${location.hash.slice(1).split('/')[0]==k||(!location.hash&&k=='home')?'active':''}">${v}</a>`).join('')}
 async function load(){[S.status,S.settings]=await Promise.all([api('/api/status'),api('/api/settings')]);await loadFx()}
-async function loadFx(){S.fx=await api(`/api/fixtures?sort=${S.sort}&desc=${S.desc}`+(S.league?`&league=${S.league}`:''));S.fx=S.fx.filter(x=>S.settings.leagues.includes(x.league))}
+async function loadFx(){S.fx=await api(`/api/fixtures?sort=${S.sort}&desc=${S.desc}`+(S.league?`&league=${S.league}`:''));S.fx=S.fx.filter(x=>S.settings.leagues.includes(x.league)&&isUpcoming(x))}
+function isUpcoming(x){const k=x.kickoff_utc6?x.kickoff_utc6.replace(' ','T')+':00-06:00':(x.date+'T23:59:00-06:00');const t=Date.parse(k);return isNaN(t)||t>Date.now()}
 function setSort(k){if(S.sort==k)S.desc=!S.desc;else{S.sort=k;S.desc=k!='kickoff'&&k!='league'}loadFx().then(route)}
 function fxTable(rows){const h=(k,l)=>`<th onclick="setSort('${k}')" class="text-left">${l}${S.sort==k?(S.desc?' ▼':' ▲'):''}</th>`;
 return `<div class="overflow-x-auto"><table class="w-full text-sm"><thead class="text-slate-400 text-xs uppercase"><tr>${h('league','League')}${h('kickoff','Kickoff UTC-6')}<th>Match</th><th>Pick</th>${h('probability','Prob')}<th>1 / X / 2</th><th>Top score</th>${h('goals','Model xG')}${h('ssi','SSI')}${h('quality','Data')}<th>Categories</th><th>Fixture source</th></tr></thead><tbody>`+
