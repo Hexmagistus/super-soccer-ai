@@ -35,6 +35,10 @@ def main(argv):
                         (dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), int(r[0]), int(r[1]), pid)); done += 1
     con.commit(); con.close()
     print(f"stored {len(preds)} predictions; evaluated {done} finished ones")
+    (backtest.REPORTS / "last_refresh.json").write_text(json.dumps({
+        "last_successful_refresh_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "matches": len(m), "fixtures": len(fx), "predictions_stored": len(preds), "evaluated": done,
+        "backtest_run": "--backtest" in argv}, indent=1))
 
 if __name__ == "__main__":
     main(sys.argv[1:])

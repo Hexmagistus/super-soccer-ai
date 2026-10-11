@@ -1,5 +1,5 @@
 """FastAPI backend for SUPER SOCCER AI. Run: .venv/bin/uvicorn app:app --port 8000"""
-import json, sqlite3
+import json, sqlite3, datetime as dt
 from fastapi import FastAPI, HTTPException, Body
 from fastapi.responses import FileResponse
 from ssa.config import DB, REPORTS, SETTINGS, ROOT, MAIN_LEAGUES, EXTRA, EXTRA_UNDATED, FD_MORE, EXTRA_MORE, UNAVAILABLE, MODEL_VERSION, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
@@ -22,6 +22,19 @@ def latest_preds():
 @app.get("/")
 def index(): return FileResponse(ROOT / "static" / "index.html")
 
+SCHEDULE_UTC = (5, 17)  # .github/workflows/daily.yml cron "17 5 * * *"
+
+def _refresh_info():
+    f = REPORTS / "last_refresh.json"
+    last = json.loads(f.read_text()) if f.exists() else None
+    now = dt.datetime.now(dt.timezone.utc)
+    nxt = now.replace(hour=SCHEDULE_UTC[0], minute=SCHEDULE_UTC[1], second=0, microsecond=0)
+    if nxt <= now: nxt += dt.timedelta(days=1)
+    return {"last_successful_refresh_utc": last and last.get("last_successful_refresh_utc"), "last_refresh": last,
+            "next_scheduled_run_utc": nxt.isoformat(timespec="minutes"),
+            "next_scheduled_run_utc6": nxt.astimezone(dt.timezone(dt.timedelta(hours=-6))).strftime("%Y-%m-%d %H:%M"),
+            "schedule": "daily 05:17 UTC via GitHub Actions (GitHub may delay scheduled runs)"}
+
 @app.get("/api/status")
 def status():
     src = q("SELECT * FROM sources ORDER BY file")
@@ -30,7 +43,7 @@ def status():
     return {"model_version": MODEL_VERSION, "sources": src, "counts": counts, "unavailable": UNAVAILABLE,
             "leagues": {**MAIN_LEAGUES, **EXTRA, **EXTRA_UNDATED, **FD_MORE, **EXTRA_MORE},
             "psl": _psl_status(), "optional_api_keys": adapters.status(),
-            "mode": "upcoming" if preds else "historical", "n_upcoming": len(preds),
+            "refresh": _refresh_info(), "mode": "upcoming" if preds else "historical", "n_upcoming": len(preds),
             "predictions_created_at": max((p["created_at"] for p in preds), default=None),
             "fixtures_source": "football-data.co.uk fixtures.csv (22 European divisions) + new_league_fixtures.csv (15 other leagues incl. Brazil Serie A and MLS). Unavailable: South Africa PSL, UEFA competitions, internationals, women's football (no free key-less source)"}
 

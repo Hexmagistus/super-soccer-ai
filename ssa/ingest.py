@@ -157,6 +157,8 @@ def connect():
         evaluated_at TEXT, result_hg INTEGER, result_ag INTEGER)""")
     con.execute("""CREATE TRIGGER IF NOT EXISTS pred_immutable BEFORE UPDATE OF payload, created_at, match_id ON predictions
         BEGIN SELECT RAISE(ABORT, 'predictions are immutable'); END""")
+    con.execute("""CREATE TRIGGER IF NOT EXISTS pred_no_delete BEFORE DELETE ON predictions
+        BEGIN SELECT RAISE(ABORT, 'predictions are immutable'); END""")
     return con
 
 def store(m, sources):
