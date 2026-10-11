@@ -1,0 +1,757 @@
+{{Short description|Football league season}}
+{{DISPLAYTITLE:2026–27 South African Premiership}}
+{{Use dmy dates|date=August 2026}}
+{{Use South African English|date=August 2026}}
+{{Infobox football league season
+| dates = 01 August 2026 - 22 May 2027<ref>{{Cite web |last=Munyai |first=Ofhani |date=June 21, 2026 |title=2026/27 PSL season kick-off dates revealed |url=https://farpost.co.za/2026/06/21/2026-27-psl-season-kick-off-dates-revealed/ |access-date=2026-06-22 |website=FARPost |language=en-ZA}}</ref>
+| season = 2026–27
+| image = 
+| competition = [[South African Premiership|Betway Premiership]]
+| winners = 
+| relegated = 
+| continentalcup1 = [[2027–28 CAF Champions League|Champions League]]
+| continentalcup1 qualifiers = 
+| continentalcup2 = [[2027–28 CAF Confederation Cup|Confederation Cup]]
+| continentalcup2 qualifiers = 
+| total goals = 125
+| league topscorer = [[AmaZulu F.C.|Thandolwenkosi Ngwenya]]<br>(8 goals)
+| biggest home win = [[Milford F.C. (South Africa)|Milford]] 5-1 [[Richards Bay F.C.|Richards Bay]]
+| biggest away win = [[Kruger United F.C.|Kruger United]] 0-4 [[Orlando Pirates F.C.|Orlando Pirates]]
+| highest scoring = [[Mamelodi Sundowns F.C.|M. Sundowns]] 5-2 [[AmaZulu F.C.|AmaZulu]]
+| longest wins = [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]<br>[[Orlando Pirates F.C.|Orlando Pirates]]<br>(5 wins)
+| longest unbeaten = [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]<br>(8 matches)
+| longest winless = [[Marumo Gallants F.C.|Marumo Gallants]]<br>[[Siwelele F.C.|Siwelele]]<br>[[Richards Bay F.C.|Richards Bay]]<br>(7 matches)
+| highest attendance = 
+| lowest attendance = 
+| average attendance = 
+| prevseason = [[2025–26 South African Premiership|2025–26]]
+| nextseason = [[2027–28 South African Premiership|''2027–28'']]
+| updated = 20 September 2026
+}}
+
+The '''2026–27 South African Premiership''' is the 31st consecutive season of the [[South African Premiership]]. It is known as the '''Betway Premiership''' for sponsorship reasons, and is also commonly referred to as the [[Premier Soccer League|PSL]] after the governing body.<ref>{{Cite web |last=Ngidi |first=Njabulo |title=Betway bets on PSL with R900 million sponsorship: 'We don't chase away anybody,' says Khoza |url=https://www.news24.com/sport/soccer/psl/betway-bets-on-psl-with-r900-million-sponsorship-we-dont-chase-away-anybody-says-khoza-20240724 |access-date=2024-08-09 |website=Sport |language=en-US}}</ref>
+
+[[Orlando Pirates F.C.|Orlando Pirates]] are defending their title after ending [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]] long reign as league champions. [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]] had won the previous eight consecutive titles, starting in the [[2017–18 South African Premiership|2017–18 season]].<ref>{{Cite web|url=https://www.timeslive.co.za/sport/soccer/2025-05-14-sundowns-crowned-league-champions-for-eighth-successive-season/|title=Sundowns crowned league champions for eighth successive season|accessdate=18 September 2025}}</ref>
+
+==Teams==
+=== Team changes ===
+{{increase}} '''Promoted from [[2025–26 National First Division]]'''
+
+* [[Kruger United F.C.|Kruger United]]<ref>{{Cite web |last=Rabothe |first=Tshepo |date=May 2, 2026 |title=Kruger United seal Betway Premiership automatic promotion |url=https://farpost.co.za/2026/05/02/kruger-united-seal-betway-premiership-automatic-promotion/ |access-date=2026-06-13 |website=FARPost |language=en-ZA}}</ref>
+* [[Milford F.C. (South Africa)|Milford]]<ref name='fp_magesi_milford'>{{Cite web |last=Madyira |first=Michael |date=June 13, 2026 |title=Magesi relegated from Betway Premiership, Milford promoted |url=https://farpost.co.za/2026/06/13/magesi-relegated-from-betway-premiership-milford-promoted/ |access-date=2026-06-13 |website=FARPost |language=en-ZA}}</ref>
+
+{{decrease}} '''Relegated to [[2026–27 National First Division]]'''
+
+* [[Orbit College F.C.|Orbit College]]<ref>{{Cite web |date=May 23, 2026 |title=Orbit relegated after one season in the PSL, Chiefs lose last match of the season |url=https://www.timeslive.co.za/sport/soccer/2026-05-23-orbit-relegated-after-one-season-in-the-psl-chiefs-lose-last-match-of-the-season/ |access-date=2026-06-13 |website=TimesLIVE |language=en}}</ref>
+* [[Magesi F.C.|Magesi]]<ref name='fp_magesi_milford' />
+
+Kruger United and Milford are playing in the Premiership for the first time.
+
+=== Stadiums and locations ===
+
+'''Stadiums'''
+
+{{location map+|South Africa|float=right|width=440|caption=Location of teams in the '''2026–27 Premiership'''.|places={{location map~ |South Africa |mark=Blue pog.svg|lat=-26.231886 |long=27.922806|label={{nowrap|'''Johannesburg'''}}|position=bottom}}
+{{location map~ |South Africa |lat=-23.924689 |long=29.468765 |label='''Polokwane''' |mark=Blue pog.svg |position=right}}
+{{Location map~ |South Africa |lat=-28.743392 |long=32.055874 |label=[[Richards Bay F.C.|Richards Bay]] |position=top}}
+{{location map~ |South Africa |lat=-29.971389 |long=30.900807 |label=[[AmaZulu F.C.|AmaZulu]] |position=bottom}}
+{{location map~ |South Africa |lat=-33.0024 |long=27.5419 |label=[[Chippa United F.C.|Chippa United]] |position=top}}
+{{location map~ |South Africa |lat=-29.5437 |long=30.5238 |label=[[Durban City F.C. (2024)|Durban City]] |position=top}}
+{{location map~ |South Africa |lat=-25.4649 |long=31.1819 |label=[[Kruger United F.C.|Kruger United]] |position=top}}
+{{location map~ |South Africa |lat=-28.743392 |long=32.055874 |label=[[Milford F.C. (South Africa)|Milford]] |position=left}}
+{{location map~ |South Africa |lat=-29.5817 |long=30.5400 |label=[[Lamontville Golden Arrows F.C.|Golden Arrows]] |position=left}}
+{{location map~ |South Africa |lat=-25.3443 |long=27.0939 |label={{nowrap|[[Marumo Gallants F.C.|Marumo Gallants]]}}|position=left}}
+From Wikipedia, the free encyclopedia
+{{location map~ |South Africa |lat=-25.753333 |long=28.222778 |label={{nowrap|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]}}|position=right}}
+{{location map~ |South Africa |lat=-29.1027 |long=26.141 |label={{nowrap|[[Siwelele F.C.|Siwelele]]}}|position=bottom}}
+{{location map~ |South Africa |lat=-25.126364 |long=28.993607|label=[[TS Galaxy F.C.|TS Galaxy]] |position=top}}
+{{location map~ |South Africa |lat=-33.940 |long=18.870 |label=[[Stellenbosch F.C.|Stellenbosch]] |position=right}}
+
+<!--DISPLAY OF JOHANNESBURG AND POLOKWANE TEAMS IN BOTTOM RIGHT CORNER-->
+{{Location map~ |South Africa |mark=TransparentPlaceholder.png |marksize=1 |lat=-22.3 |long=16.2 | 
+|label='''[[Johannesburg]]&nbsp;teams'''<br>
+[[Kaizer Chiefs F.C.|Kaizer Chiefs]]<br>
+[[Orlando Pirates F.C.|Orlando Pirates]]<br><br>
+'''[[Polokwane]]&nbsp;teams'''<br>
+[[Polokwane City F.C.|Polokwane City]]<br>
+[[Sekhukhune United F.C.|Sekhukhune United]]|position=right}}|position=right}}
+
+{| class="wikitable sortable"
+|+
+!Team
+!Location
+!Stadium
+!Capacity
+|-
+|[[AmaZulu F.C.|AmaZulu]]
+|[[Durban]]
+|[[Moses Mabhida Stadium]]
+|55,500
+|-
+|[[Chippa United F.C.|Chippa United]] (2 home venues)<ref>{{Cite web |author=iDiski Times |date=2026-08-25 |title=Chippa Confirm PSL Approval On Stadiums Usage|url=https://www.idiskitimes.co.za/betway-premiership/chippa-confirm-psl-approval-on-stadiums-usage/|access-date=2026-08-28 |language=en-ZA}}</ref>
+|[[East London, South Africa|KuGompo City]] and [[Gqeberha]]
+|[[Buffalo City Stadium]] and [[Nelson Mandela Bay Stadium]]
+|16,000 and 46,000
+|-
+|[[Durban City F.C. (2024)|Durban City]]
+|[[Durban]]
+|[[Chatsworth Stadium]]
+|22,000
+|-
+|[[Lamontville Golden Arrows F.C.|Golden Arrows]]
+|[[Umlazi]]
+|[[King Zwelithini Stadium]]<ref>{{Cite web |last=Sithole |first=Sinethemba |date=2025-07-18 |title=Golden Arrows change home venue ahead of 2025/26 season |url=https://farpost.co.za/2025/07/18/golden-arrows-change-home-venue-ahead-of-2025-26-season/ |access-date=2025-08-11 |website=FARPost |language=en-ZA}}</ref>
+|10,000
+|-
+|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
+|[[Johannesburg]] ([[Soweto]])
+|[[FNB Stadium]]
+|94,736
+|-
+|[[Kruger United F.C.|Kruger United]]
+|[[KaNyamazane]]
+|[[KaNyamazane Stadium]]
+|15,000
+|-
+|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
+|[[Pretoria]] ([[Marabastad, Pretoria|Marabastad]])
+|[[Loftus Versfeld Stadium]]
+|51,762
+|-
+|[[Marumo Gallants F.C.|Marumo Gallants]]
+|[[Bloemfontein]]
+|[[Dr. Petrus Molemela Stadium]]
+|22,000
+|-
+|[[Milford F.C. (South Africa)|Milford]]
+|[[Richards Bay]]
+|[[Richards Bay Stadium]]
+|10,000
+|-
+|[[Orlando Pirates F.C.|Orlando Pirates]]
+|[[Johannesburg]] ([[Soweto]])
+|[[Orlando Stadium]]
+|37,139
+|-
+|[[Polokwane City F.C.|Polokwane City]]
+|[[Polokwane]]
+|[[Old Peter Mokaba Stadium]]
+|15,000
+|-
+|[[Richards Bay F.C.|Richards Bay]]
+|[[Richards Bay]]
+|[[Richards Bay Stadium]]
+|10,000
+|-
+|[[Sekhukhune United F.C.|Sekhukhune United]]
+|[[Polokwane]]
+|[[Peter Mokaba Stadium]]
+|45,500
+|-
+|[[Siwelele F.C.|Siwelele]]
+|[[Bloemfontein]]
+|[[Dr. Petrus Molemela Stadium]]
+|22,000
+|-
+|[[Stellenbosch F.C.|Stellenbosch]]
+|[[Stellenbosch]]
+|[[Danie Craven Stadium]]
+|16,000
+|-
+|[[TS Galaxy F.C.|TS Galaxy]]
+|[[Mbombela]]
+|[[Mbombela Stadium]]
+|40,929
+|}
+<ref>{{Cite web |last=Online |first=Central News |date=2025-07-20 |title=PSL Clubs’ Home Grounds for the 2025/26 Betway Premiership Season Revealed |url=https://centralnews.co.za/psl-clubs-home-grounds-for-the-2025-26-betway-premiership-season-revealed/ |access-date=2025-08-11 |language=en-ZA}}</ref>
+
+=== Number of teams by province ===
+{| class="wikitable"
+!Position
+![[Provinces of South Africa|Province]]
+!Number
+!Teams
+|-
+|1
+|[[KwaZulu-Natal]]
+|5
+|[[AmaZulu F.C.|AmaZulu]], [[Golden Arrows]], [[Maritzburg United]], [[Milford F.C. (South Africa)|Milford]], [[Richards Bay F.C.|Richards Bay]]
+|-
+|2
+|[[Gauteng]]
+|3
+|[[Kaizer Chiefs]], [[Mamelodi Sundowns]], [[Orlando Pirates F.C.|Orlando Pirates]]
+|-
+| rowspan="2" |3
+|[[Limpopo]]
+| rowspan="2" |2
+|[[Polokwane United F.C.|Polokwane]] and [[Sekhukhune United F.C.|Sekhukhune United]]
+|-
+|[[Mpumalanga]]
+|[[Kruger United F.C.|Kruger United]] and [[TS Galaxy F.C.|TS Galaxy]]
+|-
+| rowspan="4" |5
+|[[Eastern Cape]]
+| rowspan="4" |1
+|[[Chippa United]]
+|-
+|[[Free State (province)|Free State]]
+|[[Siwelele F.C.|Siwelele]]
+|-
+|[[North West (South African province)|North West]]
+|[[Marumo Gallants F.C.|Marumo Gallants]]
+|-
+|[[Western Cape]]
+|[[Stellenbosch F.C.|Stellenbosch]]
+|-
+|}
+
+==League table==
+<onlyinclude>{{#invoke:Sports table|main|style=WDL|source=[http://www.psl.co.za/matchcentre?type=log Premier Soccer League]
+<!--Update team positions here-->
+|team_order = MSU, OPR, AMA, KZC, MIL, SEK, STL, GDA, CHP, DCI, PLK, TSG, KRU, RBA, SIW, MGA
+
+<!--Update team results here and the (if needed) position above. Don't forget to update the date (update perimeter)-->
+|update = 20 September 2026
+|win_AMA=5 |draw_AMA=1 |loss_AMA=1 |gf_AMA=10|ga_AMA=7<!-- AmaZulu FC --> 
+|win_MIL=3 |draw_MIL=3 |loss_MIL=2 |gf_MIL=9|ga_MIL=7<!-- Milford -->
+|win_GDA=1 |draw_GDA=5 |loss_GDA=1 |gf_GDA=3|ga_GDA=3<!-- Lamontville Golden Arrows --> 
+|win_CHP=1 |draw_CHP=5 |loss_CHP=1 |gf_CHP=4|ga_CHP=6<!-- Chippa United -->
+|win_KZC=3 |draw_KZC=4 |loss_KZC=0 |gf_KZC=12|ga_KZC=7<!-- Kaizer Chiefs -->
+|win_KRU=1 |draw_KRU=1 |loss_KRU=5 |gf_KRU=3|ga_KRU=12<!-- Kruger United -->
+|win_MSU=6 |draw_MSU=2 |loss_MSU=0 |gf_MSU=19|ga_MSU=7<!-- Mamelodi Sundowns -->
+|win_MGA=0 |draw_MGA=2 |loss_MGA=5 |gf_MGA=5|ga_MGA=13<!-- Marumo Gallants -->
+|win_OPR=6 |draw_OPR=1 |loss_OPR=0 |gf_OPR=16|ga_OPR=1<!-- Orlando Pirates -->
+|win_PLK=1 |draw_PLK=4 |loss_PLK=2 |gf_PLK=8|ga_PLK=10<!-- Polokwane City -->
+|win_RBA=0 |draw_RBA=3 |loss_RBA=4 |gf_RBA=9|ga_RBA=16<!-- Richards Bay -->
+|win_DCI=1 |draw_DCI=4 |loss_DCI=2 |gf_DCI=4|ga_DCI=5<!-- Durban City -->
+|win_SEK=3 |draw_SEK=2 |loss_SEK=2 |gf_SEK=7|ga_SEK=7<!-- Sekhukhune United -->
+|win_STL=2 |draw_STL=3 |loss_STL=2 |gf_STL=8|ga_STL=7<!-- Stellenbosch -->
+|win_SIW=0 |draw_SIW=3 |loss_SIW=4 |gf_SIW=6|ga_SIW=13<!-- Siwelele -->
+|win_TSG=1 |draw_TSG=3 |loss_TSG=3 |gf_TSG=7|ga_TSG=9<!-- TS Galaxy -->
+<!--Status-->
+
+<!--Point Adjustment-->
+
+<!--Update team qualifications here (defined below)-->
+|result1=CCL|result2=CCL|result3=CCC|result15=POT|result16=REL
+
+<!--Team definition (wikilinks in table)-->
+|name_AMA=[[AmaZulu F.C.|AmaZulu]]
+|name_MIL=[[Milford F.C. (South Africa)|Milford]]
+|name_CHP=[[Chippa United F.C.|Chippa United]]
+|name_GDA=[[Lamontville Golden Arrows F.C.|Lamontville Golden Arrows]]
+|name_TSG=[[TS Galaxy F.C.|TS Galaxy]]
+|name_KZC=[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
+|name_PLK=[[Polokwane City F.C.|Polokwane City]]
+|name_MSU=[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
+|name_KRU=[[Kruger United F.C.|Kruger United]]
+|name_MGA=[[Marumo Gallants F.C.|Marumo Gallants]]
+|name_OPR=[[Orlando Pirates F.C.|Orlando Pirates]]
+|name_RBA=[[Richards Bay F.C.|Richards Bay]]
+|name_DCI=[[Durban City F.C. (2024)|Durban City]]
+|name_SEK=[[Sekhukhune United F.C.|Sekhukhune United]]
+|name_STL=[[Stellenbosch F.C.|Stellenbosch]]
+|name_SIW=[[Siwelele F.C.|Siwelele]]
+
+<!--Table settings and rules-->
+|show_limit=5
+
+<!--Qualification and relegation column definitions-->|res_col_header=QR|col_CCL=green1|text_CCL={{nowrap|Qualification for [[CAF Champions League]]}}
+|col_CCC=blue1|text_CCC={{nowrap|Qualification for [[CAF Confederation Cup]]}}
+|col_POT=red2|text_POT=Qualification for [[2025–26 National First Division#Play-offs|Playoffs]]|col_REL=red1|text_REL=Relegation to [[National First Division]]|note_header_res=}}
+
+==Results==
+{{Updated|20 September 2026}}
+{{#invoke:sports results
+|main
+|source=[https://www.flashscore.com/football/south-africa/premier-league/ Flashscore]
+|update= 20 September 2026
+|matches_style=FBR
+|team1=AMA
+|team2=CHP
+|team3=DCI
+|team4=KZC
+|team5=GDA
+|team6=MIL
+|team7=MSU
+|team8=MGA
+|team9=KRU
+|team10=OPR
+|team11=PLK
+|team12=RBA
+|team13=SEK
+|team14=SIW
+|team15=STL
+|team16=TSG
+
+|name_AMA=[[AmaZulu F.C.|AmaZulu]]
+|name_CHP=[[Chippa United F.C.|Chippa United]]
+|name_DCI=[[Durban City F.C. (2024)|Durban City]]
+|name_KZC=[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
+|name_GDA=[[Lamontville Golden Arrows F.C.|Lamontville Golden Arrows]]
+|name_MIL=[[Milford F.C. (South Africa)|Milford]]
+|name_MSU=[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
+|name_MGA=[[Marumo Gallants F.C.|Marumo Gallants]]
+|name_KRU=[[Kruger United F.C.|Kruger United]]
+|name_OPR=[[Orlando Pirates F.C.|Orlando Pirates]]
+|name_PLK=[[Polokwane City F.C.|Polokwane City]]
+|name_RBA=[[Richards Bay F.C.|Richards Bay]]
+|name_SEK=[[Sekhukhune United F.C.|Sekhukhune United]]
+|name_SIW=[[Siwelele F.C.|Siwelele]]
+|name_STL=[[Stellenbosch F.C.|Stellenbosch]]
+|name_TSG=[[TS Galaxy F.C.|TS Galaxy]]
+
+|match_AMA_CHP=
+|match_AMA_DCI=
+|match_AMA_KZC=
+|match_AMA_GDA=
+|match_AMA_MIL=
+|match_AMA_MSU=
+|match_AMA_MGA=1-0
+|match_AMA_KRU=
+|match_AMA_OPR=1-1
+|match_AMA_PLK=
+|match_AMA_RBA=
+|match_AMA_SEK=
+|match_AMA_SIW=2-0
+|match_AMA_STL=
+|match_AMA_TSG=
+
+|match_CHP_AMA=
+|match_CHP_DCI=
+|match_CHP_KZC=
+|match_CHP_GDA=
+|match_CHP_MIL=0-0
+|match_CHP_MSU=1-1
+|match_CHP_MGA=
+|match_CHP_KRU=
+|match_CHP_OPR=0-3
+|match_CHP_PLK=
+|match_CHP_RBA=1-1
+|match_CHP_SEK=
+|match_CHP_SIW=
+|match_CHP_STL=
+|match_CHP_TSG=
+
+|match_DCI_AMA=
+|match_DCI_CHP=
+|match_DCI_KZC=
+|match_DCI_GDA=0-0
+|match_DCI_MIL=
+|match_DCI_MSU=
+|match_DCI_MGA=
+|match_DCI_KRU=
+|match_DCI_OPR=
+|match_DCI_PLK=
+|match_DCI_RBA=1-1
+|match_DCI_SEK=
+|match_DCI_SIW=
+|match_DCI_STL=0-0
+|match_DCI_TSG=
+
+|match_KZC_AMA=
+|match_KZC_CHP=
+|match_KZC_DCI=
+|match_KZC_GDA=
+|match_KZC_MIL=
+|match_KZC_MSU=1-1
+|match_KZC_MGA=
+|match_KZC_KRU=
+|match_KZC_OPR=
+|match_KZC_PLK=
+|match_KZC_RBA=
+|match_KZC_SEK=2-0
+|match_KZC_SIW=3-2
+|match_KZC_STL=
+|match_KZC_TSG=
+
+|match_GDA_AMA=
+|match_GDA_CHP=0-0
+|match_GDA_DCI=
+|match_GDA_KZC=0-0
+|match_GDA_MIL=
+|match_GDA_MSU=1-2
+|match_GDA_MGA=
+|match_GDA_KRU=
+|match_GDA_OPR=
+|match_GDA_PLK=
+|match_GDA_RBA=
+|match_GDA_SEK=
+|match_GDA_SIW=
+|match_GDA_STL=1-0
+|match_GDA_TSG=
+
+|match_MIL_AMA=
+|match_MIL_CHP=
+|match_MIL_DCI=1-1
+|match_MIL_KZC=
+|match_MIL_GDA=
+|match_MIL_MSU=
+|match_MIL_MGA=
+|match_MIL_KRU=2-1
+|match_MIL_OPR=
+|match_MIL_PLK=
+|match_MIL_RBA=5-1
+|match_MIL_SEK=
+|match_MIL_SIW=1-0
+|match_MIL_STL=
+|match_MIL_TSG=
+
+|match_MSU_AMA=5-2
+|match_MSU_CHP=
+|match_MSU_DCI=
+|match_MSU_KZC=
+|match_MSU_GDA=
+|match_MSU_MIL=2-0
+|match_MSU_MGA=2-0
+|match_MSU_KRU=
+|match_MSU_OPR=
+|match_MSU_PLK=
+|match_MSU_RBA=
+|match_MSU_SEK=
+|match_MSU_SIW=3-0
+|match_MSU_STL=
+|match_MSU_TSG=
+
+|match_MGA_AMA=
+|match_MGA_CHP=
+|match_MGA_DCI=
+|match_MGA_KZC=
+|match_MGA_GDA=
+|match_MGA_MIL=
+|match_MGA_MSU=
+|match_MGA_KRU=0-0
+|match_MGA_OPR=0-2
+|match_MGA_PLK=2-2
+|match_MGA_RBA=
+|match_MGA_SEK=
+|match_MGA_SIW=
+|match_MGA_STL=
+|match_MGA_TSG=2-3
+
+|match_KRU_AMA=
+|match_KRU_CHP=
+|match_KRU_DCI=0-2
+|match_KRU_KZC=1-3
+|match_KRU_GDA=
+|match_KRU_MIL=
+|match_KRU_MSU=
+|match_KRU_MGA=
+|match_KRU_OPR=0-4
+|match_KRU_PLK=
+|match_KRU_RBA=
+|match_KRU_SEK=
+|match_KRU_SIW=
+|match_KRU_STL=0-1
+|match_KRU_TSG=
+
+|match_OPR_AMA=
+|match_OPR_CHP=
+|match_OPR_DCI=2-0
+|match_OPR_KZC=
+|match_OPR_GDA=
+|match_OPR_MIL=2-0
+|match_OPR_MSU=
+|match_OPR_MGA=
+|match_OPR_KRU=
+|match_OPR_PLK=
+|match_OPR_RBA=
+|match_OPR_SEK=2-0
+|match_OPR_SIW=
+|match_OPR_STL=
+|match_OPR_TSG=
+
+|match_PLK_AMA=0-1
+|match_PLK_CHP=
+|match_PLK_DCI=
+|match_PLK_KZC=1-1
+|match_PLK_GDA=
+|match_PLK_MIL=0-0
+|match_PLK_MSU=
+|match_PLK_MGA=
+|match_PLK_KRU=
+|match_PLK_OPR=
+|match_PLK_RBA=
+|match_PLK_SEK=
+|match_PLK_SIW=
+|match_PLK_STL=3-3
+|match_PLK_TSG=
+
+|match_RBA_AMA=1-2
+|match_RBA_CHP=
+|match_RBA_DCI=
+|match_RBA_KZC=2-2
+|match_RBA_GDA=
+|match_RBA_MIL=
+|match_RBA_MSU=
+|match_RBA_MGA=
+|match_RBA_KRU=
+|match_RBA_OPR=
+|match_RBA_PLK=1-2
+|match_RBA_SEK=2-3
+|match_RBA_SIW=
+|match_RBA_STL=
+|match_RBA_TSG=
+
+|match_SEK_AMA=
+|match_SEK_CHP=
+|match_SEK_DCI=1-0
+|match_SEK_KZC=
+|match_SEK_GDA=
+|match_SEK_MIL=
+|match_SEK_MSU=
+|match_SEK_MGA=
+|match_SEK_KRU=
+|match_SEK_OPR=
+|match_SEK_PLK=2-0
+|match_SEK_RBA=
+|match_SEK_SIW=
+|match_SEK_STL=
+|match_SEK_TSG=0-0
+
+|match_SIW_AMA=
+|match_SIW_CHP=1-1
+|match_SIW_DCI=
+|match_SIW_KZC=
+|match_SIW_GDA=1-1
+|match_SIW_MIL=
+|match_SIW_MSU=
+|match_SIW_MGA=
+|match_SIW_KRU=
+|match_SIW_OPR=
+|match_SIW_PLK=
+|match_SIW_RBA=
+|match_SIW_SEK=
+|match_SIW_STL=
+|match_SIW_TSG=2-2
+
+|match_STL_AMA=0-1
+|match_STL_CHP=
+|match_STL_DCI=
+|match_STL_KZC=
+|match_STL_GDA=
+|match_STL_MIL=
+|match_STL_MSU=
+|match_STL_MGA=3-1
+|match_STL_KRU=
+|match_STL_OPR=
+|match_STL_PLK=
+|match_STL_RBA=
+|match_STL_SEK=1-1
+|match_STL_SIW=
+|match_STL_TSG=
+
+|match_TSG_AMA=
+|match_TSG_CHP=0-1
+|match_TSG_DCI=
+|match_TSG_KZC=
+|match_TSG_GDA=0-0
+|match_TSG_MIL=
+|match_TSG_MSU=2-3
+|match_TSG_MGA=
+|match_TSG_KRU=0-1
+|match_TSG_OPR=
+|match_TSG_PLK=
+|match_TSG_RBA=
+|match_TSG_SEK=
+|match_TSG_SIW=
+|match_TSG_STL=
+}}
+
+==Statistics== 
+Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assists, Tackles, Clean Sheets and more|url=https://www.goal.com/en-za/premier-soccer-league/top-players/yv73ms6v1995b5wny16jcfi3|website=Goal}}</ref>
+===Goals===
+
+{{Updated|20 September 2026}}
+{| class="wikitable sortable" style="text-align:center"
+|-
+!Rank
+!Player
+!Club
+!Goals
+|-
+|1
+|align="left"|{{flagicon|ZIM}} [[Thandolwenkosi Ngwenya]]
+|align="left"|[[AmaZulu F.C.|AmaZulu]]
+|8
+|-
+|2
+|align="left"|{{flagicon|RSA}} [[Nqaba Xulu]]
+|align="left"|[[Richards Bay F.C.|Richards Bay]]
+|5
+|-
+|3
+|align="left"|{{flagicon|RSA}} [[Victor Letsoalo]]
+|align="left"|[[TS Galaxy F.C.|TS Galaxy]]
+|4
+|-
+|rowspan=6|4
+|align="left"|{{flagicon|RSA}} [[Wandile Duba]]
+|align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
+|rowspan=6|3
+|-
+|align="left"|{{flagicon|COL}} [[Brayan Leon]]
+|align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
+|-
+|align="left"|{{flagicon|RSA}}[[Tshepang Moremi]]
+|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
+|-
+|align="left"|{{flagicon|RSA}} [[Khetukuthula Ndlovu]]
+|align="left"|[[Kruger United F.C.|Kruger United]]
+|-
+|align="left"|{{flagicon|RSA}} [[Quwan Plaatjies]]
+|align="left"|[[Stellenbosch F.C.|Stellenbosch]]
+|-
+|align="left"|{{flagicon|RSA}} [[Mvelo Zikakayo]]
+|align="left"|[[Milford F.C. (South Africa)|Milford]]
+|-
+|10
+|align="left"|{{flagicon|RSA}}[[Oswin Appollis]]
+|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
+|2
+|}
+
+'''DON'T ADD MORE THAN 10 PEOPLE'''
+
+===Assists===
+
+{{Updated|20 September 2026}}
+{| class="wikitable sortable" style="text-align:center"
+|-
+!Rank
+!Player
+!Club
+!Assists
+|-
+|rowspan=3|1
+|align="left"|{{flagicon|RSA}} [[Tashreeq Matthews]]
+|align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
+|rowspan=3|3
+|-
+|align="left"|{{flagicon|RSA}} [[Moses Mthembu]]
+|align="left"|[[Richards Bay F.C.|Richards Bay]]
+|-
+|align="left"|{{flagicon|RSA}} [[Nkosikhona Radebe]]
+|align="left"|[[AmaZulu F.C.|AmaZulu]]
+|-
+|rowspan=7|4
+|align="left"|{{flagicon|RSA}}[[Oswin Appollis]]
+|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
+|rowspan=7|2
+|-
+|align="left"|{{flagicon|RSA}} [[Raoul Daniels]]
+|align="left"|[[Stellenbosch F.C.|Stellenbosch]]
+|-
+|align="left"|{{flagicon|RSA}} [[Tshepo Kakora]]
+|align="left"|[[TS Galaxy F.C.|TS Galaxy]]
+|-
+|align="left"|{{flagicon|RSA}} [[Philani Khumalo]]
+|align="left"|[[Lamontville Golden Arrows F.C.|Golden Arrows]]
+|-
+|align="left"|{{flagicon|RSA}} [[Lebohang Maboe]]
+|align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
+|-
+|align="left"|{{flagicon|RSA}} [[Lehlohonolo Mojela]]
+|align="left"|[[Sekhukhune United F.C.|Sekhukhune United]]
+|-
+|align="left"|{{flagicon|RSA}}[[Thapelo Mokobodi]]
+|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
+|}
+
+===Red Cards===
+
+{{Updated|20 September 2026}}
+{| class="wikitable sortable" style="text-align:center"
+|-
+!Rank
+!Player
+!Club
+!{{Sent off}}
+|-
+|rowspan=8|1
+|align="left"|{{flagicon|RSA}} [[Menzi Chili]]
+|align="left"|[[Milford F.C. (South Africa)|Milford]]
+|rowspan=8|1
+|-
+|align="left"|{{flagicon|RSA}} [[Edgar Manaka]]
+|align="left"|[[Marumo Gallants F.C.|Marumo Gallants]]
+|-
+|align="left"|{{flagicon|RSA}} [[Sipho Maseti]]
+|align="left"|[[TS Galaxy F.C.|TS Galaxy]]
+|-
+|align="left"|{{flagicon|RSA}} [[Katlego Mohamme]]
+|align="left"|[[Kruger United F.C.|Kruger United]]
+|-
+|align="left"|{{flagicon|RSA}} [[Thendo Mukumela]]
+|align="left"|[[Kruger United F.C.|Kruger United]]
+|-
+|align="left"|{{flagicon|RSA}} [[Thabiso Sesane]]
+|align="left"|[[Siwelele F.C.|Siwelele]]
+|-
+|align="left"|{{flagicon|RSA}} [[Lindokuhle Zikhali]]
+|align="left"|[[Richards Bay F.C.|Richards Bay]]
+|-
+|align="left"|{{flagicon|RSA}} [[Veluyeke Zulu]]
+|align="left"|[[TS Galaxy F.C.|TS Galaxy]]
+|}
+
+===Yellow Cards===
+
+{{Updated|20 September 2026}}
+{| class="wikitable sortable" style="text-align:center"
+|-
+!Rank
+!Player
+!Club
+!{{Yellow card}}
+|-
+|rowspan=9|1
+|align="left"|{{flagicon|RSA}} [[Surprise Manthosi]]
+|align="left"|[[Polokwane City F.C.|Polokwane City]]
+|rowspan=9|3
+|-
+|align="left"|{{flagicon|RSA}} [[Banele Mnguni]]
+|align="left"|[[Polokwane City F.C.|Polokwane City]]
+|-
+|align="left"|{{flagicon|RSA}} [[Lehlohonolo Mojela]]
+|align="left"|[[Sekhukhune United F.C.|Sekhukhune United]]
+|-
+|align="left"|{{flagicon|RSA}} [[Goodman Mosele]]
+|align="left"|[[Chippa United F.C.|Chippa United]]
+|-
+|align="left"|{{flagicon|RSA}} [[Cebolenkosi Mthethwa]]
+|align="left"|[[Milford F.C. (South Africa)|Milford]]
+|-
+|align="left"|{{flagicon|RSA}} [[Ebrahim Seedat]]
+|align="left"|[[Kruger United F.C.|Kruger United]]
+|-
+|align="left"|{{flagicon|RSA}} [[Mlungisi Sikakane]]
+|align="left"|[[Marumo Gallants F.C.|Marumo Gallants]]
+|-
+|align="left"|{{flagicon|URU}} [[Gaston Sirino]]
+|align="left"|[[Durban City F.C.|Durban City]]
+|-
+|align="left"|{{flagicon|RSA}} [[Luthando Vena]]
+|align="left"|[[Stellenbosch F.C.|Stellenbosch]]
+|-
+|10
+|align="left"|{{flagicon|RSA}} [[Bradley Grobler]]
+|align="left"|[[Stellenbosch F.C.|Stellenbosch]]
+|2
+|}
+
+==See also==
+* [[2026–27 National First Division]]
+* [[2026-27 SAFA Second Division|2026-27 ABC Motsepe League]]
+
+==References==
+{{Reflist}}
+
+{{South African soccer seasons}}
+
+{{DEFAULTSORT:2026-27 South African Premiership}}
+[[Category:2026–27 in African association football leagues|South Africa]]
+[[Category:Premier Soccer League seasons]]
+[[Category:2026–27 in South African soccer leagues]]
+[[Category:Current association football seasons|South Africa]]

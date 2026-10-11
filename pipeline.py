@@ -5,15 +5,21 @@ import pandas as pd
 from ssa import ingest
 from ssa.models import add_features
 from ssa.predict import predict_fixtures
-from ssa import backtest
+from ssa import backtest, psl
 
 def main(argv):
     ingest.download(force="--force" in argv)
     m, sources, dropped = ingest.load_all(); ingest.store(m, sources)
     print(f"loaded {len(m)} matches ({dropped} rows dropped by validation)")
+    psl.download(force="--force" in argv); pm, prep = psl.load()
+    xc = psl.cross_check(pm) if len(pm) else None
+    con = ingest.connect(); pm.to_sql("psl_matches", con, if_exists="replace", index=False); con.commit(); con.close()
+    (backtest.REPORTS).mkdir(exist_ok=True)
+    (backtest.REPORTS / "psl_validation.json").write_text(json.dumps({"seasons": prep, "cross_check_openfootball_2024_25": xc}, indent=1, default=str))
+    print(f"PSL: {len(pm)} results; " + ", ".join(f"{s}:{r['played']} ({r['data_status']})" for s, r in prep.items()))
     m = add_features(m)
     if "--backtest" in argv or not (backtest.REPORTS / "backtest.json").exists():
-        backtest.run(m)
+        backtest.run(m, pm)
     fx = ingest.load_fixtures()
     preds = predict_fixtures(m, fx)
     con = ingest.connect()

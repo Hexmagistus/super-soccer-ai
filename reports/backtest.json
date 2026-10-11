@@ -2569,6 +2569,118 @@
     }
    ],
    "ece": 0.0134
+  },
+  "PSL": {
+   "n_matches": 690,
+   "poisson": {
+    "n": 690,
+    "accuracy": 0.4754,
+    "accuracy_ci": [
+     0.4391,
+     0.5116
+    ],
+    "log_loss": 1.0136,
+    "log_loss_ci": [
+     0.9886,
+     1.0391
+    ],
+    "brier": 0.6086,
+    "brier_ci": [
+     0.5905,
+     0.6261
+    ],
+    "rps": 0.2029,
+    "rps_ci": [
+     0.1946,
+     0.2112
+    ]
+   },
+   "dc": {
+    "n": 690,
+    "accuracy": 0.4696,
+    "accuracy_ci": [
+     0.4319,
+     0.5072
+    ],
+    "log_loss": 1.0148,
+    "log_loss_ci": [
+     0.9883,
+     1.041
+    ],
+    "brier": 0.6094,
+    "brier_ci": [
+     0.5905,
+     0.6271
+    ],
+    "rps": 0.203,
+    "rps_ci": [
+     0.1945,
+     0.2119
+    ]
+   },
+   "ens": {
+    "n": 690,
+    "accuracy": 0.4797,
+    "accuracy_ci": [
+     0.442,
+     0.516
+    ],
+    "log_loss": 1.0141,
+    "log_loss_ci": [
+     0.9875,
+     1.0424
+    ],
+    "brier": 0.6089,
+    "brier_ci": [
+     0.5906,
+     0.6265
+    ],
+    "rps": 0.2029,
+    "rps_ci": [
+     0.1943,
+     0.2115
+    ]
+   },
+   "base": {
+    "n": 690,
+    "accuracy": 0.4232,
+    "accuracy_ci": [
+     0.3884,
+     0.4609
+    ],
+    "log_loss": 1.0823,
+    "log_loss_ci": [
+     1.0697,
+     1.0957
+    ],
+    "brier": 0.6553,
+    "brier_ci": [
+     0.6459,
+     0.6644
+    ],
+    "rps": 0.2248,
+    "rps_ci": [
+     0.2189,
+     0.2313
+    ]
+   },
+   "home_always": {
+    "n": 690,
+    "accuracy": 0.4232,
+    "accuracy_ci": [
+     0.3884,
+     0.458
+    ]
+   },
+   "ens_minus_base_logloss": {
+    "mean": -0.0682,
+    "ci": [
+     -0.0903,
+     -0.0448
+    ]
+   },
+   "ece": 0.0096,
+   "note": "season-ahead backtest, Poisson+DC only, not part of 'overall' (see psl.method)"
   }
  },
  "by_season": {
@@ -4835,5 +4947,468 @@
    "mean_odds": null,
    "rule": "edge>=0.05, EV>=0.05, odds<=6.0, average pre-closing odds, 1 unit flat"
   }
+ },
+ "psl": {
+  "n_matches": 690,
+  "poisson": {
+   "n": 690,
+   "accuracy": 0.4754,
+   "accuracy_ci": [
+    0.4391,
+    0.5116
+   ],
+   "log_loss": 1.0136,
+   "log_loss_ci": [
+    0.9886,
+    1.0391
+   ],
+   "brier": 0.6086,
+   "brier_ci": [
+    0.5905,
+    0.6261
+   ],
+   "rps": 0.2029,
+   "rps_ci": [
+    0.1946,
+    0.2112
+   ]
+  },
+  "dc": {
+   "n": 690,
+   "accuracy": 0.4696,
+   "accuracy_ci": [
+    0.4319,
+    0.5072
+   ],
+   "log_loss": 1.0148,
+   "log_loss_ci": [
+    0.9883,
+    1.041
+   ],
+   "brier": 0.6094,
+   "brier_ci": [
+    0.5905,
+    0.6271
+   ],
+   "rps": 0.203,
+   "rps_ci": [
+    0.1945,
+    0.2119
+   ]
+  },
+  "ens": {
+   "n": 690,
+   "accuracy": 0.4797,
+   "accuracy_ci": [
+    0.442,
+    0.516
+   ],
+   "log_loss": 1.0141,
+   "log_loss_ci": [
+    0.9875,
+    1.0424
+   ],
+   "brier": 0.6089,
+   "brier_ci": [
+    0.5906,
+    0.6265
+   ],
+   "rps": 0.2029,
+   "rps_ci": [
+    0.1943,
+    0.2115
+   ]
+  },
+  "base": {
+   "n": 690,
+   "accuracy": 0.4232,
+   "accuracy_ci": [
+    0.3884,
+    0.4609
+   ],
+   "log_loss": 1.0823,
+   "log_loss_ci": [
+    1.0697,
+    1.0957
+   ],
+   "brier": 0.6553,
+   "brier_ci": [
+    0.6459,
+    0.6644
+   ],
+   "rps": 0.2248,
+   "rps_ci": [
+    0.2189,
+    0.2313
+   ]
+  },
+  "home_always": {
+   "n": 690,
+   "accuracy": 0.4232,
+   "accuracy_ci": [
+    0.3884,
+    0.458
+   ]
+  },
+  "ens_minus_base_logloss": {
+   "mean": -0.0682,
+   "ci": [
+    -0.0903,
+    -0.0448
+   ]
+  },
+  "calibration_bins": [
+   {
+    "bin": "0.0-0.1",
+    "n": 44,
+    "mean_pred": 0.0673,
+    "observed": 0.0455
+   },
+   {
+    "bin": "0.1-0.2",
+    "n": 179,
+    "mean_pred": 0.1586,
+    "observed": 0.1341
+   },
+   {
+    "bin": "0.2-0.3",
+    "n": 647,
+    "mean_pred": 0.2607,
+    "observed": 0.2643
+   },
+   {
+    "bin": "0.3-0.4",
+    "n": 735,
+    "mean_pred": 0.3391,
+    "observed": 0.3388
+   },
+   {
+    "bin": "0.4-0.5",
+    "n": 257,
+    "mean_pred": 0.445,
+    "observed": 0.428
+   },
+   {
+    "bin": "0.5-0.6",
+    "n": 118,
+    "mean_pred": 0.5418,
+    "observed": 0.5508
+   },
+   {
+    "bin": "0.6-0.7",
+    "n": 55,
+    "mean_pred": 0.6465,
+    "observed": 0.6909
+   },
+   {
+    "bin": "0.7-0.8",
+    "n": 25,
+    "mean_pred": 0.7452,
+    "observed": 0.88
+   },
+   {
+    "bin": "0.8-0.9",
+    "n": 10,
+    "mean_pred": 0.825,
+    "observed": 0.9
+   }
+  ],
+  "ece": 0.0096,
+  "by_season": {
+   "2023-24": {
+    "n_matches": 240,
+    "poisson": {
+     "n": 240,
+     "accuracy": 0.4417,
+     "accuracy_ci": [
+      0.3792,
+      0.5083
+     ],
+     "log_loss": 1.0269,
+     "log_loss_ci": [
+      0.9826,
+      1.067
+     ],
+     "brier": 0.6178,
+     "brier_ci": [
+      0.5871,
+      0.6482
+     ],
+     "rps": 0.208,
+     "rps_ci": [
+      0.194,
+      0.2223
+     ]
+    },
+    "dc": {
+     "n": 240,
+     "accuracy": 0.4458,
+     "accuracy_ci": [
+      0.3792,
+      0.5042
+     ],
+     "log_loss": 1.0281,
+     "log_loss_ci": [
+      0.9845,
+      1.0739
+     ],
+     "brier": 0.6186,
+     "brier_ci": [
+      0.5892,
+      0.6496
+     ],
+     "rps": 0.2081,
+     "rps_ci": [
+      0.1949,
+      0.2219
+     ]
+    },
+    "ens": {
+     "n": 240,
+     "accuracy": 0.45,
+     "accuracy_ci": [
+      0.3916,
+      0.5125
+     ],
+     "log_loss": 1.0273,
+     "log_loss_ci": [
+      0.9807,
+      1.0711
+     ],
+     "brier": 0.618,
+     "brier_ci": [
+      0.5886,
+      0.6476
+     ],
+     "rps": 0.2081,
+     "rps_ci": [
+      0.1944,
+      0.2221
+     ]
+    },
+    "base": {
+     "n": 240,
+     "accuracy": 0.4125,
+     "accuracy_ci": [
+      0.3542,
+      0.475
+     ],
+     "log_loss": 1.0861,
+     "log_loss_ci": [
+      1.0641,
+      1.108
+     ],
+     "brier": 0.6579,
+     "brier_ci": [
+      0.643,
+      0.6726
+     ],
+     "rps": 0.2272,
+     "rps_ci": [
+      0.2171,
+      0.2375
+     ]
+    }
+   },
+   "2024-25": {
+    "n_matches": 210,
+    "poisson": {
+     "n": 210,
+     "accuracy": 0.4952,
+     "accuracy_ci": [
+      0.4286,
+      0.562
+     ],
+     "log_loss": 0.9946,
+     "log_loss_ci": [
+      0.9493,
+      1.0457
+     ],
+     "brier": 0.5923,
+     "brier_ci": [
+      0.5577,
+      0.6254
+     ],
+     "rps": 0.2016,
+     "rps_ci": [
+      0.1872,
+      0.218
+     ]
+    },
+    "dc": {
+     "n": 210,
+     "accuracy": 0.481,
+     "accuracy_ci": [
+      0.419,
+      0.5524
+     ],
+     "log_loss": 0.9961,
+     "log_loss_ci": [
+      0.9535,
+      1.0426
+     ],
+     "brier": 0.5933,
+     "brier_ci": [
+      0.5611,
+      0.6254
+     ],
+     "rps": 0.2018,
+     "rps_ci": [
+      0.1857,
+      0.2184
+     ]
+    },
+    "ens": {
+     "n": 210,
+     "accuracy": 0.4952,
+     "accuracy_ci": [
+      0.4286,
+      0.5667
+     ],
+     "log_loss": 0.9953,
+     "log_loss_ci": [
+      0.9468,
+      1.0441
+     ],
+     "brier": 0.5928,
+     "brier_ci": [
+      0.5614,
+      0.6253
+     ],
+     "rps": 0.2017,
+     "rps_ci": [
+      0.1861,
+      0.217
+     ]
+    },
+    "base": {
+     "n": 210,
+     "accuracy": 0.4524,
+     "accuracy_ci": [
+      0.381,
+      0.5238
+     ],
+     "log_loss": 1.0714,
+     "log_loss_ci": [
+      1.0488,
+      1.0957
+     ],
+     "brier": 0.6478,
+     "brier_ci": [
+      0.632,
+      0.6636
+     ],
+     "rps": 0.2277,
+     "rps_ci": [
+      0.2172,
+      0.2374
+     ]
+    }
+   },
+   "2025-26": {
+    "n_matches": 240,
+    "poisson": {
+     "n": 240,
+     "accuracy": 0.4917,
+     "accuracy_ci": [
+      0.425,
+      0.5583
+     ],
+     "log_loss": 1.0168,
+     "log_loss_ci": [
+      0.965,
+      1.0638
+     ],
+     "brier": 0.6136,
+     "brier_ci": [
+      0.58,
+      0.6475
+     ],
+     "rps": 0.1989,
+     "rps_ci": [
+      0.1842,
+      0.2139
+     ]
+    },
+    "dc": {
+     "n": 240,
+     "accuracy": 0.4833,
+     "accuracy_ci": [
+      0.425,
+      0.5458
+     ],
+     "log_loss": 1.0178,
+     "log_loss_ci": [
+      0.9696,
+      1.0614
+     ],
+     "brier": 0.6141,
+     "brier_ci": [
+      0.5808,
+      0.6481
+     ],
+     "rps": 0.199,
+     "rps_ci": [
+      0.184,
+      0.2152
+     ]
+    },
+    "ens": {
+     "n": 240,
+     "accuracy": 0.4958,
+     "accuracy_ci": [
+      0.4333,
+      0.5625
+     ],
+     "log_loss": 1.0173,
+     "log_loss_ci": [
+      0.9714,
+      1.0684
+     ],
+     "brier": 0.6139,
+     "brier_ci": [
+      0.5774,
+      0.6468
+     ],
+     "rps": 0.1989,
+     "rps_ci": [
+      0.1861,
+      0.2129
+     ]
+    },
+    "base": {
+     "n": 240,
+     "accuracy": 0.4083,
+     "accuracy_ci": [
+      0.35,
+      0.475
+     ],
+     "log_loss": 1.0879,
+     "log_loss_ci": [
+      1.0631,
+      1.1119
+     ],
+     "brier": 0.6592,
+     "brier_ci": [
+      0.6424,
+      0.6758
+     ],
+     "rps": 0.2199,
+     "rps_ci": [
+      0.2103,
+      0.2292
+     ]
+    }
+   }
+  },
+  "method": "Season-ahead backtest (the source has no dates, so no in-season refits are possible): for each test season,\nfit Poisson and Dixon-Coles on ALL usable earlier seasons (season-level decay: weight 0.5 per season back),\npredict every match of the test season, and compare with base rates of the training seasons and 'always home'.\nEnsemble = fixed 50/50 Poisson/DC (no weight tuning, so no validation season is consumed).",
+  "missing": "No odds (no bookmaker benchmark, no value backtest), no shots, no dates (no Elo/form/logit models).",
+  "seasons_used": [
+   "2022-23",
+   "2023-24",
+   "2024-25",
+   "2025-26",
+   "2026-27"
+  ]
  }
 }

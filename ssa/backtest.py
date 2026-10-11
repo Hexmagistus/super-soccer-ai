@@ -123,7 +123,7 @@ def value_backtest(sub, validated_leagues=None):
             "profit_units": round(float(np.sum(pr)), 2), "mean_odds": round(float(np.mean([b["odds"] for b in bets])), 3) if bets else None,
             "rule": f"edge>={VALUE_MIN_EDGE}, EV>={VALUE_MIN_EV}, odds<={VALUE_MAX_ODDS}, average pre-closing odds, 1 unit flat"}
 
-def run(m):
+def run(m, psl_matches=None):
     rows = run_walkforward(m)
     w, val_ll, n_val = choose_weights(rows)
     test = evaluate(rows, w)
@@ -144,6 +144,12 @@ def run(m):
     out["value_rule_all_leagues"] = value_backtest(test)
     out["value_rule_validated_only"] = value_backtest(test, set(validated))
     out["value_rule_by_league"] = {lg: value_backtest([o for o in test if o["league"] == lg]) for lg in out["by_league"]}
+    if psl_matches is not None and len(psl_matches):
+        from . import psl
+        out["psl"] = psl.backtest(psl_matches)
+        if out["psl"]["n_matches"]:
+            out["by_league"]["PSL"] = {k: out["psl"][k] for k in ("n_matches", "poisson", "dc", "ens", "base", "home_always", "ens_minus_base_logloss", "ece")}
+            out["by_league"]["PSL"]["note"] = "season-ahead backtest, Poisson+DC only, not part of 'overall' (see psl.method)"
     REPORTS.mkdir(exist_ok=True)
     (REPORTS / "backtest.json").write_text(json.dumps(out, indent=1, default=float))
     (REPORTS / "backtest.md").write_text(to_md(out)); return out
@@ -171,5 +177,12 @@ def to_md(r):
         bk = b.get("bookmaker_closing", {}); L.append(f"| {k} | {b['n_matches']} | {b['ens']['log_loss']} | {b['base']['log_loss']} | {bk.get('log_loss','n/a')} | {b['ens']['rps']} | {bk.get('rps','n/a')} |")
     L += ["", "## Value rule ROI", "", f"All leagues: {r['value_rule_all_leagues']}", "", f"Validated leagues only ({r['validated_leagues']}): {r['value_rule_validated_only']}", "",
           "By league:", ""] + [f"- {k}: {v}" for k, v in r["value_rule_by_league"].items()]
+    if r.get("psl"):
+        p = r["psl"]; L += ["", "## South Africa PSL (season-ahead, separate method)", "", p["method"], "",
+             f"Test matches: {p['n_matches']} (seasons {list(p['by_season'])}); data seasons used: {p['seasons_used']}", ""]
+        for k in ("ens", "poisson", "dc", "base"):
+            L.append(f"- {k}: log loss {fmt(p[k], 'log_loss')}, RPS {fmt(p[k], 'rps')}, Brier {fmt(p[k], 'brier')}, accuracy {fmt(p[k], 'accuracy')}")
+        L += [f"- always home: accuracy {p['home_always']['accuracy']} {p['home_always']['accuracy_ci']}",
+              f"- ensemble minus base log loss: {p['ens_minus_base_logloss']}; ECE {p['ece']}", f"- missing: {p['missing']}"]
     L += ["", "Past performance does not guarantee future results. No betting outcome is guaranteed."]
     return "\n".join(L)

@@ -14,7 +14,12 @@ MAIN_LEAGUES = {"E0": "England Premier League", "E1": "England Championship", "S
 SEASONS = ["2122", "2223", "2324", "2425", "2526", "2627"]
 EXTRA = {"BRA": "Brazil Serie A", "USA": "USA MLS"}
 # Checked 2026-10-10: https://www.football-data.co.uk/new/RSA.csv redirects to the USA (MLS) file -> South Africa unavailable.
-UNAVAILABLE = {"RSA": "South Africa PSL: no football-data.co.uk file (RSA.csv URL served MLS data on 2026-10-10)"}
+# Re-checked 2026-10-11: RSA.csv still 302/301-redirects to USA.csv (identical SHA-1) -> not used.
+# PSL results come from Wikipedia season results matrices instead (ssa/psl.py).
+EXTRA_UNDATED = {"PSL": "South Africa Premiership (PSL)"}
+UNAVAILABLE = {"PSL fixtures": "South Africa PSL upcoming fixtures: no free key-less source found (optional API_FOOTBALL_KEY adapter stub, league id 288)",
+               "PSL odds/shots/dates": "PSL source (Wikipedia results matrix) has final scores only: no odds, shots or match dates",
+               "RSA.csv": "football-data.co.uk new/RSA.csv redirects to the MLS file (checked 2026-10-10 and 2026-10-11)"}
 BASE = "https://www.football-data.co.uk"
 FOOTBALL_DATA_ORG_KEY = os.getenv("FOOTBALL_DATA_ORG_KEY")
 ODDS_API_KEY = os.getenv("ODDS_API_KEY")

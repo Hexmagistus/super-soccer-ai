@@ -1,0 +1,682 @@
+{
+ "seasons": {
+  "2021-22": {
+   "teams": [
+    "AmaZulu",
+    "Baroka",
+    "Cape Town City",
+    "Chippa United",
+    "Golden Arrows",
+    "Kaizer Chiefs",
+    "Mamelodi Sundowns",
+    "Maritzburg United",
+    "Marumo Gallants",
+    "Orlando Pirates",
+    "Royal AM",
+    "Sekhukhune United",
+    "Stellenbosch",
+    "SuperSport United",
+    "Swallows",
+    "TS Galaxy"
+   ],
+   "n_teams": 16,
+   "played": 238,
+   "excluded": 2,
+   "excluded_cells": [
+    {
+     "home": "Stellenbosch",
+     "away": "Royal AM",
+     "cell": "<small>30 Jan</small>"
+    },
+    {
+     "home": "Stellenbosch",
+     "away": "Sekhukhune United",
+     "cell": "<small>16 Jan</small>"
+    }
+   ],
+   "issues": [],
+   "complete": true,
+   "table_check": {
+    "teams_checked": 16,
+    "teams_matching": 9,
+    "mismatches": [
+     {
+      "team": "Baroka",
+      "table": [
+       6,
+       7,
+       17,
+       22,
+       40
+      ],
+      "matrix": [
+       7,
+       6,
+       17,
+       22,
+       39
+      ],
+      "match": false
+     },
+     {
+      "team": "Chippa United",
+      "table": [
+       5,
+       14,
+       11,
+       23,
+       33
+      ],
+      "matrix": [
+       5,
+       15,
+       10,
+       23,
+       33
+      ],
+      "match": false
+     },
+     {
+      "team": "Mamelodi Sundowns",
+      "table": [
+       19,
+       8,
+       3,
+       56,
+       20
+      ],
+      "matrix": [
+       19,
+       8,
+       3,
+       55,
+       20
+      ],
+      "match": false
+     },
+     {
+      "team": "Maritzburg United",
+      "table": [
+       7,
+       10,
+       13,
+       22,
+       33
+      ],
+      "matrix": [
+       6,
+       10,
+       14,
+       21,
+       34
+      ],
+      "match": false
+     },
+     {
+      "team": "Royal AM",
+      "table": [
+       12,
+       11,
+       7,
+       43,
+       31
+      ],
+      "matrix": [
+       12,
+       10,
+       7,
+       41,
+       29
+      ],
+      "match": false
+     },
+     {
+      "team": "Sekhukhune United",
+      "table": [
+       8,
+       9,
+       13,
+       21,
+       24
+      ],
+      "matrix": [
+       8,
+       8,
+       13,
+       20,
+       23
+      ],
+      "match": false
+     },
+     {
+      "team": "Stellenbosch",
+      "table": [
+       11,
+       14,
+       5,
+       32,
+       23
+      ],
+      "matrix": [
+       11,
+       12,
+       5,
+       29,
+       20
+      ],
+      "match": false
+     }
+    ]
+   },
+   "data_status": "failed_consistency",
+   "goals_per_match": 1.983,
+   "home_win_rate": 0.366,
+   "url": "https://en.wikipedia.org/w/index.php?title=2021\u201322_South_African_Premiership&oldid=1376311840",
+   "revid": 1376311840,
+   "revision_timestamp": "2026-09-23T11:02:29Z",
+   "fetched_at": "2026-10-11T12:21:55+00:00",
+   "update_field": "23 May 2022"
+  },
+  "2022-23": {
+   "teams": [
+    "AmaZulu",
+    "Cape Town City",
+    "Chippa United",
+    "Golden Arrows",
+    "Kaizer Chiefs",
+    "Mamelodi Sundowns",
+    "Maritzburg United",
+    "Marumo Gallants",
+    "Orlando Pirates",
+    "Richards Bay",
+    "Royal AM",
+    "Sekhukhune United",
+    "Stellenbosch",
+    "SuperSport United",
+    "Swallows",
+    "TS Galaxy"
+   ],
+   "n_teams": 16,
+   "played": 240,
+   "excluded": 0,
+   "excluded_cells": [],
+   "issues": [],
+   "complete": true,
+   "table_check": {
+    "teams_checked": 16,
+    "teams_matching": 16,
+    "mismatches": []
+   },
+   "data_status": "verified",
+   "goals_per_match": 2.096,
+   "home_win_rate": 0.412,
+   "url": "https://en.wikipedia.org/w/index.php?title=2022\u201323_South_African_Premiership&oldid=1376908782",
+   "revid": 1376908782,
+   "revision_timestamp": "2026-09-26T22:55:39Z",
+   "fetched_at": "2026-10-11T12:21:56+00:00",
+   "update_field": "complete"
+  },
+  "2023-24": {
+   "teams": [
+    "AmaZulu",
+    "Cape Town City",
+    "Cape Town Spurs",
+    "Chippa United",
+    "Golden Arrows",
+    "Kaizer Chiefs",
+    "Mamelodi Sundowns",
+    "Orlando Pirates",
+    "Polokwane City",
+    "Richards Bay",
+    "Royal AM",
+    "Sekhukhune United",
+    "Stellenbosch",
+    "SuperSport United",
+    "Swallows",
+    "TS Galaxy"
+   ],
+   "n_teams": 16,
+   "played": 240,
+   "excluded": 0,
+   "excluded_cells": [],
+   "issues": [],
+   "complete": true,
+   "table_check": {
+    "teams_checked": 16,
+    "teams_matching": 8,
+    "mismatches": [
+     {
+      "team": "Cape Town City",
+      "table": [
+       12,
+       9,
+       9,
+       29,
+       25
+      ],
+      "matrix": [
+       12,
+       9,
+       9,
+       32,
+       26
+      ],
+      "match": false
+     },
+     {
+      "team": "Chippa United",
+      "table": [
+       8,
+       10,
+       12,
+       29,
+       30
+      ],
+      "matrix": [
+       8,
+       10,
+       12,
+       26,
+       29
+      ],
+      "match": false
+     },
+     {
+      "team": "Golden Arrows",
+      "table": [
+       10,
+       8,
+       12,
+       32,
+       43
+      ],
+      "matrix": [
+       10,
+       8,
+       12,
+       33,
+       44
+      ],
+      "match": false
+     },
+     {
+      "team": "TS Galaxy",
+      "table": [
+       12,
+       8,
+       10,
+       30,
+       24
+      ],
+      "matrix": [
+       12,
+       8,
+       10,
+       31,
+       25
+      ],
+      "match": false
+     },
+     {
+      "team": "Polokwane City",
+      "table": [
+       9,
+       12,
+       9,
+       21,
+       27
+      ],
+      "matrix": [
+       9,
+       12,
+       9,
+       20,
+       27
+      ],
+      "match": false
+     },
+     {
+      "team": "Mamelodi Sundowns",
+      "table": [
+       22,
+       7,
+       1,
+       51,
+       10
+      ],
+      "matrix": [
+       22,
+       7,
+       1,
+       52,
+       11
+      ],
+      "match": false
+     },
+     {
+      "team": "Orlando Pirates",
+      "table": [
+       14,
+       8,
+       8,
+       45,
+       27
+      ],
+      "matrix": [
+       14,
+       8,
+       8,
+       44,
+       26
+      ],
+      "match": false
+     },
+     {
+      "team": "Royal AM",
+      "table": [
+       9,
+       6,
+       15,
+       24,
+       43
+      ],
+      "matrix": [
+       9,
+       6,
+       15,
+       24,
+       42
+      ],
+      "match": false
+     }
+    ]
+   },
+   "data_status": "outcomes_verified_goals_inconsistent",
+   "goals_per_match": 2.029,
+   "home_win_rate": 0.412,
+   "url": "https://en.wikipedia.org/w/index.php?title=2023\u201324_South_African_Premiership&oldid=1377583611",
+   "revid": 1377583611,
+   "revision_timestamp": "2026-09-30T02:13:08Z",
+   "fetched_at": "2026-10-11T12:21:56+00:00",
+   "update_field": "complete"
+  },
+  "2024-25": {
+   "teams": [
+    "AmaZulu",
+    "Cape Town City",
+    "Chippa United",
+    "Golden Arrows",
+    "Kaizer Chiefs",
+    "Magesi",
+    "Mamelodi Sundowns",
+    "Marumo Gallants",
+    "Orlando Pirates",
+    "Polokwane City",
+    "Richards Bay",
+    "Royal AM",
+    "Sekhukhune United",
+    "Stellenbosch",
+    "SuperSport United",
+    "TS Galaxy"
+   ],
+   "n_teams": 16,
+   "played": 210,
+   "excluded": 30,
+   "excluded_cells": [
+    {
+     "home": "AmaZulu",
+     "away": "Royal AM",
+     "cell": "<s>2\u20131</s>"
+    },
+    {
+     "home": "Cape Town City",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Magesi",
+     "away": "Royal AM",
+     "cell": "<s>0\u20130</s>"
+    },
+    {
+     "home": "Chippa United",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Golden Arrows",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Kaizer Chiefs",
+     "away": "Royal AM",
+     "cell": "<s>2\u20132</s>"
+    },
+    {
+     "home": "Mamelodi Sundowns",
+     "away": "Royal AM",
+     "cell": "<s>2\u20131</s>"
+    },
+    {
+     "home": "Orlando Pirates",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Polokwane City",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Richards Bay",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "AmaZulu",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Cape Town City",
+     "cell": "<s>1\u20131</s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Magesi",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Chippa United",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Golden Arrows",
+     "cell": "<s>2\u20133</s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Kaizer Chiefs",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Mamelodi Sundowns",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Orlando Pirates",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Polokwane City",
+     "cell": "<s>0\u20131</s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Richards Bay",
+     "cell": "<s>0\u20130</s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Sekhukhune United",
+     "cell": "<s>2\u20130</s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Marumo Gallants",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "Stellenbosch",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "SuperSport United",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Royal AM",
+     "away": "TS Galaxy",
+     "cell": "<s>1\u20133</s>"
+    },
+    {
+     "home": "Sekhukhune United",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Marumo Gallants",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "Stellenbosch",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    },
+    {
+     "home": "SuperSport United",
+     "away": "Royal AM",
+     "cell": "<s>0\u20130</s>"
+    },
+    {
+     "home": "TS Galaxy",
+     "away": "Royal AM",
+     "cell": "<s><small>Canc.</small></s>"
+    }
+   ],
+   "issues": [],
+   "complete": true,
+   "table_check": {
+    "teams_checked": 15,
+    "teams_matching": 15,
+    "mismatches": []
+   },
+   "data_status": "verified",
+   "goals_per_match": 2.014,
+   "home_win_rate": 0.452,
+   "url": "https://en.wikipedia.org/w/index.php?title=2024\u201325_South_African_Premiership&oldid=1360198524",
+   "revid": 1360198524,
+   "revision_timestamp": "2026-06-19T21:30:28Z",
+   "fetched_at": "2026-10-11T12:21:56+00:00",
+   "update_field": "complete"
+  },
+  "2025-26": {
+   "teams": [
+    "AmaZulu",
+    "Chippa United",
+    "Durban City",
+    "Golden Arrows",
+    "Kaizer Chiefs",
+    "Magesi",
+    "Mamelodi Sundowns",
+    "Marumo Gallants",
+    "Orbit College",
+    "Orlando Pirates",
+    "Polokwane City",
+    "Richards Bay",
+    "Sekhukhune United",
+    "Siwelele",
+    "Stellenbosch",
+    "TS Galaxy"
+   ],
+   "n_teams": 16,
+   "played": 240,
+   "excluded": 0,
+   "excluded_cells": [],
+   "issues": [],
+   "complete": true,
+   "table_check": {
+    "teams_checked": 16,
+    "teams_matching": 16,
+    "mismatches": []
+   },
+   "data_status": "verified",
+   "goals_per_match": 2.021,
+   "home_win_rate": 0.408,
+   "url": "https://en.wikipedia.org/w/index.php?title=2025\u201326_South_African_Premiership&oldid=1379331329",
+   "revid": 1379331329,
+   "revision_timestamp": "2026-10-09T08:24:06Z",
+   "fetched_at": "2026-10-11T12:21:56+00:00",
+   "update_field": "23 May 2026"
+  },
+  "2026-27": {
+   "teams": [
+    "AmaZulu",
+    "Chippa United",
+    "Durban City",
+    "Golden Arrows",
+    "Kaizer Chiefs",
+    "Kruger United",
+    "Mamelodi Sundowns",
+    "Marumo Gallants",
+    "Milford",
+    "Orlando Pirates",
+    "Polokwane City",
+    "Richards Bay",
+    "Sekhukhune United",
+    "Siwelele",
+    "Stellenbosch",
+    "TS Galaxy"
+   ],
+   "n_teams": 16,
+   "played": 57,
+   "excluded": 0,
+   "excluded_cells": [],
+   "issues": [],
+   "complete": false,
+   "table_check": {
+    "teams_checked": 16,
+    "teams_matching": 16,
+    "mismatches": []
+   },
+   "data_status": "verified",
+   "goals_per_match": 2.281,
+   "home_win_rate": 0.316,
+   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1378419473",
+   "revid": 1378419473,
+   "revision_timestamp": "2026-10-04T11:00:10Z",
+   "fetched_at": "2026-10-11T12:24:33+00:00",
+   "update_field": "20 September 2026"
+  }
+ },
+ "cross_check_openfootball_2024_25": {
+  "ok": true,
+  "source": "https://raw.githubusercontent.com/openfootball/world/master/africa/south-africa/2024-25_za1.txt",
+  "fetched_at": "2026-10-11T12:24:33+00:00",
+  "openfootball_results": 189,
+  "matched": 189,
+  "unmatched_in_wikipedia": [],
+  "score_disagreements": [],
+  "agreement_rate": 1.0
+ }
+}

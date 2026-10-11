@@ -56,3 +56,10 @@ Daily cron example: `0 6 * * * cd /workspace/super-soccer-ai && .venv/bin/python
 - Elo is per league (promoted/relegated teams re-enter at the league's 20th percentile); unseen teams get league-average strength and are flagged "insufficient data".
 - Dixon-Coles rho is fitted in a second stage, not jointly; weekly (not per-matchday) refits in the backtest.
 - The model is **worse than closing bookmaker odds** in the backtest, and the value rule lost money. Treat outputs as research, not betting advice.
+
+## South Africa PSL (Betway Premiership)
+Results come from Wikipedia season results matrices (MediaWiki API, CC BY-SA 4.0; revision id + timestamp recorded in
+`data/raw/_psl_meta.json`), parsed by `ssa/psl.py`, cross-checked against openfootball 2024-25 and each page's own league
+table (`reports/psl_validation.json`). The source has no dates, odds or shots, so PSL uses a separate season-ahead
+Poisson/Dixon-Coles backtest and has no upcoming-fixture predictions (optional `API_FOOTBALL_KEY` stub, league 288).
+football-data.co.uk `new/RSA.csv` redirects to the MLS file and is not used. Raw files are in `data/raw/` and ship in the Docker image (`COPY . .`).

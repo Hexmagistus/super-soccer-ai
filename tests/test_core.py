@@ -58,3 +58,31 @@ def test_no_leakage_model_fit():
 def test_backtest_train_strictly_before():
     import inspect, ssa.backtest as bt
     src = inspect.getsource(bt.run_walkforward); assert "L.date < start" in src
+
+WIKI_SAMPLE = """==Results==
+{{#invoke:sports results|main
+| update = complete
+|name_AAA=[[Alpha F.C.|Alpha]]
+|name_BBB=[[Lamontville Golden Arrows F.C.|Lamontville Golden Arrows]]
+|name_CCC=Gamma
+|match_AAA_BBB=2–1 |match_AAA_CCC=<s>1–0</s>
+|match_BBB_AAA=[[Derby|0-3]]
+|match_BBB_CCC={{small|30 Jan}}
+|match_CCC_AAA=
+|match_CCC_BBB=1–1
+}}"""
+
+def test_psl_parser_excludes_struck_and_unplayed():
+    from ssa.psl import parse
+    rows, excl, teams = parse(WIKI_SAMPLE, "2024–25")
+    assert teams == ["Alpha", "Gamma", "Golden Arrows"]
+    got = {(r["home"], r["away"]): (r["hg"], r["ag"]) for r in rows}
+    assert got == {("Alpha", "Golden Arrows"): (2, 1), ("Golden Arrows", "Alpha"): (0, 3), ("Gamma", "Golden Arrows"): (1, 1)}
+    assert len(excl) == 2 and all(r["season"] == "2024-25" for r in rows)
+
+def test_openfootball_parser():
+    from ssa.psl import parse_openfootball
+    txt = "  Sat Sep 14 2024\n    17:30  Marumo Gallants         v Kaizer Chiefs            1-2 (1-1)\n    15:00  Royal AM                v Cape Town City FC        [cancelled]\n  Sun Sep 15\n    15:00  Richards Bay FC         v TS Galaxy                1-0 (1-0)\n"
+    df = parse_openfootball(txt)
+    assert df.to_dict("records") == [{"date": "2024-09-14", "home": "Marumo Gallants", "away": "Kaizer Chiefs", "hg": 1, "ag": 2},
+                                     {"date": "2024-09-15", "home": "Richards Bay", "away": "TS Galaxy", "hg": 1, "ag": 0}]

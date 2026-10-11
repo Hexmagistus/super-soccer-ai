@@ -49,6 +49,7 @@ ECE: 0.0061
 | I1 | 810 | 0.9781 [0.9482, 1.0067] | 1.0887 | 0.9611 | 0.5296 | 0.535 | 0.0134 |
 | SP1 | 829 | 0.9738 [0.9429, 1.0050] | 1.0608 | 0.9451 | 0.5247 | 0.562 | 0.0235 |
 | USA | 1467 | 1.0531 [1.0339, 1.0725] | 1.0709 | 1.0281 | 0.4724 | 0.4804 | 0.0134 |
+| PSL | 690 | 1.0141 [0.9875, 1.0424] | 1.0823 | n/a | 0.4797 | n/a | 0.0096 |
 
 ## By league and season
 
@@ -95,5 +96,22 @@ By league:
 - I1: {'n_bets': 310, 'roi': -0.1781, 'roi_ci95': [-0.3464, -0.0221], 'profit_units': -55.22, 'mean_odds': 3.334, 'rule': 'edge>=0.05, EV>=0.05, odds<=6.0, average pre-closing odds, 1 unit flat'}
 - SP1: {'n_bets': 253, 'roi': -0.1784, 'roi_ci95': [-0.3468, -0.0266], 'profit_units': -45.14, 'mean_odds': 2.996, 'rule': 'edge>=0.05, EV>=0.05, odds<=6.0, average pre-closing odds, 1 unit flat'}
 - USA: {'n_bets': 0, 'roi': None, 'roi_ci95': [None, None], 'profit_units': 0.0, 'mean_odds': None, 'rule': 'edge>=0.05, EV>=0.05, odds<=6.0, average pre-closing odds, 1 unit flat'}
+
+## South Africa PSL (season-ahead, separate method)
+
+Season-ahead backtest (the source has no dates, so no in-season refits are possible): for each test season,
+fit Poisson and Dixon-Coles on ALL usable earlier seasons (season-level decay: weight 0.5 per season back),
+predict every match of the test season, and compare with base rates of the training seasons and 'always home'.
+Ensemble = fixed 50/50 Poisson/DC (no weight tuning, so no validation season is consumed).
+
+Test matches: 690 (seasons ['2023-24', '2024-25', '2025-26']); data seasons used: ['2022-23', '2023-24', '2024-25', '2025-26', '2026-27']
+
+- ens: log loss 1.0141 [0.9875, 1.0424], RPS 0.2029 [0.1943, 0.2115], Brier 0.6089 [0.5906, 0.6265], accuracy 0.4797 [0.4420, 0.5160]
+- poisson: log loss 1.0136 [0.9886, 1.0391], RPS 0.2029 [0.1946, 0.2112], Brier 0.6086 [0.5905, 0.6261], accuracy 0.4754 [0.4391, 0.5116]
+- dc: log loss 1.0148 [0.9883, 1.0410], RPS 0.2030 [0.1945, 0.2119], Brier 0.6094 [0.5905, 0.6271], accuracy 0.4696 [0.4319, 0.5072]
+- base: log loss 1.0823 [1.0697, 1.0957], RPS 0.2248 [0.2189, 0.2313], Brier 0.6553 [0.6459, 0.6644], accuracy 0.4232 [0.3884, 0.4609]
+- always home: accuracy 0.4232 [0.3884, 0.458]
+- ensemble minus base log loss: {'mean': -0.0682, 'ci': [-0.0903, -0.0448]}; ECE 0.0096
+- missing: No odds (no bookmaker benchmark, no value backtest), no shots, no dates (no Elo/form/logit models).
 
 Past performance does not guarantee future results. No betting outcome is guaranteed.

@@ -1,0 +1,74 @@
+{
+ "PSL_wikipedia_2021-22.wikitext": {
+  "url": "https://en.wikipedia.org/w/index.php?title=2021\u201322_South_African_Premiership&oldid=1376311840",
+  "api": "https://en.wikipedia.org/w/api.php",
+  "title": "2021\u201322 South African Premiership",
+  "revid": 1376311840,
+  "revision_timestamp": "2026-09-23T11:02:29Z",
+  "fetched_at": "2026-10-11T12:21:55+00:00",
+  "sha1": "4b6f5c215087c96cb89864e6a2f9874a702604ef",
+  "license": "CC BY-SA 4.0 (Wikipedia contributors)",
+  "update_field": "23 May 2022",
+  "complete": true
+ },
+ "PSL_wikipedia_2022-23.wikitext": {
+  "url": "https://en.wikipedia.org/w/index.php?title=2022\u201323_South_African_Premiership&oldid=1376908782",
+  "api": "https://en.wikipedia.org/w/api.php",
+  "title": "2022\u201323 South African Premiership",
+  "revid": 1376908782,
+  "revision_timestamp": "2026-09-26T22:55:39Z",
+  "fetched_at": "2026-10-11T12:21:56+00:00",
+  "sha1": "a49884736d53af991bdd616737525ff4dbbfc73d",
+  "license": "CC BY-SA 4.0 (Wikipedia contributors)",
+  "update_field": "complete",
+  "complete": true
+ },
+ "PSL_wikipedia_2023-24.wikitext": {
+  "url": "https://en.wikipedia.org/w/index.php?title=2023\u201324_South_African_Premiership&oldid=1377583611",
+  "api": "https://en.wikipedia.org/w/api.php",
+  "title": "2023\u201324 South African Premiership",
+  "revid": 1377583611,
+  "revision_timestamp": "2026-09-30T02:13:08Z",
+  "fetched_at": "2026-10-11T12:21:56+00:00",
+  "sha1": "9e909185836940c0665259d33e7bcbf9f81eed70",
+  "license": "CC BY-SA 4.0 (Wikipedia contributors)",
+  "update_field": "complete",
+  "complete": true
+ },
+ "PSL_wikipedia_2024-25.wikitext": {
+  "url": "https://en.wikipedia.org/w/index.php?title=2024\u201325_South_African_Premiership&oldid=1360198524",
+  "api": "https://en.wikipedia.org/w/api.php",
+  "title": "2024\u201325 South African Premiership",
+  "revid": 1360198524,
+  "revision_timestamp": "2026-06-19T21:30:28Z",
+  "fetched_at": "2026-10-11T12:21:56+00:00",
+  "sha1": "10b19a8e78416dbe631216f2a01316f57534c7b6",
+  "license": "CC BY-SA 4.0 (Wikipedia contributors)",
+  "update_field": "complete",
+  "complete": true
+ },
+ "PSL_wikipedia_2025-26.wikitext": {
+  "url": "https://en.wikipedia.org/w/index.php?title=2025\u201326_South_African_Premiership&oldid=1379331329",
+  "api": "https://en.wikipedia.org/w/api.php",
+  "title": "2025\u201326 South African Premiership",
+  "revid": 1379331329,
+  "revision_timestamp": "2026-10-09T08:24:06Z",
+  "fetched_at": "2026-10-11T12:21:56+00:00",
+  "sha1": "ef864b8d8ae5701df04cdd932cb1d6a79fdbe6ce",
+  "license": "CC BY-SA 4.0 (Wikipedia contributors)",
+  "update_field": "23 May 2026",
+  "complete": true
+ },
+ "PSL_wikipedia_2026-27.wikitext": {
+  "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1378419473",
+  "api": "https://en.wikipedia.org/w/api.php",
+  "title": "2026\u201327 South African Premiership",
+  "revid": 1378419473,
+  "revision_timestamp": "2026-10-04T11:00:10Z",
+  "fetched_at": "2026-10-11T12:24:33+00:00",
+  "sha1": "cae7d7af3cda01ef6c0a5ca406d3e03c14fe1571",
+  "license": "CC BY-SA 4.0 (Wikipedia contributors)",
+  "update_field": "20 September 2026",
+  "complete": false
+ }
+}

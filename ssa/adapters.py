@@ -24,6 +24,17 @@ def odds_api_odds(sport="soccer_epl"):
         r.raise_for_status(); return {"ok": True, "data": r.json()}
     except Exception as e: return {"ok": False, "error": str(e)}
 
+def api_football_psl_fixtures(season=None):
+    """API-Football v3 (api-sports.io) upcoming South Africa Premiership fixtures. League id 288 = South Africa
+    'Premier Soccer League'. Requires API_FOOTBALL_KEY (x-apisports-key header); disabled otherwise. Not signed up."""
+    try:
+        k = _need("API_FOOTBALL_KEY")
+        params = {"league": int(os.getenv("API_FOOTBALL_PSL_LEAGUE_ID", "288")), "next": 50}
+        if season: params["season"] = season
+        r = requests.get("https://v3.football.api-sports.io/fixtures", params=params, headers={"x-apisports-key": k}, timeout=20)
+        r.raise_for_status(); return {"ok": True, "data": r.json()}
+    except Exception as e: return {"ok": False, "error": str(e)}
+
 def status():
     return {"football-data.org": bool(os.getenv("FOOTBALL_DATA_ORG_KEY")), "the-odds-api": bool(os.getenv("ODDS_API_KEY")),
             "api-football": bool(os.getenv("API_FOOTBALL_KEY"))}

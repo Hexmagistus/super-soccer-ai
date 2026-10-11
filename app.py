@@ -2,12 +2,12 @@
 import json, sqlite3
 from fastapi import FastAPI, HTTPException, Body
 from fastapi.responses import FileResponse
-from ssa.config import DB, REPORTS, SETTINGS, ROOT, MAIN_LEAGUES, EXTRA, UNAVAILABLE, MODEL_VERSION, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
+from ssa.config import DB, REPORTS, SETTINGS, ROOT, MAIN_LEAGUES, EXTRA, EXTRA_UNDATED, UNAVAILABLE, MODEL_VERSION, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
 from ssa.markets import SSI_DOC, SSI_WEIGHTS
 from ssa import adapters
 
 app = FastAPI(title="SUPER SOCCER AI", description="Research the Game. Predict the Score. Measure the Evidence.")
-DEFAULT_SETTINGS = {"leagues": list(MAIN_LEAGUES) + list(EXTRA), "timezone": "UTC-6 (Etc/GMT+6)", "betting_module": False}
+DEFAULT_SETTINGS = {"leagues": list(MAIN_LEAGUES) + list(EXTRA) + list(EXTRA_UNDATED), "timezone": "UTC-6 (Etc/GMT+6)", "betting_module": False}
 
 def q(sql, args=()):
     con = sqlite3.connect(DB); con.row_factory = sqlite3.Row
@@ -28,10 +28,22 @@ def status():
     counts = q("SELECT league, season, COUNT(*) n, MIN(date) first, MAX(date) last FROM matches GROUP BY league, season ORDER BY league, season")
     preds = latest_preds()
     return {"model_version": MODEL_VERSION, "sources": src, "counts": counts, "unavailable": UNAVAILABLE,
-            "leagues": {**MAIN_LEAGUES, **EXTRA}, "optional_api_keys": adapters.status(),
+            "leagues": {**MAIN_LEAGUES, **EXTRA, **EXTRA_UNDATED},
+            "psl": _psl_status(), "optional_api_keys": adapters.status(),
             "mode": "upcoming" if preds else "historical", "n_upcoming": len(preds),
             "predictions_created_at": max((p["created_at"] for p in preds), default=None),
-            "fixtures_source": "https://www.football-data.co.uk/fixtures.csv (main 6 leagues only; no free fixtures for BRA/USA here)"}
+            "fixtures_source": "https://www.football-data.co.uk/fixtures.csv (main 6 leagues only; no free fixtures for BRA/USA/PSL here - PSL upcoming fixtures unavailable)"}
+
+def _psl_status():
+    try: counts = q("SELECT season, COUNT(*) n, MIN(data_status) data_status, MIN(source_url) source_url FROM psl_matches GROUP BY season ORDER BY season")
+    except sqlite3.OperationalError: counts = []
+    v = REPORTS / "psl_validation.json"
+    return {"name": EXTRA_UNDATED["PSL"], "results_by_season": counts, "fixtures": "unavailable (no free key-less source; set API_FOOTBALL_KEY to enable adapter stub)",
+            "source": "Wikipedia season articles, Results matrix, via MediaWiki API (CC BY-SA 4.0)", "has_dates": False, "has_odds": False, "has_shots": False,
+            "validation": json.loads(v.read_text()) if v.exists() else None}
+
+@app.get("/api/psl")
+def psl_info(): return _psl_status()
 
 @app.get("/api/fixtures")
 def fixtures(league: str = None, sort: str = "kickoff", desc: bool = False):
