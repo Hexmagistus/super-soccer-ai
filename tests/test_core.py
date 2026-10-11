@@ -57,7 +57,7 @@ def test_no_leakage_model_fit():
 
 def test_backtest_train_strictly_before():
     import inspect, ssa.backtest as bt
-    src = inspect.getsource(bt.run_walkforward); assert "L.date < start" in src
+    src = inspect.getsource(bt._walk_league); assert "L.date < start" in src
 
 WIKI_SAMPLE = """==Results==
 {{#invoke:sports results|main
@@ -86,3 +86,58 @@ def test_openfootball_parser():
     df = parse_openfootball(txt)
     assert df.to_dict("records") == [{"date": "2024-09-14", "home": "Marumo Gallants", "away": "Kaizer Chiefs", "hg": 1, "ag": 2},
                                      {"date": "2024-09-15", "home": "Richards Bay", "away": "TS Galaxy", "hg": 1, "ag": 0}]
+
+# ---- v0.2 components ----
+from ssa.models import DixonColesJoint, ShotsModel, elo_history, ensemble_v2, promoted_flags
+from ssa.stack import fit_pool, recal, fit_recal, log_pool
+
+def _sim(n_days=900, seed=1, rho=-0.1):
+    rng = np.random.default_rng(seed); teams = [f"T{i}" for i in range(10)]; att = rng.normal(0, .3, 10); rows = []
+    d0 = pd.Timestamp("2022-01-01")
+    for k in range(n_days):
+        i, j = rng.choice(10, 2, replace=False); lh, la = np.exp(.25 + .2 + att[i] - att[j] * .5), np.exp(.25 + att[j] - att[i] * .5)
+        M = score_matrix(lh, la, rho); c = rng.choice(49, p=M.ravel()); rows.append({"league": "X", "date": d0 + pd.Timedelta(days=k),
+            "home": teams[i], "away": teams[j], "hg": float(c // 7), "ag": float(c % 7), "hst": float(rng.poisson(4 * lh)), "ast": float(rng.poisson(4 * la))})
+    return pd.DataFrame(rows)
+
+def test_dcj_gradient_and_rho_recovery():
+    m = _sim(3000); ref = m.date.max() + pd.Timedelta(days=1)
+    J = DixonColesJoint(xi=0.0, ridge=0.01, promo=False).fit(m, ref)
+    assert -0.2 < J.rho < -0.02 and abs(J.ha - 0.2) < 0.08
+
+def test_dcj_promoted_prior_for_unseen_team():
+    m = _sim(900); ref = m.date.max() + pd.Timedelta(days=1)
+    J = DixonColesJoint().fit(m, ref); lh, la = J.lambdas("NEWTEAM", "T0")
+    assert np.isclose(np.log(lh), J.mu + J.ha + J.c_att + J.de[J.idx["T0"]])
+    late = m.copy(); late.loc[late.index > 600, "home"] = late.loc[late.index > 600, "home"].replace("T1", "P1")
+    assert promoted_flags(late).get("P1") and not promoted_flags(late).get("T0")
+
+def test_shots_model_leak_free_and_flags():
+    m = _sim(600); ref = m.date.iloc[400]; tr = m[m.date < ref]
+    a = ShotsModel().fit(tr, ref).lambdas("T0", "T1"); m.loc[m.date >= ref, ["hst", "ast"]] = 50
+    assert np.allclose(a, ShotsModel().fit(m[m.date < ref], ref).lambdas("T0", "T1"))
+    assert not ShotsModel().fit(tr.assign(hst=np.nan), ref).ok
+
+def test_elo_promo_inherit_is_pre_match():
+    m = _sim(400); m["season"] = np.where(m.index < 200, "a", "b")
+    h1, a1, _ = elo_history(m, promo_inherit=True); m2 = m.copy(); m2.loc[300, ["hg", "ag"]] = [9.0, 0.0]
+    h2, a2, _ = elo_history(m2, promo_inherit=True); assert np.allclose(h1[:301], h2[:301]) and np.allclose(a1[:301], a2[:301])
+
+def test_stack_pool_and_recal():
+    rng = np.random.default_rng(0); y = rng.integers(0, 3, 2000); good = np.full((2000, 3), .2); good[np.arange(2000), y] = .6
+    noise = rng.dirichlet([1, 1, 1], 2000); w = fit_pool([good, noise], y); assert w[0] > 0.8
+    P = recal(good, 1.0, 0.0); assert np.allclose(P, good)
+    T, d = fit_recal(good, y); assert np.allclose(recal(good, T, d).sum(1), 1)
+    assert np.allclose(log_pool([good, good], [0.5, 0.5]), good)
+
+def test_ensemble_v2_matrix_matches_1x2():
+    o = {"j_lh": 1.4, "j_la": 1.0, "j_rho": -0.05, "s_lh": 1.6, "s_la": 0.9, "logit": [0.4, 0.3, 0.3]}
+    cfg = {"alpha": 0.6, "w_core": 0.77, "w_logit": 0.23, "T": 0.9, "d": 0.1}
+    M, p = ensemble_v2(o, cfg); assert abs(M.sum() - 1) < 1e-9 and np.allclose(outcome_probs(M), p)
+    M2, p2 = ensemble_v2({**o, "s_lh": None, "s_la": None}, cfg); assert abs(p2.sum() - 1) < 1e-9
+
+def test_new_league_fixtures_parse(tmp_path, monkeypatch):
+    import ssa.ingest as ing
+    (tmp_path / "new_league_fixtures.csv").write_text("Country,League,Date,Time,Home,Away,AvgH,AvgD,AvgA\nBrazil,Serie A,10/10/2026,20:00,Flamengo RJ,Palmeiras,2.1,3.2,3.6\nNarnia,X,10/10/2026,20:00,A,B,2,3,4\n")
+    monkeypatch.setattr(ing, "RAW", tmp_path); f = ing.load_fixtures()
+    assert list(f.league) == ["BRA"] and f.kickoff_utc6.iloc[0] == "2026-10-10 13:00" and f.fixture_source.iloc[0].endswith("new_league_fixtures.csv")

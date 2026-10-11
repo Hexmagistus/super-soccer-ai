@@ -179,9 +179,12 @@ def backtest(m):
     """Season-ahead backtest (the source has no dates, so no in-season refits are possible): for each test season,
     fit Poisson and Dixon-Coles on ALL usable earlier seasons (season-level decay: weight 0.5 per season back),
     predict every match of the test season, and compare with base rates of the training seasons and 'always home'.
-    Ensemble = fixed 50/50 Poisson/DC (no weight tuning, so no validation season is consumed)."""
+    Ensemble = fixed 50/50 Poisson/DC (no weight tuning, so no validation season is consumed).
+    v0.2: also fits the joint Dixon-Coles with the promoted-team prior ('dcj'); teams new to the PSL get the jointly
+    estimated promoted-team strength instead of the league average. 'ens_v2' = 50/50 Poisson/DCJ. It is adopted for
+    PSL predictions only if it beats 'ens' on the FIRST test season (used as validation, reported as 'v2_gate')."""
     import numpy as np
-    from .models import PoissonModel, DixonColes, outcome_probs
+    from .models import PoissonModel, DixonColes, DixonColesJoint, outcome_probs
     from .backtest import metric_block, ci, y_of, logloss, calibration
     m = m[m.data_status.isin(USABLE)].copy()
     done = sorted(s for s in m.season.unique() if s != season_key(SEASONS[-1]))  # current season is partial
@@ -192,21 +195,27 @@ def backtest(m):
         tr = m[m.season.isin(prev)].copy()
         tr["date"] = [ref - pd.Timedelta(days=365 * (len(prev) - prev.index(s))) for s in tr.season]  # weighting device only
         P = PoissonModel(xi=np.log(2) / 365).fit(tr, ref); D = DixonColes(xi=np.log(2) / 365).fit(tr, ref)
+        J = DixonColesJoint(xi=np.log(2) / 365).fit(tr, ref)
         base = tr.assign(r=np.sign(tr.hg - tr.ag)).r.value_counts(normalize=True).reindex([1, 0, -1]).fillna(0).values
         for r in m[m.season == test].itertuples():
-            pp = outcome_probs(P.predict(r.home, r.away)[0]); pd_ = outcome_probs(D.predict(r.home, r.away)[0])
-            rows.append({"season": test, "hg": r.hg, "ag": r.ag, "poisson": pp, "dc": pd_, "ens": (pp + pd_) / 2, "base": base,
+            pp = outcome_probs(P.predict(r.home, r.away)[0]); pd_ = outcome_probs(D.predict(r.home, r.away)[0]); pj = outcome_probs(J.predict(r.home, r.away)[0])
+            rows.append({"season": test, "hg": r.hg, "ag": r.ag, "poisson": pp, "dc": pd_, "ens": (pp + pd_) / 2, "dcj": pj, "ens_v2": (pp + pj) / 2, "base": base,
                          "home_always": np.array([1.0, 0, 0]), "new_team": int(r.home not in P.idx) + int(r.away not in P.idx)})
     def summ(sub):
         res = {"n_matches": len(sub)}
-        for key in ("poisson", "dc", "ens", "base"): res[key] = metric_block(sub, key)
+        for key in ("poisson", "dc", "dcj", "ens", "ens_v2", "base"): res[key] = metric_block(sub, key)
+        d = [logloss(o["ens_v2"], y_of(o)) - logloss(o["ens"], y_of(o)) for o in sub]; res["v2_minus_v1_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
         ha = [float(y_of(o) == 0) for o in sub]; res["home_always"] = {"n": len(sub), "accuracy": round(float(np.mean(ha)), 4), "accuracy_ci": ci(ha)}
         d = [logloss(o["ens"], y_of(o)) - logloss(o["base"], y_of(o)) for o in sub]
         res["ens_minus_base_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
         res["calibration_bins"], res["ece"] = calibration(sub); return res
     out = summ(rows) if rows else {"n_matches": 0}
-    out["by_season"] = {s: {k: v for k, v in summ([o for o in rows if o["season"] == s]).items() if k in ("n_matches", "ens", "base", "dc", "poisson")}
+    out["by_season"] = {s: {k: v for k, v in summ([o for o in rows if o["season"] == s]).items() if k in ("n_matches", "ens", "ens_v2", "dcj", "base", "dc", "poisson", "v2_minus_v1_logloss")}
                         for s in sorted({o["season"] for o in rows})}
+    if rows:
+        first = out["by_season"][min(out["by_season"])]
+        out["v2_gate"] = {"season": min(out["by_season"]), "ens_v2_log_loss": first["ens_v2"]["log_loss"], "ens_log_loss": first["ens"]["log_loss"],
+                          "adopted": bool(first["ens_v2"]["log_loss"] < first["ens"]["log_loss"])}
     out["method"] = backtest.__doc__.strip()
     out["missing"] = "No odds (no bookmaker benchmark, no value backtest), no shots, no dates (no Elo/form/logit models)."
     out["seasons_used"] = sorted(m.season.unique().tolist())

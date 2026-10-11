@@ -2,12 +2,12 @@
 import json, sqlite3
 from fastapi import FastAPI, HTTPException, Body
 from fastapi.responses import FileResponse
-from ssa.config import DB, REPORTS, SETTINGS, ROOT, MAIN_LEAGUES, EXTRA, EXTRA_UNDATED, UNAVAILABLE, MODEL_VERSION, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
+from ssa.config import DB, REPORTS, SETTINGS, ROOT, MAIN_LEAGUES, EXTRA, EXTRA_UNDATED, FD_MORE, EXTRA_MORE, UNAVAILABLE, MODEL_VERSION, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
 from ssa.markets import SSI_DOC, SSI_WEIGHTS
 from ssa import adapters
 
 app = FastAPI(title="SUPER SOCCER AI", description="Research the Game. Predict the Score. Measure the Evidence.")
-DEFAULT_SETTINGS = {"leagues": list(MAIN_LEAGUES) + list(EXTRA) + list(EXTRA_UNDATED), "timezone": "UTC-6 (Etc/GMT+6)", "betting_module": False}
+DEFAULT_SETTINGS = {"leagues": list(MAIN_LEAGUES) + list(EXTRA) + list(EXTRA_UNDATED) + list(FD_MORE) + list(EXTRA_MORE), "timezone": "UTC-6 (Etc/GMT+6)", "betting_module": False}
 
 def q(sql, args=()):
     con = sqlite3.connect(DB); con.row_factory = sqlite3.Row
@@ -28,11 +28,11 @@ def status():
     counts = q("SELECT league, season, COUNT(*) n, MIN(date) first, MAX(date) last FROM matches GROUP BY league, season ORDER BY league, season")
     preds = latest_preds()
     return {"model_version": MODEL_VERSION, "sources": src, "counts": counts, "unavailable": UNAVAILABLE,
-            "leagues": {**MAIN_LEAGUES, **EXTRA, **EXTRA_UNDATED},
+            "leagues": {**MAIN_LEAGUES, **EXTRA, **EXTRA_UNDATED, **FD_MORE, **EXTRA_MORE},
             "psl": _psl_status(), "optional_api_keys": adapters.status(),
             "mode": "upcoming" if preds else "historical", "n_upcoming": len(preds),
             "predictions_created_at": max((p["created_at"] for p in preds), default=None),
-            "fixtures_source": "https://www.football-data.co.uk/fixtures.csv (main 6 leagues only; no free fixtures for BRA/USA/PSL here - PSL upcoming fixtures unavailable)"}
+            "fixtures_source": "football-data.co.uk fixtures.csv (22 European divisions) + new_league_fixtures.csv (15 other leagues incl. Brazil Serie A and MLS). Unavailable: South Africa PSL, UEFA competitions, internationals, women's football (no free key-less source)"}
 
 def _psl_status():
     try: counts = q("SELECT season, COUNT(*) n, MIN(data_status) data_status, MIN(source_url) source_url FROM psl_matches GROUP BY season ORDER BY season")
@@ -50,8 +50,8 @@ def fixtures(league: str = None, sort: str = "kickoff", desc: bool = False):
     p = latest_preds()
     if league: p = [x for x in p if x["league"] == league]
     key = {"kickoff": lambda x: x["kickoff_utc6"] or x["date"], "league": lambda x: (x["league"], x["kickoff_utc6"] or ""),
-           "probability": lambda x: x["probability"], "ssi": lambda x: x["ssi"],
-           "goals": lambda x: x["markets"]["model_expected_goals"]["total"], "quality": lambda x: x["data_quality"]}.get(sort)
+           "probability": lambda x: x.get("probability", -1), "ssi": lambda x: x.get("ssi", -1),
+           "goals": lambda x: x["markets"]["model_expected_goals"]["total"] if x.get("markets") else -1, "quality": lambda x: x.get("data_quality", "Z")}.get(sort)
     if key: p.sort(key=key, reverse=desc)
     for x in p: x.pop("score_matrix", None)
     return p

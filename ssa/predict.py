@@ -1,7 +1,7 @@
 """Build full prediction payloads for upcoming fixtures using all finished matches before now."""
 import json, datetime as dt, numpy as np, pandas as pd
-from .config import REPORTS, MODEL_VERSION, MAIN_LEAGUES, EXTRA
-from .models import fit_predict, ensemble, MODELS, elo_history
+from .config import REPORTS, MODEL_VERSION, MAIN_LEAGUES, EXTRA, ALL_LEAGUES, BACKTEST_LEAGUES
+from .models import fit_predict, ensemble, ensemble_v2, MODELS, elo_history
 from .markets import markets, value_check, ssi, agreement, quality_grade, categories, SSI_DOC
 
 def load_bt():
@@ -15,8 +15,14 @@ def team_rows(m, team, before, n=5):
 def predict_fixtures(m, fx, now=None):
     bt = load_bt(); now = pd.Timestamp(now or dt.date.today())
     w = bt["weights"] if bt else {k: 0.25 for k in MODELS}
+    cfg = (bt or {}).get("v2")
     validated = set(bt["validated_leagues"]) if bt else set()
     created = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"); out = []
+    if fx.empty: return out
+    # only fixtures that have not kicked off yet (a prediction made after kickoff is not a pre-match prediction)
+    now_local = pd.Timestamp.now(tz="Etc/GMT+6").tz_localize(None)
+    ko = pd.to_datetime(fx.kickoff_utc6, errors="coerce").fillna(fx.date + pd.Timedelta(hours=23, minutes=59))
+    fx = fx[ko > now_local]
     if fx.empty: return out
     # pre-match Elo for fixtures: final ratings after all finished matches
     _, _, ratings = elo_history(m[m.hg.notna()])
@@ -24,7 +30,15 @@ def predict_fixtures(m, fx, now=None):
         L = m[(m.league == lg) & m.hg.notna()]
         ref = grp.date.min()
         train = L[(L.date < ref) & (L.date >= ref - pd.Timedelta(days=3 * 365))]
-        if len(train) < 200: continue
+        if len(train) < 200:   # listed, never predicted
+            for r in grp.itertuples(index=False):
+                out.append({"match_id": r.match_id, "league": lg, "league_name": ALL_LEAGUES.get(lg, lg), "date": str(r.date.date()),
+                            "kickoff_utc6": r.kickoff_utc6, "home": r.home, "away": r.away, "created_at": created, "model_version": MODEL_VERSION,
+                            "predicted": False, "categories": ["insufficient data"],
+                            "reason": f"only {len(train)} finished matches of this league in the 3-year training window (200 required)",
+                            "fixture_source": r.fixture_source, "fixture_fetched_at": r.fixture_fetched_at,
+                            "odds": {"home": _f(r.oh), "draw": _f(r.od), "away": _f(r.oa)}})
+            continue
         g = grp.copy(); g["elo_h"] = g.home.map(ratings).fillna(1500.0); g["elo_a"] = g.away.map(ratings).fillna(1500.0); g["elo_diff"] = g.elo_h - g.elo_a
         # latest available rolling-form features for each team (pre-match by construction: only past matches)
         for side, col in (("h", "home"), ("a", "away")):
@@ -33,7 +47,7 @@ def predict_fixtures(m, fx, now=None):
         outs = fit_predict(train, g, ref)
         lgbt = (bt or {}).get("by_league", {}).get(lg)
         for r, o in zip(g.itertuples(index=False), outs):
-            M, p = ensemble(o, w); mk = markets(M)
+            M, p = ensemble_v2(o, cfg) if cfg else ensemble(o, w); mk = markets(M)
             last = lambda t: L[(L.home == t) | (L.away == t)].date.max()
             days = max((ref - last(r.home)).days, (ref - last(r.away)).days)
             nmin = min(o["n_home"], o["n_away"])
@@ -44,7 +58,8 @@ def predict_fixtures(m, fx, now=None):
             score, f = ssi(factors)
             pick = ["home", "draw", "away"][int(np.argmax(p))]
             val = value_check(p, [r.oh, r.od, r.oa], lg in validated and nmin >= 20) if np.isfinite(r.oh) else None
-            out.append({"match_id": r.match_id, "league": lg, "league_name": MAIN_LEAGUES.get(lg, EXTRA.get(lg, lg)),
+            out.append({"match_id": r.match_id, "league": lg, "league_name": ALL_LEAGUES.get(lg, lg), "predicted": True,
+                "backtested": lg in BACKTEST_LEAGUES, "fixture_source": r.fixture_source, "fixture_fetched_at": r.fixture_fetched_at,
                 "date": str(r.date.date()), "kickoff_utc6": r.kickoff_utc6, "home": r.home, "away": r.away,
                 "created_at": created, "model_version": MODEL_VERSION,
                 "predicted_outcome": pick, "probability": float(max(p)),
@@ -54,8 +69,8 @@ def predict_fixtures(m, fx, now=None):
                 "per_model_1x2": {k: [round(float(x), 4) for x in o[k]] for k in MODELS},
                 "categories": categories(mk, nmin), "value": val,
                 "odds": {"home": _f(r.oh), "draw": _f(r.od), "away": _f(r.oa), "over25": _f(r.o25), "under25": _f(r.u25),
-                         "source": "football-data.co.uk fixtures.csv (average pre-match odds)"},
-                "notes": ["Model expected goals are model outputs, not shot-based xG (no real xG data source is used).",
+                         "source": f"{r.fixture_source} (average pre-match odds)"},
+                "notes": ["Model expected goals are model outputs. The model blends goal-based Dixon-Coles ratings with shots-on-target ratings, an xG PROXY - no real xG data source is used."] + ([] if lg in BACKTEST_LEAGUES else ["This league is NOT part of the walk-forward backtest: accuracy here is unmeasured and value flags are disabled."]) + [
                           f"Most likely score has only {mk['top_scores'][0]['p']:.1%} probability."],
                 "form_home": team_rows(m, r.home, ref), "form_away": team_rows(m, r.away, ref),
                 "h2h": [x for x in team_rows(m, r.home, ref, 400) if r.away in (x["home"], x["away"])][-6:],

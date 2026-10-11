@@ -3,8 +3,9 @@ seasons, all models are refit on matches dated BEFORE that week's first day and 
 (Weekly refit ~= matchday refit; a few midweek rounds share a refit with the preceding weekend, which only
 makes the model slightly staler, never leaky.)"""
 import json, itertools, numpy as np, pandas as pd
-from .config import REPORTS, MAIN_LEAGUES, EXTRA, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
-from .models import fit_predict, ensemble, MODELS, outcome_probs
+from .config import REPORTS, MAIN_LEAGUES, EXTRA, BACKTEST_LEAGUES, VALUE_MIN_EDGE, VALUE_MIN_EV, VALUE_MAX_ODDS
+from .models import fit_predict, ensemble, ensemble_v2, v2_lambdas, MODELS, outcome_probs, score_matrix, add_features
+from .stack import fit_pool, fit_recal, log_pool, _ll
 from .markets import implied
 
 RNG = np.random.default_rng(42)
@@ -14,24 +15,33 @@ def bt_seasons(m, league):
     s = sorted(m[m.league == league].season.unique())
     return s[-4:]  # first = validation (ensemble weights), rest = test
 
-def run_walkforward(m):
-    rows = []
-    for lg in m.league.unique():
-        seasons = bt_seasons(m, lg); L = m[m.league == lg]
-        target = L[L.season.isin(seasons) & L.hg.notna()]
-        for wk, grp in target.groupby(target.date.dt.to_period("W-SUN")):
-            start = wk.start_time
-            train = L[(L.date < start) & (L.date >= start - pd.Timedelta(days=WINDOW_DAYS)) & L.hg.notna()]
-            if len(train) < 200: continue
-            for r, o in zip(grp.itertuples(index=False), fit_predict(train, grp, start)):
-                o.update({"match_id": r.match_id, "league": lg, "season": r.season, "date": str(r.date.date()),
-                          "home": r.home, "away": r.away, "hg": int(r.hg), "ag": int(r.ag), "val": r.season == seasons[0],
-                          "ch": r.ch, "cd": r.cd, "ca": r.ca, "oh": r.oh, "od": r.od, "oa": r.oa,
-                          "base": train.assign(res=np.sign(train.hg - train.ag)).res.value_counts(normalize=True).reindex([1, 0, -1]).fillna(0).values,
-                          "train_mean_goals": float((train.hg + train.ag).mean())})
-                rows.append(o)
-        print("backtested", lg, len(rows), flush=True)
+def _walk_league(args):
+    m, lg = args; rows = []
+    seasons = bt_seasons(m, lg); L = m[m.league == lg]
+    target = L[L.season.isin(seasons) & L.hg.notna()]
+    for wk, grp in target.groupby(target.date.dt.to_period("W-SUN")):
+        start = wk.start_time
+        train = L[(L.date < start) & (L.date >= start - pd.Timedelta(days=WINDOW_DAYS)) & L.hg.notna()]
+        if len(train) < 200: continue
+        for r, o in zip(grp.itertuples(index=False), fit_predict(train, grp, start)):
+            o.update({"match_id": r.match_id, "league": lg, "season": r.season, "date": str(r.date.date()),
+                      "home": r.home, "away": r.away, "hg": int(r.hg), "ag": int(r.ag), "val": r.season == seasons[0],
+                      "ch": r.ch, "cd": r.cd, "ca": r.ca, "oh": r.oh, "od": r.od, "oa": r.oa,
+                      "base": train.assign(res=np.sign(train.hg - train.ag)).res.value_counts(normalize=True).reindex([1, 0, -1]).fillna(0).values,
+                      "train_mean_goals": float((train.hg + train.ag).mean())})
+            rows.append(o)
+    print("backtested", lg, len(rows), flush=True)
     return rows
+
+def run_walkforward(m, processes=8):
+    """Leagues are independent, so they run in parallel; inside each league training rows are strictly
+    earlier than the predicted week (see _walk_league: L.date < start)."""
+    from multiprocessing import get_context
+    jobs = [(m, lg) for lg in m.league.unique()]
+    if processes > 1:
+        with get_context("fork").Pool(min(processes, len(jobs))) as p: parts = p.map(_walk_league, jobs)
+    else: parts = [_walk_league(j) for j in jobs]
+    return [o for part in parts for o in part]
 
 def y_of(o): return 0 if o["hg"] > o["ag"] else 1 if o["hg"] == o["ag"] else 2
 
@@ -48,20 +58,50 @@ def choose_weights(rows):
         if best is None or ll < best[0]: best = (ll, w)
     return dict(zip(MODELS, [round(float(x), 2) for x in best[1]])), float(best[0]), len(val)
 
-def ci(x, n=1000):
+def ci(x, n=1000, digits=4):
+    """Bootstrap 95% CI of the mean. For paired differences pass the per-match differences (paired bootstrap)."""
     x = np.asarray(x, float)
     if len(x) == 0: return [None, None]
     b = [x[RNG.integers(0, len(x), len(x))].mean() for _ in range(n)]
-    return [round(float(np.percentile(b, 2.5)), 4), round(float(np.percentile(b, 97.5)), 4)]
+    return [round(float(np.percentile(b, 2.5)), digits), round(float(np.percentile(b, 97.5)), digits)]
 
-def evaluate(rows, w):
+ALPHAS = [1.0, 0.8, 0.7, 0.6, 0.5, 0.4, 0.2]
+
+def _v2_core(o, a): return outcome_probs(score_matrix(*v2_lambdas(o, a), o["j_rho"]))
+
+def fair_prematch(o):
+    odds = [o["oh"], o["od"], o["oa"]]; return implied(odds)[1] if all(np.isfinite(odds)) else None
+
+def choose_v2(rows):
+    """All on the VALIDATION season only: (1) alpha of the DCJ/SOT lambda blend by log loss, (2) linear-pool weights
+    of core + logistic by log loss, (3) temperature T and draw shift d by log loss, (4) separately, the log-pool
+    weights of the 'model + market' variant (v0.2 model and average PRE-CLOSING odds)."""
+    val = [o for o in rows if o["val"]]; y = np.array([y_of(o) for o in val])
+    alpha = min(ALPHAS, key=lambda a: _ll(np.array([_v2_core(o, a) for o in val]), y))
+    C = np.array([_v2_core(o, alpha) for o in val]); Lg = np.array([o["logit"] for o in val])
+    w = fit_pool([C, Lg], y); T, d = fit_recal(w[0] * C + w[1] * Lg, y)
+    cfg = {"alpha": float(alpha), "w_core": float(w[0]), "w_logit": float(w[1]), "T": T, "d": d}
+    P = np.array([ensemble_v2(o, cfg)[1] for o in val]); cfg["val_log_loss"] = float(_ll(P, y)); cfg["n_val"] = len(val)
+    mk = [fair_prematch(o) for o in val]; ok = np.array([m is not None for m in mk])
+    from scipy.optimize import minimize
+    MK = np.array([m for m in mk if m is not None])
+    r = minimize(lambda z: _ll(log_pool([P[ok], MK], z), y[ok]), [0.5, 0.5], method="Nelder-Mead")
+    cfg["market"] = {"w_model": float(r.x[0]), "w_market": float(r.x[1]), "val_log_loss": float(r.fun), "n_val": int(ok.sum()),
+                     "val_market_only_log_loss": float(_ll(MK, y[ok])), "odds": "average pre-closing odds (football-data Avg/BbAv columns), NOT closing"}
+    return cfg
+
+def evaluate(rows, w, cfg=None):
     test = [o for o in rows if not o["val"]]
     for o in test:
-        M, p = ensemble(o, w); o["ens"] = p; i, j = np.unravel_index(M.argmax(), M.shape)
+        M, p = ensemble(o, w); o["ens_v01"] = p
+        if cfg: M, p = ensemble_v2(o, cfg)
+        o["ens"] = p; i, j = np.unravel_index(M.argmax(), M.shape)
         o["top_score"] = f"{i}-{j}"; o["top_p"] = float(M.max())
         o["exp_goals"] = float((np.indices(M.shape).sum(0) * M).sum())
         bk = [o["ch"], o["cd"], o["ca"]]
         o["book"] = implied(bk)[1] if all(np.isfinite(bk)) else None
+        fm = fair_prematch(o); o["book_pre"] = fm
+        o["ens_market"] = log_pool([np.asarray(p)[None, :], fm[None, :]], [cfg["market"]["w_model"], cfg["market"]["w_market"]])[0] if (cfg and fm is not None) else None
     return test
 
 def metric_block(sub, key):
@@ -87,7 +127,10 @@ def calibration(sub, key="ens", bins=10):
 def summarize(sub):
     res = {"n_matches": len(sub)}
     for o in sub: o["home_always"] = np.array([1.0, 0, 0])
-    for k in MODELS + ["ens", "base"]: res[k] = metric_block(sub, k)
+    for k in MODELS + ["ens", "base"] + (["ens_v01"] if "ens_v01" in sub[0] else []): res[k] = metric_block(sub, k)
+    if "ens_v01" in sub[0]:
+        d = [logloss(o["ens"], y_of(o)) - logloss(o["ens_v01"], y_of(o)) for o in sub]; dr = [rps(o["ens"], y_of(o)) - rps(o["ens_v01"], y_of(o)) for o in sub]
+        res["v02_minus_v01"] = {"log_loss": round(float(np.mean(d)), 4), "log_loss_ci": ci(d), "rps": round(float(np.mean(dr)), 5), "rps_ci": ci(dr, digits=5)}
     ha = [float(y_of(o) == 0) for o in sub]; res["home_always"] = {"n": len(sub), "accuracy": round(float(np.mean(ha)), 4), "accuracy_ci": ci(ha), "note": "log loss undefined (p=0 events)"}
     bsub = [o for o in sub if o["book"] is not None]
     if bsub:
@@ -95,6 +138,17 @@ def summarize(sub):
         res["bookmaker_closing"] = metric_block(bsub, "bookp"); res["ensemble_on_same_matches"] = metric_block(bsub, "ens")
         d = [logloss(o["ens"], y_of(o)) - logloss(o["book"], y_of(o)) for o in bsub]
         res["ens_minus_book_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
+        dr = [rps(o["ens"], y_of(o)) - rps(o["book"], y_of(o)) for o in bsub]; res["ens_minus_book_rps"] = {"mean": round(float(np.mean(dr)), 5), "ci": ci(dr, digits=5)}
+        if "ens_v01" in bsub[0]:
+            res["ens_v01_on_same_matches"] = metric_block(bsub, "ens_v01")
+            d = [logloss(o["ens_v01"], y_of(o)) - logloss(o["book"], y_of(o)) for o in bsub]; res["ens_v01_minus_book_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
+    msub = [o for o in sub if o.get("ens_market") is not None and o["book"] is not None]
+    if msub:
+        for o in msub: o["bookp"] = o["book"]; o["bookpre"] = o["book_pre"]
+        res["model_plus_market"] = metric_block(msub, "ens_market"); res["bookmaker_prematch_avg"] = metric_block(msub, "bookpre")
+        res["bookmaker_closing_on_market_subset"] = metric_block(msub, "bookp")
+        d = [logloss(o["ens_market"], y_of(o)) - logloss(o["book"], y_of(o)) for o in msub]; res["model_plus_market_minus_closing_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
+        d = [logloss(o["ens_market"], y_of(o)) - logloss(o["book_pre"], y_of(o)) for o in msub]; res["model_plus_market_minus_prematch_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
     d = [logloss(o["ens"], y_of(o)) - logloss(o["base"], y_of(o)) for o in sub]
     res["ens_minus_base_logloss"] = {"mean": round(float(np.mean(d)), 4), "ci": ci(d)}
     ex = [float(o["top_score"] == f"{o['hg']}-{o['ag']}") for o in sub]
@@ -104,7 +158,7 @@ def summarize(sub):
     res["calibration_bins"], res["ece"] = calibration(sub)
     return res
 
-def value_backtest(sub, validated_leagues=None):
+def value_backtest(sub, validated_leagues=None, key="ens"):
     """Bet 1 unit when edge >= VALUE_MIN_EDGE, EV >= VALUE_MIN_EV, odds <= VALUE_MAX_ODDS, using average
     PRE-CLOSING odds (Avg columns) - the price available when football-data collected it. Extra leagues lack
     pre-closing odds and are excluded."""
@@ -115,7 +169,8 @@ def value_backtest(sub, validated_leagues=None):
         if not all(np.isfinite(odds)): continue
         fair = implied(odds)[1]; y = y_of(o)
         for k in range(3):
-            p = o["ens"][k]
+            if o.get(key) is None: break
+            p = o[key][k]
             if p - fair[k] >= VALUE_MIN_EDGE and p * odds[k] - 1 >= VALUE_MIN_EV and odds[k] <= VALUE_MAX_ODDS:
                 bets.append({"league": o["league"], "profit": odds[k] - 1 if k == y else -1.0, "odds": odds[k]})
     pr = [b["profit"] for b in bets]
@@ -124,10 +179,14 @@ def value_backtest(sub, validated_leagues=None):
             "rule": f"edge>={VALUE_MIN_EDGE}, EV>={VALUE_MIN_EV}, odds<={VALUE_MAX_ODDS}, average pre-closing odds, 1 unit flat"}
 
 def run(m, psl_matches=None):
+    m = m[m.league.isin(BACKTEST_LEAGUES)].reset_index(drop=True)
+    m = add_features(m)  # recompute on backtest leagues only (Elo identical to v0.1)
     rows = run_walkforward(m)
     w, val_ll, n_val = choose_weights(rows)
-    test = evaluate(rows, w)
-    out = {"weights": w, "validation": {"n": n_val, "log_loss": round(val_ll, 4), "note": "first backtest season of each league"},
+    cfg = choose_v2(rows)
+    test = evaluate(rows, w, cfg)
+    out = {"model_version": "ssa-0.2.0", "weights_v01": w, "weights": w, "v2": cfg,
+           "validation": {"n": n_val, "log_loss": round(cfg["val_log_loss"], 4), "log_loss_v01": round(val_ll, 4), "note": "first backtest season of each league"},
            "overall": summarize(test), "by_league": {}, "by_season": {}, "by_league_season": {}}
     for lg in sorted({o["league"] for o in test}):
         out["by_league"][lg] = summarize([o for o in test if o["league"] == lg])
@@ -144,6 +203,8 @@ def run(m, psl_matches=None):
     out["value_rule_all_leagues"] = value_backtest(test)
     out["value_rule_validated_only"] = value_backtest(test, set(validated))
     out["value_rule_by_league"] = {lg: value_backtest([o for o in test if o["league"] == lg]) for lg in out["by_league"]}
+    out["value_rule_v01_all_leagues"] = value_backtest(test, key="ens_v01")
+    out["value_rule_model_plus_market_all_leagues"] = value_backtest(test, key="ens_market")
     if psl_matches is not None and len(psl_matches):
         from . import psl
         out["psl"] = psl.backtest(psl_matches)
@@ -158,31 +219,40 @@ def fmt(b, k): return f"{b[k]:.4f} [{b[k+'_ci'][0]:.4f}, {b[k+'_ci'][1]:.4f}]"
 
 def to_md(r):
     o = r["overall"]; L = ["# SUPER SOCCER AI - walk-forward backtest", "",
-        f"Ensemble weights (chosen on validation season, n={r['validation']['n']}): {r['weights']}", "",
+        f"Model {r.get('model_version','')}. v0.2 combination (all chosen on the validation season, n={r['validation']['n']}): {r.get('v2')}", "",
+        f"v0.1 ensemble weights (kept as the 'before' baseline): {r['weights']}", "",
         f"Test matches: {o['n_matches']}. 95% bootstrap CIs in brackets.", "",
         "| Model | n | Accuracy | Log loss | Brier | RPS |", "|---|---|---|---|---|---|"]
-    names = {"ens": "Ensemble", "poisson": "Poisson", "dc": "Dixon-Coles", "elo": "Elo", "logit": "Logistic", "base": "Base rates", "bookmaker_closing": "Bookmaker closing (subset)", "ensemble_on_same_matches": "Ensemble (same subset)"}
+    names = {"ens": "Ensemble v0.2", "ens_v01": "Ensemble v0.1 (before)", "poisson": "Poisson", "dc": "Dixon-Coles", "elo": "Elo", "logit": "Logistic", "base": "Base rates", "bookmaker_closing": "Bookmaker closing (subset)", "ensemble_on_same_matches": "Ensemble v0.2 (same subset)", "ens_v01_on_same_matches": "Ensemble v0.1 (same subset)",
+             "model_plus_market": "Model + market (pre-closing avg odds)", "bookmaker_prematch_avg": "Bookmaker pre-closing avg (market subset)",
+             "bookmaker_closing_on_market_subset": "Bookmaker closing (market subset)"}
     for k, nm in names.items():
         if k in o: b = o[k]; L.append(f"| {nm} | {b['n']} | {fmt(b,'accuracy')} | {fmt(b,'log_loss')} | {fmt(b,'brier')} | {fmt(b,'rps')} |")
     L.append(f"| Home always | {o['home_always']['n']} | {fmt(o['home_always'],'accuracy')} | - | - | - |")
-    L += ["", f"Ensemble minus bookmaker log loss: {o.get('ens_minus_book_logloss')}", f"Ensemble minus base-rate log loss: {o['ens_minus_base_logloss']}",
+    L += ["", f"v0.2 minus v0.1 (paired bootstrap 95% CI): {o.get('v02_minus_v01')}",
+          f"v0.1 minus bookmaker closing log loss: {o.get('ens_v01_minus_book_logloss')}", f"v0.2 minus bookmaker closing RPS: {o.get('ens_minus_book_rps')}",
+          f"Model+market minus closing log loss: {o.get('model_plus_market_minus_closing_logloss')}; minus pre-closing: {o.get('model_plus_market_minus_prematch_logloss')}",
+          f"Ensemble minus bookmaker log loss: {o.get('ens_minus_book_logloss')}", f"Ensemble minus base-rate log loss: {o['ens_minus_base_logloss']}",
           f"Exact-score hit rate (top score): {o['exact_score_hit_rate']}", f"Total goals MAE: {o['goals_mae']}", f"ECE: {o['ece']}", "",
           "## Calibration (all outcomes pooled)", "", "| bin | n | mean predicted | observed |", "|---|---|---|---|"]
     L += [f"| {c['bin']} | {c['n']} | {c['mean_pred']} | {c['observed']} |" for c in o["calibration_bins"]]
-    L += ["", "## By league", "", "| League | n | Ens log loss | Base log loss | Book log loss | Ens acc | Book acc | ECE |", "|---|---|---|---|---|---|---|---|"]
+    L += ["", "## By league", "", "| League | n | v0.2 log loss | v0.1 log loss | v0.2-v0.1 [95% CI] | v0.2 RPS | v0.1 RPS | Base LL | Book closing LL (subset) | v0.2-book [95% CI] | ECE |", "|---|---|---|---|---|---|---|---|---|---|---|"]
     for lg, b in r["by_league"].items():
-        bk = b.get("bookmaker_closing", {}); L.append(f"| {lg} | {b['n_matches']} | {fmt(b['ens'],'log_loss')} | {b['base']['log_loss']} | {bk.get('log_loss','n/a')} | {b['ens']['accuracy']} | {bk.get('accuracy','n/a')} | {b['ece']} |")
+        bk = b.get("bookmaker_closing", {}); dv = b.get("v02_minus_v01"); db = b.get("ens_minus_book_logloss")
+        L.append(f"| {lg} | {b['n_matches']} | {fmt(b['ens'],'log_loss')} | {b.get('ens_v01',{}).get('log_loss','-')} | {(str(dv['log_loss']) + ' ' + str(dv['log_loss_ci'])) if dv else '-'} | {b['ens']['rps']} | {b.get('ens_v01',{}).get('rps','-')} | {b['base']['log_loss']} | {bk.get('log_loss','n/a')} | {(str(db['mean']) + ' ' + str(db['ci'])) if db else '-'} | {b['ece']} |")
     L += ["", "## By league and season", "", "| League season | n | Ens LL | Base LL | Book LL | Ens RPS | Book RPS |", "|---|---|---|---|---|---|---|"]
     for k, b in r["by_league_season"].items():
         bk = b.get("bookmaker_closing", {}); L.append(f"| {k} | {b['n_matches']} | {b['ens']['log_loss']} | {b['base']['log_loss']} | {bk.get('log_loss','n/a')} | {b['ens']['rps']} | {bk.get('rps','n/a')} |")
-    L += ["", "## Value rule ROI", "", f"All leagues: {r['value_rule_all_leagues']}", "", f"Validated leagues only ({r['validated_leagues']}): {r['value_rule_validated_only']}", "",
+    L += ["", "## Value rule ROI (test seasons, average pre-closing odds)", "", f"v0.2, all leagues: {r['value_rule_all_leagues']}", "",
+          f"v0.1, all leagues: {r.get('value_rule_v01_all_leagues')}", "", f"Model + market variant, all leagues: {r.get('value_rule_model_plus_market_all_leagues')}", "", f"Validated leagues only ({r['validated_leagues']}): {r['value_rule_validated_only']}", "",
           "By league:", ""] + [f"- {k}: {v}" for k, v in r["value_rule_by_league"].items()]
     if r.get("psl"):
         p = r["psl"]; L += ["", "## South Africa PSL (season-ahead, separate method)", "", p["method"], "",
              f"Test matches: {p['n_matches']} (seasons {list(p['by_season'])}); data seasons used: {p['seasons_used']}", ""]
-        for k in ("ens", "poisson", "dc", "base"):
+        for k in ("ens", "ens_v2", "poisson", "dc", "dcj", "base"):
+            if k not in p: continue
             L.append(f"- {k}: log loss {fmt(p[k], 'log_loss')}, RPS {fmt(p[k], 'rps')}, Brier {fmt(p[k], 'brier')}, accuracy {fmt(p[k], 'accuracy')}")
         L += [f"- always home: accuracy {p['home_always']['accuracy']} {p['home_always']['accuracy_ci']}",
-              f"- ensemble minus base log loss: {p['ens_minus_base_logloss']}; ECE {p['ece']}", f"- missing: {p['missing']}"]
+              f"- ensemble minus base log loss: {p['ens_minus_base_logloss']}; ECE {p['ece']}", f"- v2 (Poisson/DCJ) minus v1: {p.get('v2_minus_v1_logloss')}; gate: {p.get('v2_gate')}", f"- missing: {p['missing']}"]
     L += ["", "Past performance does not guarantee future results. No betting outcome is guaranteed."]
     return "\n".join(L)

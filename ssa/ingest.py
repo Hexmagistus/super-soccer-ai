@@ -8,11 +8,12 @@ NOW = lambda: dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 def _targets():
     for s in SEASONS:
-        for l in MAIN_LEAGUES:
+        for l in list(MAIN_LEAGUES) + list(FD_MORE):
             yield f"{l}_{s}.csv", f"{BASE}/mmz4281/{s}/{l}.csv"
-    for c in EXTRA:
+    for c in list(EXTRA) + list(EXTRA_MORE):
         yield f"X_{c}.csv", f"{BASE}/new/{c}.csv"
     yield "fixtures.csv", f"{BASE}/fixtures.csv"
+    yield "new_league_fixtures.csv", f"{BASE}/new_league_fixtures.csv"
 
 def download(force=False, max_age_h=12):
     """Cache: skip files younger than max_age_h unless force. Records HTTP Last-Modified + fetch time."""
@@ -101,11 +102,11 @@ def load_all():
     meta = json.loads((RAW / "_meta.json").read_text()) if (RAW / "_meta.json").exists() else {}
     frames, sources = [], []
     for s in SEASONS:
-        for l in MAIN_LEAGUES:
+        for l in list(MAIN_LEAGUES) + list(FD_MORE):
             fn = f"{l}_{s}.csv"; p = RAW / fn
             if not p.exists(): continue
             frames.append(normalize_main(_read(p), l, s, fn))
-    for c in EXTRA:
+    for c in list(EXTRA) + list(EXTRA_MORE):
         fn = f"X_{c}.csv"; p = RAW / fn
         if p.exists(): frames.append(normalize_extra(_read(p), c, fn))
     m, dropped = validate(pd.concat(frames, ignore_index=True))
@@ -118,15 +119,32 @@ def load_all():
                         "latest_match": str(sub.date.max().date()) if len(sub) else None, "error": info.get("error")})
     return m, pd.DataFrame(sources), dropped
 
+def _fix_meta(fn):
+    meta = json.loads((RAW / "_meta.json").read_text()) if (RAW / "_meta.json").exists() else {}
+    return meta.get(fn, {}).get("url", f"{BASE}/{fn}"), meta.get(fn, {}).get("fetched_at")
+
 def load_fixtures():
+    """Upcoming fixtures from football-data.co.uk: fixtures.csv (22 European divisions, 'Div' codes) and
+    new_league_fixtures.csv (15 other leagues incl. Brazil Serie A and MLS, 'Country' column). Kickoff times are
+    UK local time in both files and are converted to UTC-6. Every row carries its source URL + fetch time."""
+    frames = []
     p = RAW / "fixtures.csv"
-    if not p.exists(): return pd.DataFrame()
-    df = _read(p)
-    df = df[df["Div"].isin(MAIN_LEAGUES)]
-    f = pd.DataFrame({"league": df.Div, "date": pd.to_datetime(df.Date, dayfirst=True, format="mixed"),
-                      "time": df.Time, "home": df.HomeTeam, "away": df.AwayTeam,
-                      "oh": _first(df, ["AvgH", "B365H"]), "od": _first(df, ["AvgD", "B365D"]), "oa": _first(df, ["AvgA", "B365A"]),
-                      "o25": _first(df, ["Avg>2.5"]), "u25": _first(df, ["Avg<2.5"])})
+    if p.exists():
+        df = _read(p); df = df[df["Div"].isin({**MAIN_LEAGUES, **FD_MORE})]
+        url, ts = _fix_meta("fixtures.csv")
+        frames.append(pd.DataFrame({"league": df.Div, "date": pd.to_datetime(df.Date, dayfirst=True, format="mixed"), "time": df.Time,
+            "home": df.HomeTeam, "away": df.AwayTeam, "oh": _first(df, ["AvgH", "B365H"]), "od": _first(df, ["AvgD", "B365D"]),
+            "oa": _first(df, ["AvgA", "B365A"]), "o25": _first(df, ["Avg>2.5"]), "u25": _first(df, ["Avg<2.5"]),
+            "fixture_source": url, "fixture_fetched_at": ts}))
+    p = RAW / "new_league_fixtures.csv"
+    if p.exists():
+        df = _read(p); df = df[df["Country"].isin(NEW_FIX_COUNTRY)]
+        url, ts = _fix_meta("new_league_fixtures.csv")
+        frames.append(pd.DataFrame({"league": df.Country.map(NEW_FIX_COUNTRY), "date": pd.to_datetime(df.Date, dayfirst=True, format="mixed"),
+            "time": df.Time, "home": df.Home, "away": df.Away, "oh": _first(df, ["AvgH", "B365H"]), "od": _first(df, ["AvgD", "B365D"]),
+            "oa": _first(df, ["AvgA", "B365A"]), "o25": np.nan, "u25": np.nan, "fixture_source": url, "fixture_fetched_at": ts}))
+    if not frames: return pd.DataFrame()
+    f = pd.concat(frames, ignore_index=True)
     ko = pd.to_datetime(f.date.dt.strftime("%Y-%m-%d") + " " + f.time.fillna("00:00"))
     f["kickoff_utc6"] = ko.dt.tz_localize(SOURCE_TZ, ambiguous="NaT", nonexistent="NaT").dt.tz_convert(USER_TZ).dt.strftime("%Y-%m-%d %H:%M")
     f["match_id"] = [match_id(*r) for r in f[["league", "date", "home", "away"]].itertuples(index=False)]
