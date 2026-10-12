@@ -18,12 +18,12 @@
   "w_logit": 0.23400388119601412,
   "T": 0.9032678956981768,
   "d": 0.10611251112664781,
-  "val_log_loss": 1.0035420970671318,
+  "val_log_loss": 1.0035420968935516,
   "n_val": 3205,
   "market": {
    "w_model": -0.2625802117515806,
    "w_market": 1.3821709644432099,
-   "val_log_loss": 0.9673824455491911,
+   "val_log_loss": 0.9673824456130709,
    "n_val": 2304,
    "val_market_only_log_loss": 0.9696827142157589,
    "odds": "average pre-closing odds (football-data Avg/BbAv columns), NOT closing"
@@ -6896,7 +6896,7 @@
    "ens_log_loss": 1.0273,
    "adopted": true
   },
-  "method": "Season-ahead backtest (the source has no dates, so no in-season refits are possible): for each test season,\nfit Poisson and Dixon-Coles on ALL usable earlier seasons (season-level decay: weight 0.5 per season back),\npredict every match of the test season, and compare with base rates of the training seasons and 'always home'.\nEnsemble = fixed 50/50 Poisson/DC (no weight tuning, so no validation season is consumed).\nv0.2: also fits the joint Dixon-Coles with the promoted-team prior ('dcj'); teams new to the PSL get the jointly\nestimated promoted-team strength instead of the league average. 'ens_v2' = 50/50 Poisson/DCJ. It is adopted for\nPSL predictions only if it beats 'ens' on the FIRST test season (used as validation, reported as 'v2_gate').",
+  "method": "Season-ahead backtest (the source has no dates, so no in-season refits are possible): for each test season,\n    fit Poisson and Dixon-Coles on ALL usable earlier seasons (season-level decay: weight 0.5 per season back),\n    predict every match of the test season, and compare with base rates of the training seasons and 'always home'.\n    Ensemble = fixed 50/50 Poisson/DC (no weight tuning, so no validation season is consumed).\n    v0.2: also fits the joint Dixon-Coles with the promoted-team prior ('dcj'); teams new to the PSL get the jointly\n    estimated promoted-team strength instead of the league average. 'ens_v2' = 50/50 Poisson/DCJ. It is adopted for\n    PSL predictions only if it beats 'ens' on the FIRST test season (used as validation, reported as 'v2_gate').",
   "missing": "No odds (no bookmaker benchmark, no value backtest), no shots, no dates (no Elo/form/logit models).",
   "seasons_used": [
    "2022-23",
