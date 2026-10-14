@@ -656,23 +656,150 @@
    "complete": false,
    "table_check": {
     "teams_checked": 16,
-    "teams_matching": 16,
-    "mismatches": []
+    "teams_matching": 9,
+    "mismatches": [
+     {
+      "team": "AmaZulu",
+      "table": [
+       6,
+       1,
+       1,
+       12,
+       8
+      ],
+      "matrix": [
+       5,
+       1,
+       1,
+       10,
+       7
+      ],
+      "match": false
+     },
+     {
+      "team": "TS Galaxy",
+      "table": [
+       1,
+       3,
+       4,
+       7,
+       12
+      ],
+      "matrix": [
+       1,
+       3,
+       3,
+       7,
+       9
+      ],
+      "match": false
+     },
+     {
+      "team": "Kaizer Chiefs",
+      "table": [
+       3,
+       5,
+       0,
+       13,
+       8
+      ],
+      "matrix": [
+       3,
+       4,
+       0,
+       12,
+       7
+      ],
+      "match": false
+     },
+     {
+      "team": "Mamelodi Sundowns",
+      "table": [
+       7,
+       2,
+       0,
+       23,
+       8
+      ],
+      "matrix": [
+       6,
+       2,
+       0,
+       19,
+       7
+      ],
+      "match": false
+     },
+     {
+      "team": "Orlando Pirates",
+      "table": [
+       7,
+       1,
+       0,
+       19,
+       1
+      ],
+      "matrix": [
+       6,
+       1,
+       0,
+       16,
+       1
+      ],
+      "match": false
+     },
+     {
+      "team": "Durban City",
+      "table": [
+       1,
+       4,
+       3,
+       5,
+       7
+      ],
+      "matrix": [
+       1,
+       4,
+       2,
+       4,
+       5
+      ],
+      "match": false
+     },
+     {
+      "team": "Stellenbosch",
+      "table": [
+       2,
+       4,
+       2,
+       9,
+       8
+      ],
+      "matrix": [
+       2,
+       3,
+       2,
+       8,
+       7
+      ],
+      "match": false
+     }
+    ]
    },
-   "data_status": "verified",
+   "data_status": "failed_consistency",
    "goals_per_match": 2.281,
    "home_win_rate": 0.316,
-   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1378419473",
-   "revid": 1378419473,
-   "revision_timestamp": "2026-10-04T11:00:10Z",
-   "fetched_at": "2026-10-13T12:44:53+00:00",
+   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380195219",
+   "revid": 1380195219,
+   "revision_timestamp": "2026-10-14T09:46:59Z",
+   "fetched_at": "2026-10-14T10:13:25+00:00",
    "update_field": "20 September 2026"
   }
  },
  "cross_check_openfootball_2024_25": {
   "ok": true,
   "source": "https://raw.githubusercontent.com/openfootball/world/master/africa/south-africa/2024-25_za1.txt",
-  "fetched_at": "2026-10-13T12:44:54+00:00",
+  "fetched_at": "2026-10-14T10:13:25+00:00",
   "openfootball_results": 189,
   "matched": 189,
   "unmatched_in_wikipedia": [],

@@ -205,30 +205,178 @@ From Wikipedia, the free encyclopedia
 |[[Stellenbosch F.C.|Stellenbosch]]
 |-
 |}
+==Squads==
+{{Updated|13 October 2026}}
+===AmaZulu===
+===Chippa United===
+===Durban City===
+===Kaizer Chiefs===
+{{Fs start}}
+{{Fs player|no=1 |pos=GK |nat=RSA |name=[[Brandon Petersen]]}}
+{{Fs player|no=2 |pos=DF |nat=RSA |name=[[Thabiso Monyane]]}}
+{{Fs player|no=3 |pos=FW |nat=RSA |name=[[Khanyisa Mayo]]}}
+{{Fs player|no=4 |pos=DF |nat=RSA |name=[[Zitha Kwinika]]}}
+{{Fs player|no=5 |pos=MF |nat=RSA |name=[[Sibongiseni Mthethwa]]}}
+{{Fs player|no=6 |pos=MF |nat=RSA |name=[[Lebohang Maboe]]}}
+{{Fs player|no=7 |pos=MF |nat=RSA |name=[[Mduduzi Shabalala]]}}
+{{Fs player|no=8 |pos=MF |nat=RSA |name=[[Siphesihle Ndlovu]]}}
+{{Fs player|no=11 |pos=FW |nat=RSA |name=Luke Baartman}}
+{{Fs player|no=12 |pos=MF |nat=RSA |name=[[Nkosingiphile Ngcobo]]}}
+{{Fs mid}}
+{{Fs player|no=13 |pos=MF |nat=RSA |name=[[Pule Mmodi]]}}
+{{Fs player|no=14 |pos=DF |nat=RSA |name=[[Rushwin Dortley]]}}
+{{Fs player|no=16 |pos=GK |nat=RSA |name=[[Renaldo Leaner]]}}
+{{Fs player|no=17 |pos=FW |nat=RSA |name=[[Asenele Velebayi]]}}
+{{Fs player|no=18 |pos=DF |nat=RSA |name=Dillon Solomons}}
+{{Fs player|no=22 |pos=MF |nat=TAN |name=Adolf Bitegeko}}
+{{Fs player|no=23 |pos=MF |nat=RSA |name=[[Ethan Chislett]]}}
+{{Fs player|no=28 |pos=MF |nat=RSA |name=[[Mfundo Vilakazi]]}}
+{{Fs player|no=29 |pos=DF |nat=RSA |name=[[Paseka Mako]]}}
+{{Fs player|no=35 |pos=MF |nat=RSA |name=Faiz Abrahams}}
+{{Fs mid}}
+{{Fs player|no=38 |pos=DF |nat=RSA |name=Kabelo Nkgwesa}}
+{{Fs player|no=39 |pos=DF |nat=RSA |name=[[Reeve Frosler]]}}
+{{Fs player|no=41 |pos=GK |nat=RSA |name=[[Takalani Mazhamba]]}}
+{{Fs player|no=42 |pos=DF |nat=RSA |name=[[Brendon Moloisane]]}}
+{{Fs player|no=44 |pos=GK |nat=RSA |name=[[Bruce Bvuma]]}}
+{{Fs player|no=47 |pos=FW |nat=RSA |name=[[Wandile Duba]]}}
+{{Fs player|no=48 |pos=DF |nat=RSA |name=[[Bradley Cross (soccer)|Bradley Cross]]}}
+{{Fs player|no=50 |pos=FW |nat=NGR |name=Etiosa Ighodaro}}
+{{Fs player|no=70 |pos=FW |nat=RSA |name=Langelihle Phili}}
+{{Fs player|no=74 |pos=DF |nat=RSA |name=Nkanyiso Shinga}}
+{{Fs player|no=77 |pos=FW |nat=GNB |name=[[Flávio Silva]]}}
+{{Fs player|no=84 |pos=DF |nat=ANG |name=[[Inácio Miguel]]}}
+{{Fs end}}
+
+===Kruger United===
+===Lamontville Golden Arrows===
+
+===Mamelodi Sundowns===
+{{Fs start}}
+{{Fs player|no=1 |pos=GK |nat=UGA |name=[[Denis Onyango]] |other=[[captain (association football)|captain]]}}
+{{Fs player|no=2 |pos=DF |nat=RSA |name=[[Malibongwe Khoza]]}}
+{{Fs player|no=3 |pos=DF |nat=RSA |name=[[Khulumani Ndamane]]}}
+{{Fs player|no=4 |pos=MF |nat=RSA |name=[[Teboho Mokoena (footballer, born 1997)|Teboho Mokoena]]}}
+{{Fs player|no=5 |pos=DF |nat=ZIM |name=[[Divine Lunga]]}}
+{{Fs player|no=6 |pos=DF |nat=RSA |name=[[Aubrey Modiba]]}}
+{{Fs player|no=9 |pos=FW |nat=BRA |name=[[Arthur Sales (footballer, born 2002)|Arthur Sales]]}}
+{{Fs player|no=10 |pos=MF |nat=POR |name=[[Nuno Santos (footballer, born 1999)|Nuno Santos]]}}
+{{Fs player|no=11 |pos=MF |nat=CHI |name=[[Marcelo Allende]]}}
+{{Fs player|no=12 |pos=FW |nat=COL |name=[[Brayan León]]}}
+{{Fs mid}}
+{{Fs player|no=13 |pos=FW |nat=RSA |name=[[Iqraam Rayners]]}}
+{{Fs player|no=14 |pos=FW |nat=RSA |name=[[Monnapule Saleng]]}}
+{{Fs player|no=15 |pos=MF |nat=RSA |name=[[Bathusi Aubaas]]}}
+{{Fs player|no=17 |pos=FW |nat=RSA |name=[[Tashreeq Matthews]]}}
+{{Fs player|no=18 |pos=MF |nat=RSA |name=[[Themba Zwane]]}}
+{{Fs player|no=19 |pos=MF |nat=RSA |name=[[Thabo Cele]]}}
+{{Fs player|no=20 |pos=DF |nat=RSA |name=[[Grant Kekana]]}}
+{{Fs player|no=21 |pos=MF |nat=RSA |name=[[Sphelele Mkhulise]]}}
+{{Fs player|no=22 |pos=DF |nat=RSA |name=[[Thabang Matuludi]]}}
+{{Fs player|no=23 |pos=DF |nat=RSA |name=[[Fawaaz Basadien]]}}
+{{Fs mid}}
+{{Fs player|no=24 |pos=DF |nat=RSA |name=[[Keanu Cupido]]}}
+{{Fs player|no=25 |pos=DF |nat=RSA |name=[[Khuliso Mudau]]}}
+{{Fs player|no=26 |pos=GK |nat=RSA |name=[[Reyaad Pieterse]]}}
+{{Fs player|no=27 |pos=DF |nat=RSA |name=[[Thapelo Morena]]}}
+{{Fs player|no=28 |pos=DF |nat=RSA |name=[[Zuko Mdunyelwa]]}}
+{{Fs player|no=29 |pos=FW |nat=RSA |name=[[Antonio Van Wyk]]}}
+{{Fs player|no=30 |pos=GK |nat=RSA |name=[[Ronwen Williams]] |other= [[captain (association football)|captain]]}}
+{{Fs player|no=31 |pos=GK |nat=RSA |name=[[Ricardo Goss]]}}
+{{Fs player|no=33 |pos=FW |nat=RSA |name=[[Cassius Mailula]]}}
+{{Fs player|no=34 |pos=MF |nat=RSA |name=[[Tsiki Ntsabeleng]] |other= on loan from [[FC Dallas|Dallas]]}}
+{{Fs mid}}
+{{Fs player|no=35 |pos=FW |nat=RSA |name=[[Lebo Mothiba]]}}
+{{Fs player|no=37 |pos=DF |nat=RSA |name=[[Kegan Johannes]]}}
+{{Fs player|no=38 |pos=FW |nat=RSA |name=[[Siyanda Ndlovu]]}}
+{{Fs player|no=40 |pos=DF |nat=RSA |name=[[Mothobi Mvala]]}}
+{{Fs player|no=43 |pos=FW |nat=RSA |name=[[Kutlwano Letlhaku]]}}
+{{Fs player|no=44 |pos=MF |nat=RSA |name=[[Gomolemo Kekana]]}}
+{{Fs player|no=45 |pos=DF |nat=RSA |name=Wandile Dube}}
+{{Fs player|no=46 |pos=FW |nat=RSA |name=Bennet Mokoena}}
+{{Fs player|no=47 |pos=DF |nat=RSA |name=[[Deano Van Rooyen]]}}
+{{Fs player|no= |pos=MF |nat=ARG |name=[[Matías Esquivel]]}}
+{{Fs player|no= |pos=FW |nat=RSA |name=[[Siyabonga Mabena]]}}
+{{Fs end}}
+===Marumo Gallants===
+===Milford===
+
+===Orlando Pirates===
+{{Fs start}}
+{{Fs player|no=2 |pos=DF |nat=RSA |name=Bulelani Sigomoshe}}
+{{Fs player|no=3 |pos=DF |nat=RSA |name=Nkosikhona Ndaba}}
+{{Fs player|no=5 |pos=DF |nat=RSA |name=[[Nkosinathi Sibisi]] |other= [[captain (association football)|captain]]}}
+{{Fs player|no=6 |pos=DF |nat=RSA |name=[[Lebone Seema]]}}
+{{Fs player|no=7 |pos=DF |nat=NAM |name=[[Deon Hotto]]}}
+{{Fs player|no=8 |pos=MF |nat=RSA |name=[[Makhehlene Makhaula]]}}
+{{Fs player|no=9 |pos=FW |nat=RSA |name=[[Yanela Mbuthuma]]}}
+{{Fs player|no=11 |pos=FW |nat=RSA |name=[[Tshepang Moremi]]}}
+{{Fs player|no=12 |pos=FW |nat=RSA |name=[[Oswin Appollis]]}}
+{{Fs player|no=14 |pos=FW |nat=NZL |name=[[Andre De Jong]]}}
+{{Fs mid}}
+{{Fs player|no=15 |pos=MF |nat=RSA |name=Masindi Nemtajela}}
+{{Fs player|no=16 |pos=MF |nat=RSA |name=[[Thalente Mbatha]]}}
+{{Fs player|no=17 |pos=FW |nat=RSA |name=[[Evidence Makgopa]]}}
+{{Fs player|no=18 |pos=MF |nat=RSA |name=[[Kabelo Dlamini]]}}
+{{Fs player|no=19 |pos=DF |nat=RSA |name=[[Neo Rapoo]]}}
+{{Fs player|no=20 |pos=MF |nat=RSA |name=[[Simphiwe Selepe]]}}
+{{Fs player|no=21 |pos=FW |nat=RSA |name=[[Mohau Nkota]]|other= on loan from [[Al-Ettifaq Club|Al-Ettifaq]]}}
+{{Fs player|no=23 |pos=FW |nat=ZAM |name=[[Gamphani Lungu]]}}
+{{Fs player|no=24 |pos=GK |nat=RSA |name=[[Sipho Chaine]]}}
+{{Fs player|no=25 |pos=FW |nat=RSA |name=[[Boitumelo Radiopane]]}}
+{{Fs mid}}
+{{Fs player|no=26 |pos=MF |nat=RSA |name=Matome Mmolai}}
+{{Fs player|no=27 |pos=DF |nat=RSA |name=[[Thapelo Xoki]]}}
+{{Fs player|no=29 |pos=MF |nat=RSA |name=[[Mthetheleli Mthiyane]]}}
+{{Fs player|no=30 |pos=MF |nat=RSA |name=[[Sihle Nduli]]}}
+{{Fs player|no=31 |pos=FW |nat=NOR |name=[[Sebastian Pedersen]]}}
+{{Fs player|no=32 |pos=GK |nat=RSA |name=Siyabonga Dladla}}
+{{Fs player|no=33 |pos=MF |nat=RSA |name=Thapelo Mokobodi}}
+{{Fs player|no=36 |pos=DF |nat=RSA |name=[[Kamogelo Sebelebele]]}}
+{{Fs player|no=37 |pos=DF |nat=RSA |name=Sbangani Zulu}}
+{{Fs player|no=38 |pos=FW |nat=RSA |name=[[Mpho Padime]]}}
+{{Fs mid}}
+{{Fs player|no=40 |pos=GK |nat=NZL |name=Dublin Boon}}
+{{Fs player|no=41 |pos=FW |nat=RSA |name=Bheki Mabuza}}
+{{Fs player|no=43 |pos=DF |nat=RSA |name=Mpho Chabatsane}}
+{{Fs player|no=44 |pos=DF |nat=RSA |name=Christian Derbyshire}}
+{{Fs player|no=46 |pos=MF |nat=RSA |name=[[Cemran Dansin]]}}
+{{Fs player|no=47 |pos=MF |nat=RSA |name=Bohlale Ngwato}}
+{{Fs player|no=48 |pos=MF |nat=RSA |name=Simphiwe Masilela}}
+{{Fs player|no=49 |pos=FW |nat=RSA |name=Kabelo Kgositsile}}
+{{Fs player|no= |pos=GK |nat=RSA |name=Ethan Visagie}}
+{{Fs player|no= |pos=DF |nat=RSA |name=Yanga Madiba}}
+{{Fs end}}
+===Polokwane City===
+===Richards Bay===
+===Sekhukhune United===
+===Siwelele===
+===Stellenbosch===
+===TS Galaxy===
 
 ==League table==
 <onlyinclude>{{#invoke:Sports table|main|style=WDL|source=[http://www.psl.co.za/matchcentre?type=log Premier Soccer League]
 <!--Update team positions here-->
-|team_order = MSU, OPR, AMA, KZC, MIL, SEK, STL, GDA, CHP, DCI, PLK, TSG, KRU, RBA, SIW, MGA
+|team_order = MSU, OPR, AMA, KZC, MIL, SEK, STL, GDA, CHP, PLK, DCI, TSG, KRU, RBA, SIW, MGA
 
 <!--Update team results here and the (if needed) position above. Don't forget to update the date (update perimeter)-->
-|update = 20 September 2026
-|win_AMA=5 |draw_AMA=1 |loss_AMA=1 |gf_AMA=10|ga_AMA=7<!-- AmaZulu FC --> 
+|update = 13 October 2026
+|win_AMA=6 |draw_AMA=1 |loss_AMA=1 |gf_AMA=12|ga_AMA=8<!-- AmaZulu FC --> 
 |win_MIL=3 |draw_MIL=3 |loss_MIL=2 |gf_MIL=9|ga_MIL=7<!-- Milford -->
 |win_GDA=1 |draw_GDA=5 |loss_GDA=1 |gf_GDA=3|ga_GDA=3<!-- Lamontville Golden Arrows --> 
 |win_CHP=1 |draw_CHP=5 |loss_CHP=1 |gf_CHP=4|ga_CHP=6<!-- Chippa United -->
-|win_KZC=3 |draw_KZC=4 |loss_KZC=0 |gf_KZC=12|ga_KZC=7<!-- Kaizer Chiefs -->
+|win_KZC=3 |draw_KZC=5 |loss_KZC=0 |gf_KZC=13|ga_KZC=8<!-- Kaizer Chiefs -->
 |win_KRU=1 |draw_KRU=1 |loss_KRU=5 |gf_KRU=3|ga_KRU=12<!-- Kruger United -->
-|win_MSU=6 |draw_MSU=2 |loss_MSU=0 |gf_MSU=19|ga_MSU=7<!-- Mamelodi Sundowns -->
+|win_MSU=7 |draw_MSU=2 |loss_MSU=0 |gf_MSU=23|ga_MSU=8<!-- Mamelodi Sundowns -->
 |win_MGA=0 |draw_MGA=2 |loss_MGA=5 |gf_MGA=5|ga_MGA=13<!-- Marumo Gallants -->
-|win_OPR=6 |draw_OPR=1 |loss_OPR=0 |gf_OPR=16|ga_OPR=1<!-- Orlando Pirates -->
+|win_OPR=7 |draw_OPR=1 |loss_OPR=0 |gf_OPR=19|ga_OPR=1<!-- Orlando Pirates -->
 |win_PLK=1 |draw_PLK=4 |loss_PLK=2 |gf_PLK=8|ga_PLK=10<!-- Polokwane City -->
 |win_RBA=0 |draw_RBA=3 |loss_RBA=4 |gf_RBA=9|ga_RBA=16<!-- Richards Bay -->
-|win_DCI=1 |draw_DCI=4 |loss_DCI=2 |gf_DCI=4|ga_DCI=5<!-- Durban City -->
+|win_DCI=1 |draw_DCI=4 |loss_DCI=3 |gf_DCI=5|ga_DCI=7<!-- Durban City -->
 |win_SEK=3 |draw_SEK=2 |loss_SEK=2 |gf_SEK=7|ga_SEK=7<!-- Sekhukhune United -->
-|win_STL=2 |draw_STL=3 |loss_STL=2 |gf_STL=8|ga_STL=7<!-- Stellenbosch -->
+|win_STL=2 |draw_STL=4 |loss_STL=2 |gf_STL=9|ga_STL=8<!-- Stellenbosch -->
 |win_SIW=0 |draw_SIW=3 |loss_SIW=4 |gf_SIW=6|ga_SIW=13<!-- Siwelele -->
-|win_TSG=1 |draw_TSG=3 |loss_TSG=3 |gf_TSG=7|ga_TSG=9<!-- TS Galaxy -->
+|win_TSG=1 |draw_TSG=3 |loss_TSG=4 |gf_TSG=7|ga_TSG=12<!-- TS Galaxy -->
 <!--Status-->
 
 <!--Point Adjustment-->
@@ -272,11 +420,11 @@ From Wikipedia, the free encyclopedia
 |team2=CHP
 |team3=DCI
 |team4=KZC
-|team5=GDA
-|team6=MIL
+|team5=KRU
+|team6=GDA
 |team7=MSU
 |team8=MGA
-|team9=KRU
+|team9=MIL
 |team10=OPR
 |team11=PLK
 |team12=RBA
