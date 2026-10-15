@@ -789,17 +789,17 @@
    "data_status": "failed_consistency",
    "goals_per_match": 2.281,
    "home_win_rate": 0.316,
-   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380195219",
-   "revid": 1380195219,
-   "revision_timestamp": "2026-10-14T09:46:59Z",
-   "fetched_at": "2026-10-14T10:13:25+00:00",
+   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380259580",
+   "revid": 1380259580,
+   "revision_timestamp": "2026-10-14T18:51:11Z",
+   "fetched_at": "2026-10-15T09:56:52+00:00",
    "update_field": "20 September 2026"
   }
  },
  "cross_check_openfootball_2024_25": {
   "ok": true,
   "source": "https://raw.githubusercontent.com/openfootball/world/master/africa/south-africa/2024-25_za1.txt",
-  "fetched_at": "2026-10-14T10:13:25+00:00",
+  "fetched_at": "2026-10-15T09:56:52+00:00",
   "openfootball_results": 189,
   "matched": 189,
   "unmatched_in_wikipedia": [],

@@ -60,13 +60,13 @@
   "complete": true
  },
  "PSL_wikipedia_2026-27.wikitext": {
-  "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380195219",
+  "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380259580",
   "api": "https://en.wikipedia.org/w/api.php",
   "title": "2026\u201327 South African Premiership",
-  "revid": 1380195219,
-  "revision_timestamp": "2026-10-14T09:46:59Z",
-  "fetched_at": "2026-10-14T10:13:25+00:00",
-  "sha1": "eea71e99a5a3773b177867ffd2dfbd81bc9ee644",
+  "revid": 1380259580,
+  "revision_timestamp": "2026-10-14T18:51:11Z",
+  "fetched_at": "2026-10-15T09:56:52+00:00",
+  "sha1": "9bbc6d94b3c1e18c289ddeff4b97e5f519f11c04",
   "license": "CC BY-SA 4.0 (Wikipedia contributors)",
   "update_field": "20 September 2026",
   "complete": false

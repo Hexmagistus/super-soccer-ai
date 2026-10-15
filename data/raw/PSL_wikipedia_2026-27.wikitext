@@ -208,6 +208,30 @@ From Wikipedia, the free encyclopedia
 ==Squads==
 {{Updated|13 October 2026}}
 ===AmaZulu===
+{{Fs start}}
+{{Fs player|no=1 |pos=GK |nat=RSA |name=[[Olwethu Mzimela]]}}
+{{Fs player|no=2 |pos=FW |nat=RSA |name=Athini Maqokolo}}
+{{Fs player|no=3 |pos=DF |nat=RSA |name=Omega Mdaka}}
+{{Fs player|no=4 |pos=DF |nat=NAM |name=[[Riaan Hanamub]]}}
+{{Fs player|no=5 |pos=DF |nat=RSA |name=[[Keegan Allan]]}}
+{{Fs player|no=6 |pos=MF |nat=RSA |name=Siyanda Hlangabeza}}
+{{Fs player|no=8 |pos=MF |nat=RSA |name=Khomotjo Lekoloane}}
+{{Fs player|no=9 |pos=FW |nat=RSA |name=[[Ryan Moon]]}}
+{{Fs player|no=10 |pos=MF |nat=RSA |name=[[Sphesihle Maduna]]}}
+{{Fs player|no=11 |pos=FW |nat=RSA |name=Andiswa Sithole}}
+{{Fs mid}}
+{{Fs player|no=14 |pos=MF |nat=RSA |name=Nkosikhona Radebe}}
+{{Fs player|no=15 |pos=MF |nat=RSA |name=[[Mlondi Mbanjwa]]}}
+{{Fs player|no=16 |pos=GK |nat=RSA |name=Darren Johnson}}
+{{Fs player|no=17 |pos=MF |nat=RSA |name=[[Liam Bern]]}}
+{{Fs player|no=18 |pos=MF |nat=RSA |name=Neo Mokoena}}
+{{Fs player|no=23 |pos=FW |nat=ZIM |name=Thandolwenkosi Ngwenya}}
+{{Fs player|no=24 |pos=GK |nat=CIV |name=Wilfried Kouassi}}
+{{Fs player|no=27 |pos=FW |nat=RSA |name=[[Hendrick Ekstein]]}}
+{{Fs player|no=42 |pos=DF |nat=RSA |name=[[Sandile Mthethwa]]}}
+{{Fs player|no=45 |pos=FW |nat=KEN |name=[[Moses Shumah]]}}
+{{Fs end}}
+
 ===Chippa United===
 ===Durban City===
 ===Kaizer Chiefs===
@@ -268,7 +292,7 @@ From Wikipedia, the free encyclopedia
 {{Fs player|no=14 |pos=FW |nat=RSA |name=[[Monnapule Saleng]]}}
 {{Fs player|no=15 |pos=MF |nat=RSA |name=[[Bathusi Aubaas]]}}
 {{Fs player|no=17 |pos=FW |nat=RSA |name=[[Tashreeq Matthews]]}}
-{{Fs player|no=18 |pos=MF |nat=RSA |name=[[Themba Zwane]]}}
+{{Fs player|no=18 |pos=MF |nat=RSA |name=[[Themba Zwane]] |other= [[captain (association football)|captain]]}}
 {{Fs player|no=19 |pos=MF |nat=RSA |name=[[Thabo Cele]]}}
 {{Fs player|no=20 |pos=DF |nat=RSA |name=[[Grant Kekana]]}}
 {{Fs player|no=21 |pos=MF |nat=RSA |name=[[Sphelele Mkhulise]]}}
@@ -298,6 +322,7 @@ From Wikipedia, the free encyclopedia
 {{Fs player|no= |pos=MF |nat=ARG |name=[[Matías Esquivel]]}}
 {{Fs player|no= |pos=FW |nat=RSA |name=[[Siyabonga Mabena]]}}
 {{Fs end}}
+
 ===Marumo Gallants===
 ===Milford===
 
