@@ -649,49 +649,30 @@
     "TS Galaxy"
    ],
    "n_teams": 16,
-   "played": 61,
+   "played": 64,
    "excluded": 0,
    "excluded_cells": [],
    "issues": [],
    "complete": false,
    "table_check": {
     "teams_checked": 16,
-    "teams_matching": 15,
-    "mismatches": [
-     {
-      "team": "Richards Bay",
-      "table": [
-       0,
-       3,
-       4,
-       9,
-       16
-      ],
-      "matrix": [
-       0,
-       3,
-       5,
-       10,
-       20
-      ],
-      "match": false
-     }
-    ]
+    "teams_matching": 16,
+    "mismatches": []
    },
-   "data_status": "failed_consistency",
-   "goals_per_match": 2.344,
-   "home_win_rate": 0.311,
-   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380516540",
-   "revid": 1380516540,
-   "revision_timestamp": "2026-10-16T05:39:08Z",
-   "fetched_at": "2026-10-17T09:22:23+00:00",
-   "update_field": "13 October 2026"
+   "data_status": "verified",
+   "goals_per_match": 2.312,
+   "home_win_rate": 0.312,
+   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380797213",
+   "revid": 1380797213,
+   "revision_timestamp": "2026-10-17T23:41:55Z",
+   "fetched_at": "2026-10-18T09:39:51+00:00",
+   "update_field": "17 October 2026"
   }
  },
  "cross_check_openfootball_2024_25": {
   "ok": true,
   "source": "https://raw.githubusercontent.com/openfootball/world/master/africa/south-africa/2024-25_za1.txt",
-  "fetched_at": "2026-10-17T09:22:23+00:00",
+  "fetched_at": "2026-10-18T09:39:51+00:00",
   "openfootball_results": 189,
   "matched": 189,
   "unmatched_in_wikipedia": [],
