@@ -665,14 +665,14 @@
    "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1380797213",
    "revid": 1380797213,
    "revision_timestamp": "2026-10-17T23:41:55Z",
-   "fetched_at": "2026-10-18T09:39:51+00:00",
+   "fetched_at": "2026-10-19T10:55:57+00:00",
    "update_field": "17 October 2026"
   }
  },
  "cross_check_openfootball_2024_25": {
   "ok": true,
   "source": "https://raw.githubusercontent.com/openfootball/world/master/africa/south-africa/2024-25_za1.txt",
-  "fetched_at": "2026-10-18T09:39:51+00:00",
+  "fetched_at": "2026-10-19T10:55:57+00:00",
   "openfootball_results": 189,
   "matched": 189,
   "unmatched_in_wikipedia": [],
