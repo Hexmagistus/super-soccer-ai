@@ -1,8 +1,8 @@
 {
- "last_successful_refresh_utc": "2026-10-28T11:23:50+00:00",
- "matches": 101134,
+ "last_successful_refresh_utc": "2026-10-29T11:33:51+00:00",
+ "matches": 101178,
  "fixtures": 83,
- "predictions_stored": 54,
- "evaluated": 140,
+ "predictions_stored": 12,
+ "evaluated": 17,
  "backtest_run": false
 }
