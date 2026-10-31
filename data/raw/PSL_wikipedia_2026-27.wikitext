@@ -13,20 +13,20 @@
 | continentalcup1 qualifiers = 
 | continentalcup2 = [[2027–28 CAF Confederation Cup|Confederation Cup]]
 | continentalcup2 qualifiers = 
-| total goals = 148
+| total goals = 153
 | league topscorer = [[AmaZulu F.C.|Thandolwenkosi Ngwenya]]<br>(8 goals)
 | biggest home win = [[Milford F.C. (South Africa)|Milford]] 5-1 [[Richards Bay F.C.|Richards Bay]]
 | biggest away win = [[Kruger United F.C.|Kruger United]] 0-4 [[Orlando Pirates F.C.|Orlando Pirates]]
 | highest scoring = [[Mamelodi Sundowns F.C.|M. Sundowns]] 5-2 [[AmaZulu F.C.|AmaZulu]]
 | longest wins = [[Orlando Pirates F.C.|Orlando Pirates]]<br>(6 wins)
 | longest unbeaten = [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]<br>(9 matches)
-| longest winless = [[Marumo Gallants F.C.|Marumo Gallants]]<br>[[Siwelele F.C.|Siwelele]]<br>[[Richards Bay F.C.|Richards Bay]]<br>(7 matches)
+| longest winless = [[Siwelele F.C.|Siwelele]]<br>[[Richards Bay F.C.|Richards Bay]]<br>(8 matches)
 | highest attendance = 
 | lowest attendance = 
 | average attendance = 
 | prevseason = [[2025–26 South African Premiership|2025–26]]
 | nextseason = [[2027–28 South African Premiership|''2027–28'']]
-| updated = 18 October 2026
+| updated = 30 October 2026
 }}
 
 The '''2026–27 South African Premiership''' is the 31st consecutive season of the [[South African Premiership]]. It is known as the '''Betway Premiership''' for sponsorship reasons, and is also commonly referred to as the [[Premier Soccer League|PSL]] after the governing body.<ref>{{Cite web |last=Ngidi |first=Njabulo |title=Betway bets on PSL with R900 million sponsorship: 'We don't chase away anybody,' says Khoza |url=https://www.news24.com/sport/soccer/psl/betway-bets-on-psl-with-r900-million-sponsorship-we-dont-chase-away-anybody-says-khoza-20240724 |access-date=2024-08-09 |website=Sport |language=en-US}}</ref>
@@ -382,10 +382,10 @@ From Wikipedia, the free encyclopedia
 ==League table==
 <onlyinclude>{{#invoke:Sports table|main|style=WDL|source=[http://www.psl.co.za/matchcentre?type=log Premier Soccer League]
 <!--Update team positions here-->
-|team_order = MSU, OPR, AMA, MIL, KZC, SEK, STL, GDA, CHP, PLK, DCI, KRU, TSG, SIW, RBA, MGA
+|team_order = MSU, OPR, AMA, MIL, KZC, SEK, STL, GDA, CHP, PLK, DCI, KRU, TSG, MGA, SIW, RBA
 
 <!--Update team results here and the (if needed) position above. Don't forget to update the date (update perimeter)-->
-|update = 17 October 2026
+|update = 30 October 2026
 |win_AMA=6 |draw_AMA=1 |loss_AMA=1 |gf_AMA=12|ga_AMA=8<!-- AmaZulu FC --> 
 |win_MIL=4 |draw_MIL=3 |loss_MIL=2 |gf_MIL=10|ga_MIL=7<!-- Milford -->
 |win_GDA=1 |draw_GDA=5 |loss_GDA=2 |gf_GDA=3|ga_GDA=4<!-- Lamontville Golden Arrows --> 
@@ -393,14 +393,14 @@ From Wikipedia, the free encyclopedia
 |win_KZC=3 |draw_KZC=5 |loss_KZC=0 |gf_KZC=13|ga_KZC=8<!-- Kaizer Chiefs -->
 |win_KRU=2 |draw_KRU=1 |loss_KRU=5 |gf_KRU=4|ga_KRU=12<!-- Kruger United -->
 |win_MSU=7 |draw_MSU=2 |loss_MSU=0 |gf_MSU=23|ga_MSU=8<!-- Mamelodi Sundowns -->
-|win_MGA=0 |draw_MGA=2 |loss_MGA=6 |gf_MGA=6|ga_MGA=15<!-- Marumo Gallants -->
+|win_MGA=1 |draw_MGA=2 |loss_MGA=6 |gf_MGA=9|ga_MGA=17<!-- Marumo Gallants -->
 |win_OPR=7 |draw_OPR=1 |loss_OPR=0 |gf_OPR=19|ga_OPR=1<!-- Orlando Pirates -->
 |win_PLK=1 |draw_PLK=4 |loss_PLK=2 |gf_PLK=8|ga_PLK=10<!-- Polokwane City -->
 |win_RBA=0 |draw_RBA=3 |loss_RBA=5 |gf_RBA=10|ga_RBA=20<!-- Richards Bay -->
 |win_DCI=1 |draw_DCI=4 |loss_DCI=3 |gf_DCI=5|ga_DCI=7<!-- Durban City -->
 |win_SEK=4 |draw_SEK=2 |loss_SEK=2 |gf_SEK=9|ga_SEK=8<!-- Sekhukhune United -->
 |win_STL=2 |draw_STL=4 |loss_STL=2 |gf_STL=9|ga_STL=8<!-- Stellenbosch -->
-|win_SIW=0 |draw_SIW=3 |loss_SIW=4 |gf_SIW=6|ga_SIW=13<!-- Siwelele -->
+|win_SIW=0 |draw_SIW=3 |loss_SIW=5 |gf_SIW=8|ga_SIW=16<!-- Siwelele -->
 |win_TSG=1 |draw_TSG=3 |loss_TSG=4 |gf_TSG=7|ga_TSG=12<!-- TS Galaxy -->
 <!--Status-->
 
@@ -435,11 +435,11 @@ From Wikipedia, the free encyclopedia
 |col_POT=red2|text_POT=Qualification for [[2025–26 National First Division#Play-offs|Playoffs]]|col_REL=red1|text_REL=Relegation to [[National First Division]]|note_header_res=}}
 
 ==Results==
-{{Updated|18 October 2026}}
+{{Updated|30 October 2026}}
 {{#invoke:sports results
 |main
 |source=[https://www.flashscore.com/football/south-africa/premier-league/ Flashscore]
-|update= 17 October 2026
+|update= 30 October 2026
 |matches_style=FBR
 |team1=AMA
 |team2=CHP
@@ -599,7 +599,7 @@ From Wikipedia, the free encyclopedia
 |match_MGA_PLK=2-2
 |match_MGA_RBA=
 |match_MGA_SEK=
-|match_MGA_SIW=
+|match_MGA_SIW=3-2
 |match_MGA_STL=
 |match_MGA_TSG=2-3
 
