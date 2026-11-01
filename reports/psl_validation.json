@@ -656,23 +656,294 @@
    "complete": false,
    "table_check": {
     "teams_checked": 16,
-    "teams_matching": 16,
-    "mismatches": []
+    "teams_matching": 1,
+    "mismatches": [
+     {
+      "team": "AmaZulu",
+      "table": [
+       7,
+       1,
+       1,
+       13,
+       8
+      ],
+      "matrix": [
+       6,
+       1,
+       1,
+       12,
+       8
+      ],
+      "match": false
+     },
+     {
+      "team": "Milford",
+      "table": [
+       5,
+       3,
+       2,
+       11,
+       7
+      ],
+      "matrix": [
+       4,
+       3,
+       2,
+       10,
+       7
+      ],
+      "match": false
+     },
+     {
+      "team": "Chippa United",
+      "table": [
+       2,
+       5,
+       2,
+       6,
+       7
+      ],
+      "matrix": [
+       1,
+       5,
+       2,
+       4,
+       7
+      ],
+      "match": false
+     },
+     {
+      "team": "Golden Arrows",
+      "table": [
+       1,
+       5,
+       3,
+       3,
+       5
+      ],
+      "matrix": [
+       1,
+       5,
+       2,
+       3,
+       4
+      ],
+      "match": false
+     },
+     {
+      "team": "TS Galaxy",
+      "table": [
+       1,
+       4,
+       4,
+       7,
+       12
+      ],
+      "matrix": [
+       1,
+       3,
+       4,
+       7,
+       12
+      ],
+      "match": false
+     },
+     {
+      "team": "Kaizer Chiefs",
+      "table": [
+       3,
+       5,
+       1,
+       14,
+       10
+      ],
+      "matrix": [
+       3,
+       5,
+       0,
+       13,
+       8
+      ],
+      "match": false
+     },
+     {
+      "team": "Polokwane City",
+      "table": [
+       1,
+       5,
+       2,
+       8,
+       11
+      ],
+      "matrix": [
+       1,
+       4,
+       2,
+       8,
+       10
+      ],
+      "match": false
+     },
+     {
+      "team": "Mamelodi Sundowns",
+      "table": [
+       8,
+       2,
+       0,
+       27,
+       9
+      ],
+      "matrix": [
+       7,
+       2,
+       0,
+       23,
+       8
+      ],
+      "match": false
+     },
+     {
+      "team": "Kruger United",
+      "table": [
+       3,
+       1,
+       5,
+       7,
+       13
+      ],
+      "matrix": [
+       2,
+       1,
+       5,
+       4,
+       12
+      ],
+      "match": false
+     },
+     {
+      "team": "Orlando Pirates",
+      "table": [
+       8,
+       1,
+       0,
+       21,
+       2
+      ],
+      "matrix": [
+       7,
+       1,
+       0,
+       19,
+       1
+      ],
+      "match": false
+     },
+     {
+      "team": "Richards Bay",
+      "table": [
+       0,
+       3,
+       6,
+       11,
+       23
+      ],
+      "matrix": [
+       0,
+       3,
+       5,
+       10,
+       20
+      ],
+      "match": false
+     },
+     {
+      "team": "Durban City",
+      "table": [
+       1,
+       4,
+       4,
+       6,
+       11
+      ],
+      "matrix": [
+       1,
+       4,
+       3,
+       5,
+       7
+      ],
+      "match": false
+     },
+     {
+      "team": "Sekhukhune United",
+      "table": [
+       4,
+       2,
+       3,
+       9,
+       9
+      ],
+      "matrix": [
+       4,
+       2,
+       2,
+       9,
+       8
+      ],
+      "match": false
+     },
+     {
+      "team": "Stellenbosch",
+      "table": [
+       2,
+       4,
+       3,
+       9,
+       10
+      ],
+      "matrix": [
+       2,
+       4,
+       2,
+       9,
+       8
+      ],
+      "match": false
+     },
+     {
+      "team": "Siwelele",
+      "table": [
+       1,
+       3,
+       5,
+       9,
+       16
+      ],
+      "matrix": [
+       0,
+       3,
+       5,
+       8,
+       16
+      ],
+      "match": false
+     }
+    ]
    },
-   "data_status": "verified",
+   "data_status": "failed_consistency",
    "goals_per_match": 2.354,
    "home_win_rate": 0.323,
-   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1382878710",
-   "revid": 1382878710,
-   "revision_timestamp": "2026-10-30T20:04:38Z",
-   "fetched_at": "2026-10-31T10:58:38+00:00",
+   "url": "https://en.wikipedia.org/w/index.php?title=2026\u201327_South_African_Premiership&oldid=1383152167",
+   "revid": 1383152167,
+   "revision_timestamp": "2026-11-01T06:42:42Z",
+   "fetched_at": "2026-11-01T11:53:18+00:00",
    "update_field": "30 October 2026"
   }
  },
  "cross_check_openfootball_2024_25": {
   "ok": true,
   "source": "https://raw.githubusercontent.com/openfootball/world/master/africa/south-africa/2024-25_za1.txt",
-  "fetched_at": "2026-10-31T10:58:38+00:00",
+  "fetched_at": "2026-11-01T11:53:18+00:00",
   "openfootball_results": 189,
   "matched": 189,
   "unmatched_in_wikipedia": [],
