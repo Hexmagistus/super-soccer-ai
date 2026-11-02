@@ -13,20 +13,21 @@
 | continentalcup1 qualifiers = 
 | continentalcup2 = [[2027–28 CAF Confederation Cup|Confederation Cup]]
 | continentalcup2 qualifiers = 
-| total goals = 153
-| league topscorer = [[AmaZulu F.C.|Thandolwenkosi Ngwenya]]<br>(8 goals)
+| matches = 73
+| total goals = 170
+| league topscorer = [[AmaZulu F.C.|Thandolwenkosi Ngwenya]]<br>(9 goals)
 | biggest home win = [[Milford F.C. (South Africa)|Milford]] 5-1 [[Richards Bay F.C.|Richards Bay]]
 | biggest away win = [[Kruger United F.C.|Kruger United]] 0-4 [[Orlando Pirates F.C.|Orlando Pirates]]
 | highest scoring = [[Mamelodi Sundowns F.C.|M. Sundowns]] 5-2 [[AmaZulu F.C.|AmaZulu]]
-| longest wins = [[Orlando Pirates F.C.|Orlando Pirates]]<br>(6 wins)
-| longest unbeaten = [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]<br>(9 matches)
-| longest winless = [[Siwelele F.C.|Siwelele]]<br>[[Richards Bay F.C.|Richards Bay]]<br>(8 matches)
+| longest wins = [[Orlando Pirates F.C.|Orlando Pirates]]<br>(7 wins)
+| longest unbeaten = [[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]<br>(10 matches)
+| longest winless = [[Richards Bay F.C.|Richards Bay]]<br>(9 matches)
 | highest attendance = 
 | lowest attendance = 
 | average attendance = 
 | prevseason = [[2025–26 South African Premiership|2025–26]]
 | nextseason = [[2027–28 South African Premiership|''2027–28'']]
-| updated = 30 October 2026
+| updated = 31 October 2026
 }}
 
 The '''2026–27 South African Premiership''' is the 31st consecutive season of the [[South African Premiership]]. It is known as the '''Betway Premiership''' for sponsorship reasons, and is also commonly referred to as the [[Premier Soccer League|PSL]] after the governing body.<ref>{{Cite web |last=Ngidi |first=Njabulo |title=Betway bets on PSL with R900 million sponsorship: 'We don't chase away anybody,' says Khoza |url=https://www.news24.com/sport/soccer/psl/betway-bets-on-psl-with-r900-million-sponsorship-we-dont-chase-away-anybody-says-khoza-20240724 |access-date=2024-08-09 |website=Sport |language=en-US}}</ref>
@@ -395,7 +396,7 @@ From Wikipedia, the free encyclopedia
 |win_MSU=8 |draw_MSU=2 |loss_MSU=0 |gf_MSU=27|ga_MSU=9<!-- Mamelodi Sundowns -->
 |win_MGA=1 |draw_MGA=2 |loss_MGA=6 |gf_MGA=9|ga_MGA=17<!-- Marumo Gallants -->
 |win_OPR=8 |draw_OPR=1 |loss_OPR=0 |gf_OPR=21|ga_OPR=2<!-- Orlando Pirates -->
-|win_PLK=1 |draw_PLK=5 |loss_PLK=2 |gf_PLK=8|ga_PLK=11<!-- Polokwane City -->
+|win_PLK=1 |draw_PLK=5 |loss_PLK=3 |gf_PLK=8|ga_PLK=11<!-- Polokwane City -->
 |win_RBA=0 |draw_RBA=3 |loss_RBA=6 |gf_RBA=11|ga_RBA=23<!-- Richards Bay -->
 |win_DCI=1 |draw_DCI=4 |loss_DCI=4 |gf_DCI=6|ga_DCI=11<!-- Durban City -->
 |win_SEK=4 |draw_SEK=2 |loss_SEK=3 |gf_SEK=9|ga_SEK=9<!-- Sekhukhune United -->
@@ -435,11 +436,11 @@ From Wikipedia, the free encyclopedia
 |col_POT=red2|text_POT=Qualification for [[2025–26 National First Division#Play-offs|Playoffs]]|col_REL=red1|text_REL=Relegation to [[National First Division]]|note_header_res=}}
 
 ==Results==
-{{Updated|30 October 2026}}
+{{Updated|01 November 2026}}
 {{#invoke:sports results
 |main
 |source=[https://www.flashscore.com/football/south-africa/premier-league/ Flashscore]
-|update= 30 October 2026
+|update= 31 October 2026
 |matches_style=FBR
 |team1=AMA
 |team2=CHP
@@ -478,7 +479,7 @@ From Wikipedia, the free encyclopedia
 |match_AMA_CHP=
 |match_AMA_DCI=
 |match_AMA_KZC=
-|match_AMA_GDA=
+|match_AMA_GDA=1-0
 |match_AMA_MIL=
 |match_AMA_MSU=
 |match_AMA_MGA=1-0
@@ -566,14 +567,14 @@ From Wikipedia, the free encyclopedia
 |match_MIL_OPR=
 |match_MIL_PLK=
 |match_MIL_RBA=5-1
-|match_MIL_SEK=
+|match_MIL_SEK=1-0
 |match_MIL_SIW=1-0
 |match_MIL_STL=
 |match_MIL_TSG=
 
 |match_MSU_AMA=5-2
 |match_MSU_CHP=
-|match_MSU_DCI=
+|match_MSU_DCI=4-1
 |match_MSU_KZC=
 |match_MSU_GDA=
 |match_MSU_MIL=2-0
@@ -613,7 +614,7 @@ From Wikipedia, the free encyclopedia
 |match_KRU_MGA=
 |match_KRU_OPR=0-4
 |match_KRU_PLK=
-|match_KRU_RBA=
+|match_KRU_RBA=3-1
 |match_KRU_SEK=
 |match_KRU_SIW=
 |match_KRU_STL=0-1
@@ -622,7 +623,7 @@ From Wikipedia, the free encyclopedia
 |match_OPR_AMA=
 |match_OPR_CHP=
 |match_OPR_DCI=2-0
-|match_OPR_KZC=
+|match_OPR_KZC=2-1
 |match_OPR_GDA=
 |match_OPR_MIL=2-0
 |match_OPR_MSU=
@@ -649,7 +650,7 @@ From Wikipedia, the free encyclopedia
 |match_PLK_SEK=
 |match_PLK_SIW=
 |match_PLK_STL=3-3
-|match_PLK_TSG=
+|match_PLK_TSG=0-0
 
 |match_RBA_AMA=1-2
 |match_RBA_CHP=
@@ -693,14 +694,14 @@ From Wikipedia, the free encyclopedia
 |match_SIW_MGA=
 |match_SIW_KRU=
 |match_SIW_OPR=
-|match_SIW_PLK=
+|match_SIW_PLK=1-0
 |match_SIW_RBA=
 |match_SIW_SEK=
 |match_SIW_STL=
 |match_SIW_TSG=2-2
 
 |match_STL_AMA=0-1
-|match_STL_CHP=
+|match_STL_CHP=0-2
 |match_STL_DCI=
 |match_STL_KZC=
 |match_STL_GDA=
@@ -736,7 +737,7 @@ From Wikipedia, the free encyclopedia
 Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assists, Tackles, Clean Sheets and more|url=https://www.goal.com/en-za/premier-soccer-league/top-players/yv73ms6v1995b5wny16jcfi3|website=Goal}}</ref>
 ===Goals===
 
-{{Updated|17 October 2026}}
+{{Updated|31 October 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -747,25 +748,31 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |1
 |align="left"|{{flagicon|ZIM}} [[Thandolwenkosi Ngwenya]]
 |align="left"|[[AmaZulu F.C.|AmaZulu]]
-|8
+|9
 |-
-|2
-|align="left"|{{flagicon|RSA}} [[Nqaba Xulu]]
-|align="left"|[[Richards Bay F.C.|Richards Bay]]
-|5
-|-
-|rowspan=2|3
-|align="left"|{{flagicon|RSA}} [[Victor Letsoalo]]
-|align="left"|[[TS Galaxy F.C.|TS Galaxy]]
-|rowspan=2|4
-|-
+|rowspan=2|2
 |align="left"|{{flagicon|RSA}}[[Tshepang Moremi]]
 |align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
+|rowspan=2|5
 |-
-|rowspan=6|5
+|align="left"|{{flagicon|RSA}} [[Nqaba Xulu]]
+|align="left"|[[Richards Bay F.C.|Richards Bay]]
+|-
+|rowspan=3|4
+|align="left"|{{flagicon|RSA}} [[Victor Letsoalo]]
+|align="left"|[[TS Galaxy F.C.|TS Galaxy]]
+|rowspan=3|4
+|-
+|align="left"|{{flagicon|RSA}} [[Iqraam Rayners]]
+|align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
+|-
+|align="left"|{{flagicon|RSA}} [[Mvelo Zikakayo]]
+|align="left"|[[Milford F.C. (South Africa)|Milford]]
+|-
+|rowspan=4|7
 |align="left"|{{flagicon|RSA}} [[Wandile Duba]]
 |align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
-|rowspan=6|3
+|rowspan=4|3
 |-
 |align="left"|{{flagicon|COL}} [[Brayan Leon]]
 |align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
@@ -773,19 +780,13 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |align="left"|{{flagicon|RSA}} [[Tashreeq Matthews]]
 |align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
 |-
-|align="left"|{{flagicon|RSA}} [[Khetukuthula Ndlovu]]
-|align="left"|[[Kruger United F.C.|Kruger United]]
-|-
-|align="left"|{{flagicon|RSA}} [[Quwan Plaatjies]]
-|align="left"|[[Stellenbosch F.C.|Stellenbosch]]
-|-
-|align="left"|{{flagicon|RSA}}[[Boitumelo Radiopane]]
+|align="left"|{{flagicon|RSA}}[[Yanela Mbuthuma]]
 |align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
 |}
 
 ===Assists===
 
-{{Updated|17 October 2026}}
+{{Updated|31 October 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -793,12 +794,18 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 !Club
 !Assists
 |-
-|1
+|rowspan=3|1
 |align="left"|{{flagicon|RSA}} [[Tashreeq Matthews]]
 |align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
-|4
+|rowspan=3|4
 |-
-|rowspan=3|2
+|align="left"|{{flagicon|RSA}}[[Thapelo Mokobodi]]
+|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
+|-
+|align="left"|{{flagicon|RSA}} [[Nkosikhona Radebe]]
+|align="left"|[[AmaZulu F.C.|AmaZulu]]
+|-
+|rowspan=3|4
 |align="left"|{{flagicon|RSA}}[[Oswin Appollis]]
 |align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
 |rowspan=3|3
@@ -806,33 +813,27 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |align="left"|{{flagicon|RSA}} [[Moses Mthembu]]
 |align="left"|[[Richards Bay F.C.|Richards Bay]]
 |-
-|align="left"|{{flagicon|RSA}} [[Nkosikhona Radebe]]
-|align="left"|[[AmaZulu F.C.|AmaZulu]]
+|align="left"|{{flagicon|RSA}} [[Tebogo Potsane]]
+|align="left"|[[Siwelele F.C.|Siwelele]]
 |-
-|rowspan=6|5
+|rowspan=4|7
+|align="left"|{{flagicon|RSA}} [[Menzi Chili]]
+|align="left"|[[Milford F.C. (South Africa)|Milford]]
+|rowspan=4|2
+|-
 |align="left"|{{flagicon|RSA}} [[Raoul Daniels]]
 |align="left"|[[Stellenbosch F.C.|Stellenbosch]]
-|rowspan=6|2
+|-
+|align="left"|{{flagicon|ESW}} [[Justice Figuareido]]
+|align="left"|[[Chippa United F.C.|Chippa United]]
 |-
 |align="left"|{{flagicon|RSA}} [[Tshepo Kakora]]
 |align="left"|[[TS Galaxy F.C.|TS Galaxy]]
-|-
-|align="left"|{{flagicon|RSA}} [[D'Angelo Kazeem]]
-|align="left"|[[Sekhukhune United F.C.|Sekhukhune United]]
-|-
-|align="left"|{{flagicon|RSA}} [[Philani Khumalo]]
-|align="left"|[[Lamontville Golden Arrows F.C.|Golden Arrows]]
-|-
-|align="left"|{{flagicon|RSA}} [[Lebohang Maboe]]
-|align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
-|-
-|align="left"|{{flagicon|RSA}} [[Terrence Mashego]]
-|align="left"|[[Stellenbosch F.C.|Stellenbosch]]
 |}
 
 ===Red Cards===
 
-{{Updated|17 October 2026}}
+{{Updated|31 October 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -840,10 +841,13 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 !Club
 !{{Sent off}}
 |-
-|rowspan=8|1
+|rowspan=9|1
 |align="left"|{{flagicon|RSA}} [[Menzi Chili]]
 |align="left"|[[Milford F.C. (South Africa)|Milford]]
-|rowspan=8|1
+|rowspan=9|1
+|-
+|align="left"|{{flagicon|ANG}} [[Inácio Miguel]]
+|align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
 |-
 |align="left"|{{flagicon|RSA}} [[Edgar Manaka]]
 |align="left"|[[Marumo Gallants F.C.|Marumo Gallants]]
@@ -869,7 +873,7 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 
 ===Yellow Cards===
 
-{{Updated|17 October 2026}}
+{{Updated|31 October 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -893,6 +897,9 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
 |rowspan=7|3
 |-
+|align="left"|{{flagicon|RSA}} [[Thato Letshedi]]
+|align="left"|[[Siwelele F.C.|Siwelele]]
+|-
 |align="left"|{{flagicon|RSA}} [[Surprise Manthosi]]
 |align="left"|[[Polokwane City F.C.|Polokwane City]]
 |-
@@ -907,9 +914,6 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |-
 |align="left"|{{flagicon|RSA}} [[Thabo Moloisane]]
 |align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
-|-
-|align="left"|{{flagicon|RSA}} [[Goodman Mosele]]
-|align="left"|[[Chippa United F.C.|Chippa United]]
 |}
 
 ==See also==
