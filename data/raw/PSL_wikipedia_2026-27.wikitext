@@ -86,7 +86,7 @@ NB: Note that these are official squads for these teams, therefore you should no
 {{Fs player|no=23 |pos=MF |nat=RSA |name=[[Ethan Chislett]]}}
 {{Fs player|no=28 |pos=MF |nat=RSA |name=[[Mfundo Vilakazi]]}}
 {{Fs player|no=29 |pos=DF |nat=RSA |name=[[Paseka Mako]]}}
-{{Fs player|no=35 |pos=MF |nat=RSA |name=Faiz Abrahams}}
+{{Fs player|no=35 |pos=MF |nat=RSA |name=Faiz Abrahams |other=on loan from [[Stellenbosch F.C.|Stellenbosch]]}}
 {{Fs mid}}
 {{Fs player|no=38 |pos=DF |nat=RSA |name=Kabelo Nkgwesa}}
 {{Fs player|no=39 |pos=DF |nat=RSA |name=[[Reeve Frosler]]}}
@@ -101,8 +101,25 @@ NB: Note that these are official squads for these teams, therefore you should no
 {{Fs player|no=77 |pos=FW |nat=GNB |name=[[Flávio Silva]]}}
 {{Fs player|no=84 |pos=DF |nat=ANG |name=[[Inácio Miguel]]}}
 {{Fs end}}
+
 ===Kruger United===
 ===Lamontville Golden Arrows===
+{{Fs start}}
+{{Fs player|no=3 |pos=DF |nat=RSA |name=[[Khulekani Shezi]]}}
+{{Fs player|no=4 |pos=DF |nat=RSA |name=Ayanda Jiyane}}
+{{Fs player|no=8 |pos=MF |nat=ZIM |name=[[Jonah Fabisch]]}}
+{{Fs player|no=18 |pos=FW |nat=CHA |name=[[Junior Dion]]}}
+{{Fs player|no=19 |pos=GK |nat=RSA |name=Dumsani Msibi}}
+{{Fs player|no=20 |pos=DF |nat=RSA |name=Osborn Maluleke}}
+{{Fs player|no=22 |pos=FW |nat=RSA |name=Jerome Karelse}}
+{{Fs player|no=23 |pos=MF |nat=LBR |name=[[Ousmane Barry]]}}
+{{Fs player|no=26 |pos=DF |nat=CIV |name=Eroine Agnikoi}}
+{{Fs player|no=27 |pos=GK |nat=RSA |name=Thakasani Mbanjwa}}
+{{Fs player|no=28 |pos=FW |nat=RSA |name=Ronaldo van Neel}}
+{{Fs player|no=29 |pos=MF |nat=RSA |name=Sabelo Sithole}}
+{{Fs player|no=34 |pos=GK |nat=NAM |name=[[Edward Maova]]}}
+{{Fs end}}
+
 ===Mamelodi Sundowns===
 {{Fs start}}
 {{Fs player|no=1 |pos=GK |nat=UGA |name=[[Denis Onyango]] |other=[[captain (association football)|captain]]}}
@@ -197,7 +214,9 @@ NB: Note that these are official squads for these teams, therefore you should no
 {{Fs player|no=49 |pos=FW |nat=RSA |name=Kabelo Kgositsile}}
 {{Fs player|no= |pos=GK |nat=RSA |name=Ethan Visagie}}
 {{Fs player|no= |pos=DF |nat=RSA |name=Yanga Madiba}}
+{{Fs player|no= |pos=FW |nat=NAM |name=Lawrence Doeseb |other= to join in January 2027}}
 {{Fs end}}
+
 ===Polokwane City===
 ===Richards Bay===
 ===Sekhukhune United===
@@ -205,15 +224,37 @@ NB: Note that these are official squads for these teams, therefore you should no
 ===Stellenbosch===
 {{Fs start}}
 {{Fs player|no=1 |pos=GK |nat=NZL |name=[[Nathan Garrow]]}}
-{{Fs player|no=2 |pos=DF |nat=AZE |name=[[Turan Manafov]]}}
+{{Fs player|no=2 |pos=MF |nat=RSA |name=Kgaogelo Ramushu}}
 {{Fs player|no=3 |pos=DF |nat=RSA |name=Surprise Nhlabathi}}
 {{Fs player|no=4 |pos=DF |nat=RSA |name=Luthando Vena}}
+{{Fs player|no=6 |pos=MF |nat=RSA |name=Tlakusani Mthethwa}}
+{{Fs player|no=8 |pos=MF |nat=RSA |name=Vuyolwethu Andrieas}}
 {{Fs player|no=10 |pos=FW |nat=RSA |name=[[Ashley Du Preez]]}}
 {{Fs player|no=11 |pos=FW |nat=RSA |name=Quwan Plaatjies}}
+{{Fs player|no=12 |pos=MF |nat=RSA |name=[[Shakeel April]]}}
+{{Fs player|no=14 |pos=FW |nat=RSA |name=[[Sinoxolo Kwayiba]]}}
+{{Fs mid}}
 {{Fs player|no=16 |pos=GK |nat=GHA |name=[[Solomon Agbasi]]}}
 {{Fs player|no=17 |pos=GK |nat=RSA |name=[[Sage Stephens]]}}
 {{Fs player|no=18 |pos=FW |nat=NGR |name=Arigo Godspower}}
+{{Fs player|no=19 |pos=MF |nat=RSA |name=[[Genino Palace]]}}
+{{Fs player|no=20 |pos=MF |nat=RSA |name=Keanan Johannesen}}
+{{Fs player|no=21 |pos=DF |nat=RSA |name=Gopolang Taunyana}}
+{{Fs player|no=22 |pos=DF |nat=RSA |name=Qobolwakhe Sibande}}
+{{Fs player|no=26 |pos=DF |nat=RSA |name=Siviwe Nkwali}}
+{{Fs player|no=27 |pos=DF |nat=RSA |name=[[Terrence Mashego]]}}
+{{Fs player|no=28 |pos=MF |nat=RSA |name=[[George Matlou]]}}
+{{Fs mid}}
 {{Fs player|no=29 |pos=FW |nat=NGR |name=Kazeem Adeyanju}}
+{{Fs player|no=30 |pos=DF |nat=RSA |name=[[Sphiwe Msimango]] |other=[[captain (association football)|captain]]}}
+{{Fs player|no=31 |pos=MF |nat=RSA |name=Darrel Matsheke}}
+{{Fs player|no=32 |pos=FW |nat=RSA |name=Raoul Daniels}}
+{{Fs player|no=33 |pos=MF |nat=RSA |name=[[Chumani Butsaka]]}}
+{{Fs player|no=35 |pos=MF |nat=RSA |name=[[Njabulo Blom]] |other=on loan from [[Borneo FC|Borneo]]}}
+{{Fs player|no=37 |pos=DF |nat=RSA |name=[[Thabiso Lebitso]]}}
+{{Fs player|no=52 |pos=MF |nat=RSA |name=Ntando Bunyula}}
+{{Fs player|no=67 |pos=FW |nat=RSA |name=[[Bradley Grobler]]}}
+{{Fs player|no= |pos=DF |nat=AZE |name=[[Turan Manafov]]}}
 {{Fs end}}
 
 ===TS Galaxy===
@@ -747,7 +788,7 @@ From Wikipedia, the free encyclopedia
 Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assists, Tackles, Clean Sheets and more|url=https://www.goal.com/en-za/premier-soccer-league/top-players/yv73ms6v1995b5wny16jcfi3|website=Goal}}</ref>
 ===Goals===
 
-{{Updated|31 October 2026}}
+{{Updated|25 November 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -768,10 +809,13 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |align="left"|{{flagicon|RSA}} [[Nqaba Xulu]]
 |align="left"|[[Richards Bay F.C.|Richards Bay]]
 |-
-|rowspan=3|4
+|rowspan=4|4
 |align="left"|{{flagicon|RSA}} [[Victor Letsoalo]]
 |align="left"|[[TS Galaxy F.C.|TS Galaxy]]
-|rowspan=3|4
+|rowspan=4|4
+|-
+|align="left"|{{flagicon|RSA}}[[Boitumelo Radiopane]]
+|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
 |-
 |align="left"|{{flagicon|RSA}} [[Iqraam Rayners]]
 |align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
@@ -779,24 +823,21 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 |align="left"|{{flagicon|RSA}} [[Mvelo Zikakayo]]
 |align="left"|[[Milford F.C. (South Africa)|Milford]]
 |-
-|rowspan=4|7
+|rowspan=3|7
 |align="left"|{{flagicon|RSA}} [[Wandile Duba]]
 |align="left"|[[Kaizer Chiefs F.C.|Kaizer Chiefs]]
-|rowspan=4|3
+|rowspan=3|3
 |-
 |align="left"|{{flagicon|COL}} [[Brayan Leon]]
 |align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
 |-
 |align="left"|{{flagicon|RSA}} [[Tashreeq Matthews]]
 |align="left"|[[Mamelodi Sundowns F.C.|Mamelodi Sundowns]]
-|-
-|align="left"|{{flagicon|RSA}}[[Yanela Mbuthuma]]
-|align="left"|[[Orlando Pirates F.C.|Orlando Pirates]]
 |}
 
 ===Assists===
 
-{{Updated|31 October 2026}}
+{{Updated|25 November 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -843,7 +884,7 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 
 ===Red Cards===
 
-{{Updated|31 October 2026}}
+{{Updated|25 November 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
@@ -883,7 +924,7 @@ Source:GOAL<ref>{{cite web|title=Premier Soccer League Top Players - Goals, Assi
 
 ===Yellow Cards===
 
-{{Updated|31 October 2026}}
+{{Updated|25 November 2026}}
 {| class="wikitable sortable" style="text-align:center"
 |-
 !Rank
